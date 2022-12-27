@@ -11,7 +11,8 @@
 - Attachment
 - CRUD
 - 
-*Service Provider
+*Service Provider - Future (For company, manage Personnel) 
+  - Manage Payment(e-wallet)
   - Manage Services  
   - Reports (Income, Performance, Client, Re-occurrence)
   - Remarks(optional)
@@ -19,7 +20,9 @@
   - Notification (Appointment for approval, re-schedule)
   - Service Quotation (save as draft)
   - Location
+
 *Customer
+  - Manage Payment (e-wallet)
   - Manage Booking
     - Upcoming appointment (Cancel, Reschedule)
     - Cancelled appointment (Re-use)
@@ -28,21 +31,22 @@
     - Re-schedule 
       
   - List of Service Providers (per SP)
-    - Booking Calendar(displays availability)
-    - List of Services (with quotation)
-      - Application
-        - Property Location
-    - Performance Review / feedback
-    
-    - 
+    - Profile (Landing page)
+      - Message
+      - Reviews
+      - About
+      - Contact us
+      - List of Services (with quotation)
+      - CTA (Call to Action)
+        - Avail Service
+          - Booking Calendar(displays availability)
+          - Property Location
+    - Performance Review / feedback (star & remarks)
 *Admin
-
-
-*Dashboard
-  - Charts
-    - Income
-    - 
-
+ - Review approval
+ - Manage Service Provider
+ - Manage Customer
+ - Reports (List of SP, Customer, Income, Low Reviews SP, Billing)
 ## Instructions
 
 *Save a copy of this template for your team in the same folder that contains
@@ -75,9 +79,9 @@ level of detail to aim for.*
 *List the most important questions you have about your design, or things that
 you are still debating internally that you might like help working through.*
 
-1.   
-2.   
-3.  
+1. Booking Payment
+2. Booking Process(Startpoint to Endpoint)
+3. Manage personnel for Service Provider (Company)
 
 ## 3. Use Cases
 
@@ -85,9 +89,9 @@ you are still debating internally that you might like help working through.*
 would like to do (and why). You may also include use cases for yourselves, or
 for the organization providing the product to customers.*
 
-U1. *As a [product] customer, I want to `<result>` when I `<action>`*
+U1. *As a [service] customer, I want to `<book an appointment>` when I `<avail a service>`*
 
-U2. *As a [product] customer, I want to view my grocery list when I log into the
+U2. *As a [service] customer, I want to view my grocery list when I log into the
 grocery list page*
     
 U3. ...
