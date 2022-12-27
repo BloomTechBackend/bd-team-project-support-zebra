@@ -145,6 +145,12 @@ U48. As Admin, I want to view Service cost per SP
 what questions to ask to make sure you are solving for what you say and stops
 discussions from getting sidetracked by aspects you do not intend to handle in
 your design.*
+- Online presence of skilled individual as service provider
+- Rate and write review about service rendered by SP for other customer's reference.
+- Service quotation for customer's budgeting reference.
+- Availability of Service Provider
+- appointment booking conflicts.
+
 
 ### 4.1. In Scope
 
