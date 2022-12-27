@@ -150,12 +150,18 @@ your design.*
 - Service quotation for customer's budgeting reference.
 - Availability of Service Provider
 - appointment booking conflicts.
-
+- separate means of communication.
 
 ### 4.1. In Scope
 
 *Which parts of the problem defined in Sections 1 and 3 will you solve with this
 design?*
+- Online presence of skilled individual as service provider
+- Rate and write review about service rendered by SP for other customer's reference.
+- Service quotation for customer's budgeting reference.
+- Availability of Service Provider
+- appointment booking conflicts.
+- separate means of communication.
 
 ### 4.2. Out of Scope
 
@@ -164,6 +170,9 @@ you are not planning to solve? Do potential expansions or related problems occur
 to you that you want to explicitly say you are not worrying about now? Feel free
 to put anything here that you think your team can't accomplish in the unit, but
 would love to do with more time.*
+- Service provider as Group/Company
+- Manage Personnel
+
 
 # 5. Proposed Architecture Overview
 
