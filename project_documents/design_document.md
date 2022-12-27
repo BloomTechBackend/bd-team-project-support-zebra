@@ -1,4 +1,47 @@
 # [team name] Design Document
+# Modules
+*Authentication
+*Registration
+*Email Verification
+*Profile
+*Messaging
+- Search a user
+- Search within conversation
+- Block / Unblock
+- Attachment
+- CRUD
+- 
+*Service Provider
+  - Manage Services  
+  - Reports (Income, Performance, Client, Re-occurrence)
+  - Remarks(optional)
+  - Booking Calendar (Manual)
+  - Notification (Appointment for approval, re-schedule)
+  - Service Quotation (save as draft)
+  - Location
+*Customer
+  - Manage Booking
+    - Upcoming appointment (Cancel, Reschedule)
+    - Cancelled appointment (Re-use)
+    - Past appointment (Re-use)
+    - Ongoing
+    - Re-schedule 
+      
+  - List of Service Providers (per SP)
+    - Booking Calendar(displays availability)
+    - List of Services (with quotation)
+      - Application
+        - Property Location
+    - Performance Review / feedback
+    
+    - 
+*Admin
+
+
+*Dashboard
+  - Charts
+    - Income
+    - 
 
 ## Instructions
 
@@ -17,7 +60,14 @@ level of detail to aim for.*
 
 ## 1. Problem Statement
 
-*Explain clearly what problem you are trying to solve.*
+* Service provider online presence
+* Decentralized service providers
+* Performance review
+  * Customer relies on network of people for the job with biased review.
+  * No output can validate the quality of work.
+* Indecisive availability
+* Uncertain service cost
+
 
 
 ## 2. Top Questions to Resolve in Review
