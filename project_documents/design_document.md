@@ -1,52 +1,5 @@
-# [team name] Design Document
-# Modules
-*Authentication
-*Registration
-*Email Verification
-*Profile
-*Messaging
-- Search a user
-- Search within conversation
-- Block / Unblock
-- Attachment
-- CRUD
-- 
-*Service Provider - Future (For company, manage Personnel) 
-  - Manage Payment(e-wallet)
-  - Manage Services  
-  - Reports (Income, Performance, Client, Re-occurrence)
-  - Remarks(optional)
-  - Booking Calendar (Manual)
-  - Notification (Appointment for approval, re-schedule)
-  - Service Quotation (save as draft)
-  - Location
+# Support Zebra Design Document
 
-*Customer
-  - Manage Payment (e-wallet)
-  - Manage Booking
-    - Upcoming appointment (Cancel, Reschedule)
-    - Cancelled appointment (Re-use)
-    - Past appointment (Re-use)
-    - Ongoing
-    - Re-schedule 
-      
-  - List of Service Providers (per SP)
-    - Profile (Landing page)
-      - Message
-      - Reviews
-      - About
-      - Contact us
-      - List of Services (with quotation)
-      - CTA (Call to Action)
-        - Avail Service
-          - Booking Calendar(displays availability)
-          - Property Location
-    - Performance Review / feedback (star & remarks)
-*Admin
- - Review approval
- - Manage Service Provider
- - Manage Customer
- - Reports (List of SP, Customer, Income, Low Reviews SP, Billing)
 ## Instructions
 
 *Save a copy of this template for your team in the same folder that contains
@@ -73,7 +26,6 @@ level of detail to aim for.*
 * Uncertain service cost
 
 
-
 ## 2. Top Questions to Resolve in Review
 
 *List the most important questions you have about your design, or things that
@@ -89,91 +41,6 @@ you are still debating internally that you might like help working through.*
 would like to do (and why). You may also include use cases for yourselves, or
 for the organization providing the product to customers.*
 
-<<<<<<< HEAD
-Manage Services
-CRUD Service
-Manage Cost/Service()
-
-Bookings(Calendar)
-Calendar(show available date) on Manage Serices
-Show Calendar with bookings(change view to specific date, by week, by month)
-both customer and SP(show appoinments upcoming, pending, past, cancelled)
-
-Messsaging
-Send Message
-Attachments
-Search individual and view Profile(show button "send a message" show "block/unblock")
-
-Signup > Email Verification > Create Profile
-
-As Customer > I want to Signup > when I provide Email as Username and password
-As Customer > I want to Login > When I provide Username and password
-As Customer > I want to Create a Profile
-As Customer > I want to Retrieve specific service
-As Customer > I want to Create a message SP
-As Customer > I want to Create a review to a service
-As Customer > I want to Create an Appointment
-As Customer > I want to Update Appointment
-As Customer > I want to View SP availability while booking
-As Customer > I want to view SP services
-As Customer > I want to view Service Cost and Reviews
-As Customer > I want to view service provider portfolio
-As Customer > I want to view > Upcoming appointment > When I log in to dashboard
-As Customer > I want to view available services
-As Customer > I want to view Ongoing Appointment
-As Customer > I want to view upcoming Appointment
-As Customer > I want to view Appointment History
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-As SP > I want to Signup > when I provide Email as Username and password
-As SP > I want to Login > When I provide Username and password
-As SP > I want to Create a Profile
-As SP > I want to create a service
-As SP > I want to Update a service
-As SP > I want to retrieve list of services
-As SP > I want to view reviews/service
-As SP > I want to view > Upcoming appointment > When I log in to dashboard
-As SP > I want to view booking Calendar
-As SP > I want to view Ongoing Appointment
-As SP > I want to view upcoming Appointment
-As SP > I want to view Appointment History
-As SP > I want to create Service cost
-As SP > I want to Update Service cost
-
-As Admin > I want to create new SP
-As Admin > I want to retrieve list of SPs
-As Admin > I want to retrieve list of Customers
-As Admin > I want to delete SP
-As Admin > I want to delete Customer
-As Admin > I want to update SP
-As Admin > I want to view low reviews SP
-As Admin > I want to approve SP
-As Admin > I want to approve Reviews
-As Admin > I want to retrieve list of services
-As Admin > I want to view reviews per service
-As Admin > I want to view > Upcoming appointment per SP and Customer
-As Admin > I want to view booking Calendar per SP and Customer
-As Admin > I want to view Ongoing Appointment per SP and Customer
-As Admin > I want to view upcoming Appointment per SP and Customer
-As Admin > I want to view Appointment History per SP and Customer
-As Admin > I want to view Service cost per SP
-
-
-
-=======
 U1.	As Customer, I want to Signup, when I provide Email as Username and password
 U2.	As Customer, I want to Login, When I provide Username and password
 U3.	As Customer, I want to Create a Profile
@@ -222,8 +89,6 @@ U45. As Admin, I want to view Ongoing Appointment per SP and Customer
 U46. As Admin, I want to view upcoming Appointment per SP and Customer
 U47. As Admin, I want to view Appointment History per SP and Customer
 U48. As Admin, I want to view Service cost per SP
->>>>>>> b82e4cf13c5c214868c5a294403732be008c502c
-
 
 ## 4. Project Scope
 
@@ -259,7 +124,6 @@ would love to do with more time.*
 - Service provider as Group/Company
 - Manage Personnel
 
-
 # 5. Proposed Architecture Overview
 
 *Describe broadly how you are proposing to solve for the requirements you
@@ -267,6 +131,9 @@ described in Section 3.*
 
 *This may include class diagram(s) showing what components you are planning to
 build.*
+#### [Admin Class Diagram](project_documents/oxifiedAdminUCD.puml)
+#### [Customer Class Diagram](project_documents/oxifiedCustomerUCD.puml)
+#### [Service Provider Class Diagram](project_documents/oxifiedServiceProviderUCD.puml)
 
 *You should argue why this architecture (organization of components) is
 reasonable. That is, why it represents a good data flow and a good separation of
