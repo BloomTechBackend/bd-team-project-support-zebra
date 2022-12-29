@@ -2,29 +2,24 @@
 
 ## Instructions
 
-*Save a copy of this template for your team in the same folder that contains
-this template.*
 
-*Replace italicized text (including this text!) with details of the design you
-are proposing for your team project. (Your replacement text shouldn't be in
-italics)*
-
-*You should take a look at the example design document in the same folder as
-this template for more guidance on the types of information to capture, and the
-level of detail to aim for.*
 
 ## *Project Title* Design
 
 ## 1. Problem Statement
-
-* Service provider online presence
-* Decentralized service providers
-* Performance review
-  * Customer relies on network of people for the job with biased review.
-  * No output can validate the quality of work.
-* Indecisive availability
-* Uncertain service cost
-
+  It is important for businesses and individuals to consider the potential impacts of a lack of  online presence in 
+order to avoid these issues. Decrease visibility: Without internet presence, it can be difficult for potential customers
+or clients to find and learn about your services. Limited reach: The internet provides a global platform for business to
+reach customers, but if you are not online, you are missing out on this potential market. Lost opportunities: Without an 
+internet presence, businesses may miss out on opportunities to connect with customers, share information, or sell 
+products and services online.
+  Performance review for manpower service providers should aim ot asses the provider's overall performance and identify
+areas for improvement, as well as recognize any strengths or successes. However, with the lack of internet presence 
+hinders the credibility of a service provider's work. Mostly, a customer can connect-with service providers that are
+from known network.
+  Indecisive Time Availability can be challenging for customers to get a work done, when a 
+service provider is not available. This can be especially frustrating, as customers may not know when they 
+can expect a service provider to be free.
 
 ## 2. Top Questions to Resolve in Review
 
