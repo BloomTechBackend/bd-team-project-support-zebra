@@ -13,10 +13,12 @@ or clients to find and learn about your services. Limited reach: The internet pr
 reach customers, but if you are not online, you are missing out on this potential market. Lost opportunities: Without an 
 internet presence, businesses may miss out on opportunities to connect with customers, share information, or sell 
 products and services online.
+
   Performance review for manpower service providers should aim ot asses the provider's overall performance and identify
 areas for improvement, as well as recognize any strengths or successes. However, with the lack of internet presence 
 hinders the credibility of a service provider's work. Mostly, a customer can connect-with service providers that are
 from known network.
+
   Indecisive Time Availability can be challenging for customers to get a work done, when a 
 service provider is not available. This can be especially frustrating, as customers may not know when they 
 can expect a service provider to be free.
@@ -36,53 +38,100 @@ you are still debating internally that you might like help working through.*
 would like to do (and why). You may also include use cases for yourselves, or
 for the organization providing the product to customers.*
 
-U1.	As Customer, I want to Signup, when I provide Email as Username and password
+U1. As Customer, I want to Signup, when I provide Email as Username and password
+
 U2.	As Customer, I want to Login, When I provide Username and password
+
 U3.	As Customer, I want to Create a Profile
+
 U4.	As Customer, I want to Retrieve specific service
+
 U5.	As Customer, I want to Create a message SP
+
 U6.	As Customer, I want to Create a review to a service
+
 U7.	As Customer, I want to Create an Appointment
+
 U8.	As Customer, I want to Update Appointment
+
 U9.	As Customer, I want to View SP availability while booking
+
 U10. As Customer, I want to view SP services
+
 U11. As Customer, I want to view Service Cost and Reviews
+
 U12. As Customer, I want to view service provider portfolio
+
 U13. As Customer, I want to view Upcoming appointment, When I log in to dashboard
+
 U14. As Customer, I want to view available services
+
 U15. As Customer, I want to view Ongoing Appointment
+
 U16. As Customer, I want to view upcoming Appointment
+
 U17. As Customer, I want to view Appointment History
+
 U18. As SP, I want to Signup, when I provide Email as Username and password
+
 U19. As SP, I want to Login, When I provide Username and password
+
 U20. As SP, I want to Create a Profile
+
 U21. As SP, I want to create a service
+
 U22. As SP, I want to Update a service
+
 U23. As SP, I want to retrieve list of services
+
 U24. As SP, I want to view reviews/service
+
 U25. As SP, I want to view, Upcoming appointment, When I log in to dashboard
+
 U26. As SP, I want to view booking Calendar
+
 U27. As SP, I want to view Ongoing Appointment
+
 U28. As SP, I want to view upcoming Appointment
+
 U29. As SP, I want to view Appointment History
+
 U30. As SP, I want to create Service cost
+
 U31. As SP, I want to Update Service cost
+
 U32. As Admin, I want to create new SP
+
 U33. As Admin, I want to retrieve list of SPs
+
 U34. As Admin, I want to retrieve list of Customers
+
 U35. As Admin, I want to delete SP
+
 U36. As Admin, I want to delete Customer
+
 U37. As Admin, I want to update SP
+
 U38. As Admin, I want to view low reviews SP
+
 U39. As Admin, I want to approve SP
+
 U40. As Admin, I want to approve Reviews
+
 U41. As Admin, I want to retrieve list of services
+
 U42. As Admin, I want to view reviews per service
+
 U43. As Admin, I want to view, Upcoming appointment per SP and Customer
+
 U44. As Admin, I want to view booking Calendar per SP and Customer
+
 U45. As Admin, I want to view Ongoing Appointment per SP and Customer
+
 U46. As Admin, I want to view upcoming Appointment per SP and Customer
+
 U47. As Admin, I want to view Appointment History per SP and Customer
+
 U48. As Admin, I want to view Service cost per SP
 
 ## 4. Project Scope
