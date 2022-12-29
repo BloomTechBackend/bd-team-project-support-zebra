@@ -131,9 +131,9 @@ described in Section 3.*
 
 *This may include class diagram(s) showing what components you are planning to
 build.*
-#### [Admin Class Diagram](project_documents/oxifiedAdminUCD.puml)
-#### [Customer Class Diagram](project_documents/oxifiedCustomerUCD.puml)
-#### [Service Provider Class Diagram](project_documents/oxifiedServiceProviderUCD.puml)
+#### [Admin Class Diagram](oxifiedAdminUCD.puml)
+#### [Customer Class Diagram](oxifiedCustomerUCD.puml)
+#### [Service Provider Class Diagram](oxifiedServiceProviderUCD.puml)
 
 *You should argue why this architecture (organization of components) is
 reasonable. That is, why it represents a good data flow and a good separation of
