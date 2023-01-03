@@ -305,6 +305,7 @@ requirements.*
 * Accepts a userAccount ID and returns the corresponding userAccountModel.
     * If the given user account ID (uaId) is not found, will throw a
       `UserAccountNotFoundException`
+* [Sequence Diagram Here!](SequenceDiagrams/GetUserAccount.puml)
   
 ### 6.4 Update UserAccount EndPoint
 * Accepts PUT requests to /UserAccounts/:id

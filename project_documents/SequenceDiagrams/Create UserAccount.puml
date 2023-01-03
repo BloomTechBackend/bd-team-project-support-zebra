@@ -8,6 +8,6 @@ participant CreateUserAccountActivity as cua
 database UserAccounts
 
 c -> wrp: Submit User Registration Form
-wrp -> cua: Sent User Account
+wrp -> cua: Send User Account Information
 cua -> UserAccounts: save new UserAccount
 @enduml
