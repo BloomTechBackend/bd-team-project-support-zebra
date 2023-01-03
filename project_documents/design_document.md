@@ -151,12 +151,11 @@ your design.*
 
 *Which parts of the problem defined in Sections 1 and 3 will you solve with this
 design?*
-- Online presence of skilled individual as service provider
-- Rate and write review about service rendered by SP for other customer's reference.
-- Service quotation for customer's budgeting reference.
-- Availability of Service Provider
-- appointment booking conflicts.
-- separate means of communication.
+- Creating, retrieving and updating user account
+- Creating, retrieving and updating Service
+- Creating appointment
+- Adding to and retrieve saved appointment to booking
+- Creating, sending and retrieving Message
 
 ### 4.2. Out of Scope
 
@@ -166,7 +165,7 @@ to you that you want to explicitly say you are not worrying about now? Feel free
 to put anything here that you think your team can't accomplish in the unit, but
 would love to do with more time.*
 - Service provider as Group/Company
-- Manage Personnel
+- Ability to manage personnel
 
 # 5. Proposed Architecture Overview
 
@@ -188,10 +187,109 @@ requirements.*
 
 ## 6.1. Public Models
 
-*Define the data models your service will expose in its responses via your
-*`-Model`* package. These will be equivalent to the *`PlaylistModel`* and
-*`SongModel`* from the Unit 3 project.*
-
+### a. `AppointmentModel`
+```
+-   String appoinmentId
+-	String time
+-	String date
+-	Service service
+-	String addressId (appointmentLocation -> Address Class)
+-	String status
+```
+### b. `ServiceModel`
+```
+-	String serviceId
+-	String uaId
+-	String name
+-	BigDecimal serviceTypeCost
+-	String category
+-	String serviceType
+-	String status
+```
+### c. `ReviewModel`
+```
+-	String reviewId
+-	String serviceId
+-	Double rating
+-	String feedback
+-	String status
+```
+###  d. `UserAccountModel`
+```
+-	String uaId (Hash)
+-	Email
+-	Password
+-	String userType (Range)
+-	String status
+-	String lastName
+-	String firstName
+-	String contactNumber
+-	String addressId
+-	String birthdate
+-	String gender
+-	String image
+-	Hashset<String> inbox
+```
+###  e. `AddressModel`
+```
+-	String addressId
+-	String houseNumber
+-	String lotNumber
+-	String blockNumber
+-	String street
+-	String barangay
+-	String City/Municipality
+-	String Province
+-	Int zipCode
+```
+###  f. `ProofModel`
+```
+-	String proofId
+-	String id1
+-	String id2
+-	String proofOfBilling
+```
+###  g. `ServiceProviderModel`
+```
+-	String uaId
+-	String serviceProvideId
+-	String accountStatus – (inactive, active)
+-	String backgroundChecked – (yes / no)
+-	String experience
+-	Language[] language
+-	String [] businessHours (Monday – Sunday)  - 8am-5pm
+-	LocalDateTime[] availability
+-	String bookingId
+```
+###  h. `CustomerModel`
+```
+-	String uaId
+-	String customerId
+-	Address[] propertyLocation
+-	String bookingId
+```
+###  i. `InboxModel`
+```
+-	String inboxId
+-	String senderId
+-	String receiverId
+-	String messageToDisplay
+```
+###  j. `MessageModel`
+```
+-	String messageId
+-	String inboxId
+-	String senderId
+-	String receiverId
+-	String dateTimeSent
+-	String messageBody
+```
+###  k.`BookingModel`
+```
+- String bookingId
+- Appointment[] appointments
+- Integer appointmentCount
+```
 ## 6.2. *First Endpoint*
 
 *Describe the behavior of the first endpoint you will build into your service
@@ -201,16 +299,47 @@ showing how a user interaction goes from user to website to service to database,
 and back. This first endpoint can serve as a template for subsequent endpoints.
 (If there is a significant difference on a subsequent endpoint, review that with
 your team before building it!)*
+### 6.2 Create UserAccount EndPoint
+    *Accepts POST requests to /userAccount
+### 6.3 Get UserAccount EndPoint
+     *Accepts GET requests to /userAccount/:id
+### 6.4 Update UserAccount EndPoint
+     *Accepts PUT requests to /profile/:id
+### 6.5 Create Service EndPoint
+    *Accepts POST requests to /service
+### 6.6 Get Service EndPoint
+    *Accepts GET requests to /service/:id
+### 6.7 Get ServicesByServiceProvider EndPoint
+     *Accepts GET requests to /userAccount/:id
+### 6.8 Update Service EndPoint
+    *Accepts GET requests to /userAccount/:id
+### 6.9 Create Appointments EndPoint
+     *Accepts GET requests to /userAccount/:id
+### 6.10 Add BookingAppointment EndPoint
+    *Accepts GET requests to /userAccount/:id    
+### 6.11 Update BookingAppointment EndPoint
+    *Accepts GET requests to /userAccount/:id    
+### 6.12 Get Booking EndPoint
+    *Accepts GET requests to /userAccount/:id
+### 6.13 Get BookingByCustomer EndPoint
+    *Accepts GET requests to /userAccount/:id
+### 6.14 Get BookingByServiceProvider EndPoint
+    *Accepts GET requests to /userAccount/:id
+### 6.15 Create Review EndPoint
+    *Accepts GET requests to /userAccount/:id
+### 6.16 Get ReviewByService EndPoint
+    *Accepts GET requests to /userAccount/:id
+### 6.17 Update Review EndPoint
+    *Accepts GET requests to /userAccount/:id
+### 6.18 Create Message EndPoint
+    *Accepts GET requests to /userAccount/:id
+### 6.19 Send Message EndPoint
+    *Accepts GET requests to /userAccount/:id
+### 6.20 Get MessageByInboxId EndPoint
+    *Accepts GET requests to /userAccount/:id
+### 6.21 Get InboxByUserAccount EndPoint
+    *Accepts GET requests to /userAccount/:id
 
-*(You should have a separate section for each of the endpoints you are expecting
-to build...)*
-
-## 6.3 *Second Endpoint*
-
-*(repeat, but you can use shorthand here, indicating what is different, likely
-primarily the data in/out and error conditions. If the sequence diagram is
-nearly identical, you can say in a few words how it is the same/different from
-the first endpoint)*
 
 # 7. Tables
 
