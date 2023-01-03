@@ -298,12 +298,14 @@ requirements.*
 * For security concerns, we will validate that the provided customer ID and playlist name do not contain any invalid characters: ``` "'\ ```
 * If the user account ID contains any of the invalid characters, will throw an InvalidAttributeValueException.
 * This API must create the user account with an empty list of inbox.
+* [Sequence Diagram Here!](SequenceDiagrams/Create UserAccount.puml)
 
 ### 6.3 Get UserAccount EndPoint
 * Accepts GET requests to /UserAccounts/:id
 * Accepts a userAccount ID and returns the corresponding userAccountModel.
     * If the given user account ID (uaId) is not found, will throw a
       `UserAccountNotFoundException`
+  
 ### 6.4 Update UserAccount EndPoint
 * Accepts PUT requests to /UserAccounts/:id
 * Accepts data to update a user account including a uaId, userType, an updated password name, (optional) image, addressId, and contact number. Returns the updated user account.
