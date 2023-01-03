@@ -290,47 +290,59 @@ requirements.*
 - Appointment[] appointments
 - Integer appointmentCount
 ```
-## 6.2. *First Endpoint*
+## UserAccount Service
+### 6.2 Create UserAccount EndPoint*
+* Accepts POST requests to /UserAccounts
+* Accepts data to create a new user account with a provided uaId, userType, email, hashed password, first name, last name, contact number, birthdate, gender, (optional)image and an inactive status. Returns the new user account, including a unique user account ID (uaId) assigned by the user account service.
+* We have a utility class with a validation method, and a method to generate a new, unique user account ID (uaId).
+* For security concerns, we will validate that the provided customer ID and playlist name do not contain any invalid characters: ``` "'\ ```
+* If the user account ID contains any of the invalid characters, will throw an InvalidAttributeValueException.
+* This API must create the user account with an empty list of inbox.
 
-*Describe the behavior of the first endpoint you will build into your service
-API. This should include what data it requires, what data it returns, and how it
-will handle any known failure cases. You should also include a sequence diagram
-showing how a user interaction goes from user to website to service to database,
-and back. This first endpoint can serve as a template for subsequent endpoints.
-(If there is a significant difference on a subsequent endpoint, review that with
-your team before building it!)*
-### 6.2 Create UserAccount EndPoint
-    *Accepts POST requests to /userAccount
 ### 6.3 Get UserAccount EndPoint
-     *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /UserAccounts/:id
+* Accepts a userAccount ID and returns the corresponding userAccountModel.
+    * If the given user account ID (uaId) is not found, will throw a
+      `UserAccountNotFoundException`
 ### 6.4 Update UserAccount EndPoint
-     *Accepts PUT requests to /profile/:id
+* Accepts PUT requests to /UserAccounts/:id
+* Accepts data to update a user account including a uaId, userType, an updated password name, (optional) image, addressId, and contact number. Returns the updated user account.
+* If the user account ID (uaId) is not found, will throw a UserAccountNotFoundException
+* If the user account ID  contains any of the invalid characters, will throw an InvalidAttributeValueException.
+
+## SPS Service
 ### 6.5 Create Service EndPoint
-    *Accepts POST requests to /service
+
 ### 6.6 Get Service EndPoint
-    *Accepts GET requests to /service/:id
+
 ### 6.7 Get ServicesByServiceProvider EndPoint
-     *Accepts GET requests to /userAccount/:id
+*Accepts GET requests to /service/:id
 ### 6.8 Update Service EndPoint
-    *Accepts GET requests to /userAccount/:id
+*Accepts PUT requests to /service/:id
+
+## Appointment Service
 ### 6.9 Create Appointments EndPoint
-     *Accepts GET requests to /userAccount/:id
+     *Accepts POST requests to /appointment/:id
 ### 6.10 Add BookingAppointment EndPoint
-    *Accepts GET requests to /userAccount/:id    
+    *Accepts GET requests to /booking/appointment/:id    
 ### 6.11 Update BookingAppointment EndPoint
-    *Accepts GET requests to /userAccount/:id    
+    *Accepts PUT requests to /booking/userAccount/:id    
 ### 6.12 Get Booking EndPoint
     *Accepts GET requests to /userAccount/:id
 ### 6.13 Get BookingByCustomer EndPoint
     *Accepts GET requests to /userAccount/:id
 ### 6.14 Get BookingByServiceProvider EndPoint
     *Accepts GET requests to /userAccount/:id
+
+## Review Service
 ### 6.15 Create Review EndPoint
-    *Accepts GET requests to /userAccount/:id
+    *Accepts POST requests to /userAccount/:id
 ### 6.16 Get ReviewByService EndPoint
     *Accepts GET requests to /userAccount/:id
 ### 6.17 Update Review EndPoint
-    *Accepts GET requests to /userAccount/:id
+    *Accepts PUT requests to /userAccount/:id
+
+## Message Service
 ### 6.18 Create Message EndPoint
     *Accepts GET requests to /userAccount/:id
 ### 6.19 Send Message EndPoint
