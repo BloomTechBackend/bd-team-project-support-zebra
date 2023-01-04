@@ -322,7 +322,7 @@ requirements.*
 * For security concerns, we will validate that the provided serviceId and service name do not contain any invalid characters: ``` "'\ ```
 * If the serviceId and service name contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
 * This API must create the user account with an empty list of inbox.
-* * [Sequence Diagram Here!](SequenceDiagrams/CreateService.puml)
+* ![Sequence Diagram Here!](images/design_document/createService.png)
 ### 6.6 Get Service EndPoint
 * Accepts GET requests to /Services
 * Returns the list of ServiceModel.
@@ -333,7 +333,7 @@ requirements.*
 * Accepts a serviceId and user account ID(uaId) and returns the corresponding list of ServiceModel.
     * If the given serviceId is not found, will throw a
       `ServiceNotFoundException`
-* [Sequence Diagram Here!](SequenceDiagrams/GetServiceByServiceProvider.puml)
+* ![Sequence Diagram Here!](images/design_document/GetServiceBySP.png)
 ### 6.8 Update Service EndPoint
 * Accepts PUT requests to /UserAccounts/:id/Services/:id
 * Accepts data to update a service including a serviceId, uaId, updated: name, serviceTypeCost, category, serviceType, and status. Returns the updated service.
@@ -391,3 +391,5 @@ pages. It should be clear what the interactions will be on the page, especially
 where customers enter and submit data. You may want to accompany the mockups
 with some description of behaviors of the page (e.g. “When customer submits the
 submit-dog-photo button, the customer is sent to the doggie detail page”)*
+
+![](images/design_document/1.png)
