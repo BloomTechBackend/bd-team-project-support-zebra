@@ -174,9 +174,9 @@ described in Section 3.*
 
 *This may include class diagram(s) showing what components you are planning to
 build.*
-#### [Admin Class Diagram](oxifiedAdminUCD.puml)
-#### [Customer Class Diagram](oxifiedCustomerUCD.puml)
-#### [Service Provider Class Diagram](oxifiedServiceProviderUCD.puml)
+#### [Admin Class Diagram](ClassDiagrams/oxifiedAdminUCD.puml)
+#### [Customer Class Diagram](ClassDiagrams/oxifiedCustomerUCD.puml)
+#### [Service Provider Class Diagram](ClassDiagrams/oxifiedServiceProviderUCD.puml)
 
 *You should argue why this architecture (organization of components) is
 reasonable. That is, why it represents a good data flow and a good separation of
@@ -293,10 +293,10 @@ requirements.*
 ## UserAccount Service
 ### 6.2 Create UserAccount EndPoint*
 * Accepts POST requests to /UserAccounts
-* Accepts data to create a new user account with a provided uaId, userType, email, hashed password, first name, last name, contact number, birthdate, gender, (optional)image and an inactive status. Returns the new user account, including a unique user account ID (uaId) assigned by the user account service.
+* Accepts data to create a new user account with a provided uaId, userType, email, hashed password, first name, last name, and an inactive status. Returns the new user account, including a unique user account ID (uaId) assigned by the user account service.
 * We have a utility class with a validation method, and a method to generate a new, unique user account ID (uaId).
-* For security concerns, we will validate that the provided customer ID and playlist name do not contain any invalid characters: ``` "'\ ```
-* If the user account ID contains any of the invalid characters, will throw an InvalidAttributeValueException.
+* For security concerns, we will validate that the provided user account ID(uaId) do not contain any invalid characters: ``` "'\ ```
+* If the user account ID contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
 * This API must create the user account with an empty list of inbox.
 * [Sequence Diagram Here!](SequenceDiagrams/Create UserAccount.puml)
 
@@ -310,18 +310,36 @@ requirements.*
 ### 6.4 Update UserAccount EndPoint
 * Accepts PUT requests to /UserAccounts/:id
 * Accepts data to update a user account including a uaId, userType, an updated password name, (optional) image, addressId, and contact number. Returns the updated user account.
-* If the user account ID (uaId) is not found, will throw a UserAccountNotFoundException
-* If the user account ID  contains any of the invalid characters, will throw an InvalidAttributeValueException.
+* If the user account ID (uaId) is not found, will throw a `UserAccountNotFoundException`
+* If the user account ID  contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
+* [Sequence Diagram Here!](SequenceDiagrams/UpdateUserAccount.puml)
 
 ## SPS Service
 ### 6.5 Create Service EndPoint
-
+* Accepts POST requests to /Services
+* Accepts data to create a new service with a provided serviceId, serviceName, time, date, service, addressId, status. Returns the new service, including a unique serviceId assigned by the SPS service.
+* We have a utility class with a validation method, and a method to generate a new, unique user serviceId.
+* For security concerns, we will validate that the provided serviceId and service name do not contain any invalid characters: ``` "'\ ```
+* If the serviceId and service name contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
+* This API must create the user account with an empty list of inbox.
+* * [Sequence Diagram Here!](SequenceDiagrams/CreateService.puml)
 ### 6.6 Get Service EndPoint
+* Accepts GET requests to /Services
+* Returns the list of ServiceModel.
 
+[//]: # (* [Sequence Diagram Here!]&#40;SequenceDiagrams/GetServices.puml&#41;)
 ### 6.7 Get ServicesByServiceProvider EndPoint
-*Accepts GET requests to /service/:id
+* Accepts GET requests to /UserAccounts/:id/Services/:id
+* Accepts a serviceId and user account ID(uaId) and returns the corresponding list of ServiceModel.
+    * If the given serviceId is not found, will throw a
+      `ServiceNotFoundException`
+* [Sequence Diagram Here!](SequenceDiagrams/GetServiceByServiceProvider.puml)
 ### 6.8 Update Service EndPoint
-*Accepts PUT requests to /service/:id
+* Accepts PUT requests to /UserAccounts/:id/Services/:id
+* Accepts data to update a service including a serviceId, uaId, updated: name, serviceTypeCost, category, serviceType, and status. Returns the updated service.
+* If the serviceId is not found, will throw a `ServiceNotFoundException`
+* If the serviceId  contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
+* [Sequence Diagram Here!](SequenceDiagrams/UpdateService.puml)
 
 ## Appointment Service
 ### 6.9 Create Appointments EndPoint
@@ -355,13 +373,14 @@ requirements.*
 ### 6.21 Get InboxByUserAccount EndPoint
     *Accepts GET requests to /userAccount/:id
 
-
 # 7. Tables
 
 *Define the DynamoDB tables you will need for the data your service will use. It
 may be helpful to first think of what objects your service will need, then
 translate that to a table structure, like with the *`Playlist` POJO* versus the
 `playlists` table in the Unit 3 project.*
+#### 7.1 UserAccounts
+#### 7.2 Services
 
 # 8. Pages
 

@@ -1,7 +1,7 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-
+title Get User Account
 actor Client as c
 participant "Website Profile page" as wrp
 participant GetUserAccountActivity as cua
