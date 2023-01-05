@@ -360,21 +360,56 @@ requirements.*
 
 ## Review Service
 ### 6.15 Create Review EndPoint
-    *Accepts POST requests to /userAccount/:id
+* Accepts POST requests to /Reviews/
+* Accepts data to create a new service review with a provided reviewId, serviceId, rating, feedback and status. Returns the new Service review, including the assigned unique review ID (reviewId).
+* We have a utility class with a validation method, and a method to generate a new unique review ID (reviewId).
+* For security concerns, we will validate that the provided review ID and feedback do not contain any invalid characters: ``` "'\ ```
+* If the review ID and feedback contains any of the invalid characters, will throw an InvalidAttributeValueException.
+
 ### 6.16 Get ReviewByService EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /Reviews/:serviceId
+* Accepts data to fetch reviews with a provided serviceId. Returns reviewId, serviceId, rating, feedback and status.
+* We have a utility class with a validation method to validate serviceId ID (serviceId).
+* For security concerns, we will validate that the provided service ID do not contain any invalid characters: ``` "'\ ```
+* If the service ID contains any of the invalid characters, will throw an InvalidAttributeValueException.
+
 ### 6.17 Update Review EndPoint
-    *Accepts PUT requests to /userAccount/:id
+* Accepts PUT requests to /Reviews/:reviewId
+* Accepts data to Update reviews with a provided reviewId. Returns updated rating, feedback and status.
+* We have a utility class with a validation method to validate review ID (reviewId).
+* For security concerns, we will validate that the provided review ID do not contain any invalid characters: ``` "'\ ```
+* If the review ID contains any of the invalid characters, will throw an InvalidAttributeValueException.
 
 ## Message Service
-### 6.18 Create Message EndPoint
-    *Accepts GET requests to /userAccount/:id
-### 6.19 Send Message EndPoint
-    *Accepts GET requests to /userAccount/:id
+
+### 6.18 Create Inbox EndPoint
+* Accepts POST requests to /Inbox
+* Accepts data to create an inbox provided inboxId, senderId, receiverId, messageBody, dateTimeSent . Returns the new inbox, including the assigned unique inbox ID (inboxId).
+* We have a utility class with a validation method, and a method to generate a new unique inbox ID (inboxId).
+* For security concerns, we will validate that the provided inbox ID and message body to do not contain any invalid characters: ``` "'\ ```
+* If the inbox ID and message body contains any of the invalid characters, will throw an InvalidAttributeValueException.
+
+### 6.19 Create Message EndPoint
+* Accepts POST requests to /Messages
+* Accepts data to create a new message provided messageId, inboxId, senderId, receiverId, messageBody, dateTimeSent. Returns the new message, including the assigned unique message ID (messageId).
+* We have a utility class with a validation method, and a method to generate a new unique message ID (messageId).
+* For security concerns, we will validate that the provided message ID and message body to do not contain any invalid characters: ``` "'\ ```
+* If the message ID and message body contains any of the invalid characters, will throw an InvalidAttributeValueException.
+
 ### 6.20 Get MessageByInboxId EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /Messages/:inboxId
+* Accepts data to fetch messages provided inboxId. Returns messageId, senderId, receiverId, messageBody, dateTimeSent , including the assigned unique inbox ID (inboxId).
+* We have a utility class with a validation method that validates inbox ID (inboxId).
+* For security concerns, we will validate that the provided inbox ID and to do not contain any invalid characters: ``` "'\ ```
+* If the inbox ID body contains any of the invalid characters, will throw an InvalidAttributeValueException.
+
 ### 6.21 Get InboxByUserAccount EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /Inbox/?senderId=uaId
+* Accepts GET requests to /Inbox/?receiverId=uaId
+* Accepts data to fetch inbox provided uaId. Returns the inbox including the senderId, receiverId, messageBody, dateTimeSent.
+* We have a utility class with a validation method that validates the user account ID (uaId).
+* For security concerns, we will validate that the provided user account to do not contain any invalid characters: ``` "'\ ```
+* If the user account ID contains any of the invalid characters, will throw an InvalidAttributeValueException.
 
 # 7. Tables
 
