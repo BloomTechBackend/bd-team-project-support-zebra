@@ -298,7 +298,7 @@ requirements.*
 * For security concerns, we will validate that the provided user account ID(uaId) do not contain any invalid characters: ``` "'\ ```
 * If the user account ID contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
 * This API must create the user account with an empty list of inbox.
-* [Sequence Diagram Here!](SequenceDiagrams/Create UserAccount.puml)
+* [Sequence Diagram Here!](SequenceDiagrams/CreateUserAccount.puml)
 
 ### 6.3 Get UserAccount EndPoint
 * Accepts GET requests to /UserAccounts/:id
@@ -346,7 +346,16 @@ requirements.*
 
 ## Appointment Service
 ### 6.9 Create Appointments EndPoint
-     *Accepts POST requests to /appointment/:id
+* Accepts POST requests to /Appointment.
+* Accepts data to create a new Appointment with a provided appointmentId, time, date, service, addressId, status.
+  Returns the newly created appointment appointmentId assigned by Appointment Service.
+* We have a utility class with a validation method, and a method to generate a unique appointment ID.
+* For security concerns, we will validate that the provided appointment ID do not contain any invalid characters
+  such as ``` "'\ ```.
+* If the appointment ID contains any invalid characters, will throw an `InvalidAttributeValueException`.
+* This API must create the Appointment with inactive status.
+* [Sequence Diagram Here!](SequenceDiagrams/CreateAppointment.puml)
+
 ### 6.10 Add BookingAppointment EndPoint
     *Accepts GET requests to /booking/appointment/:id    
 ### 6.11 Update BookingAppointment EndPoint
