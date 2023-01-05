@@ -2,7 +2,7 @@
 'https://plantuml.com/sequence-diagram
 
 title Create User Account
-actor Client as c
+actor User as c
 participant "Website Registration page" as wrp
 participant CreateUserAccountActivity as cua
 database UserAccounts

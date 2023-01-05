@@ -2,7 +2,7 @@
 'https://plantuml.com/sequence-diagram
 
 title Get Service by SP
-actor Client as c
+actor User as c
 participant "Website SP Service page" as wrp
 participant GetServicesByServiceProviderActivity as cua
 database Services as s
