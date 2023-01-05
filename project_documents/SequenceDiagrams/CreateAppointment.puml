@@ -8,13 +8,13 @@ database Appointment
 Customer -> AppointmentServicePage : Submit Form
 AppointmentServicePage -> Utility : CreateAppointmentRequest
 Utility -> Utility : generate unique Appointment ID
-Utility -> CreateAppointmentActivity : Appointment ID
 
 alt Validation Failed
 AppointmentServicePage <-- Utility : throw InvalidAttributeValueException
 Customer <-- AppointmentServicePage : Unexpected Error Occurred
 end
 
+Utility -> CreateAppointmentActivity : Appointment ID
 CreateAppointmentActivity -> Appointment : save Appointment
 CreateAppointmentActivity <-- Appointment : Appointment ID
 AppointmentServicePage <-- CreateAppointmentActivity : CreateAppointmentResult

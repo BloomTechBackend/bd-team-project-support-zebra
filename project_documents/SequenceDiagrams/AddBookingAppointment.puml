@@ -1,0 +1,30 @@
+@startuml
+actor Customer
+participant AppointmentServicePage
+participant Appointment
+participant Utility
+participant AddAppointmentToBookingActivity
+database Booking
+
+Customer -> AppointmentServicePage : Submit Appointment Form
+AppointmentServicePage -> Appointment : AddAppointmentToBookingRequest
+
+alt Appointment does not exist
+AppointmentServicePage <-- Appointment : throw AppointmentNotFoundException
+Customer <-- AppointmentServicePage : Appointment not found
+end
+
+Appointment -> Utility : Appointment ID
+Utility -> Utility : generate unique Booking ID
+
+alt Validation Failed
+AppointmentServicePage <-- Utility : throw InvalidAttributeValueException
+Customer <-- AppointmentServicePage : Unexpected Error Occurred
+end
+
+Utility -> AddAppointmentToBookingActivity : Booking ID
+AddAppointmentToBookingActivity -> Booking : save Booking
+AddAppointmentToBookingActivity <-- Booking : Booking ID
+AppointmentServicePage <-- AddAppointmentToBookingActivity : AddAppointmentToBookingResult
+Customer <-- AppointmentServicePage : view Appointments[]
+@enduml
