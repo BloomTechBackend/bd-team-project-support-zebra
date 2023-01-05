@@ -153,9 +153,10 @@ your design.*
 design?*
 - Creating, retrieving and updating user account
 - Creating, retrieving and updating Service
-- Creating appointment
+- Creating, updating and canceling appointment
 - Adding to and retrieve saved appointment to booking
 - Creating, sending and retrieving Message
+- - Creating, sending and retrieving Reviews
 
 ### 4.2. Out of Scope
 
@@ -164,6 +165,9 @@ you are not planning to solve? Do potential expansions or related problems occur
 to you that you want to explicitly say you are not worrying about now? Feel free
 to put anything here that you think your team can't accomplish in the unit, but
 would love to do with more time.*
+- Admin Page
+- Billing
+- Gift Cards and Referal bonus
 - Service provider as Group/Company
 - Ability to manage personnel
 
@@ -379,6 +383,46 @@ may be helpful to first think of what objects your service will need, then
 translate that to a table structure, like with the *`Playlist` POJO* versus the
 `playlists` table in the Unit 3 project.*
 
+####  a. `UserAccount`
+```
+-	String uaId (Hash)
+-	Email
+-	Password
+-	String userType (Range)
+-	String status
+-	String lastName
+-	String firstName
+-	String contactNumber
+-	String addressId
+-	String birthdate
+-	String gender
+-	String image
+-	Hashset<String> inbox
+-	String serviceProvideId
+-	String accountStatus – (inactive, active)
+-	String backgroundChecked – (yes / no)
+-	String experience
+-	Language[] language
+-	String [] businessHours (Monday – Sunday)  - 8am-5pm
+-	LocalDateTime[] availability
+-	String uaId
+-	String customerId
+-	Address[] propertyLocation
+-	String id1
+-	String id2
+-	String proofOfBilling
+-	String bookingId
+```
+#### b. `Service`
+```
+-	String serviceId
+-	String uaId
+-	String name
+-	BigDecimal serviceTypeCost
+-	String category
+-	String serviceType
+-	String status
+```
 
 # 8. Pages
 
