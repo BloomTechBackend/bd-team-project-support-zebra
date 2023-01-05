@@ -19,5 +19,4 @@ CreateAppointmentActivity -> Appointment : save Appointment
 CreateAppointmentActivity <-- Appointment : Appointment ID
 AppointmentServicePage <-- CreateAppointmentActivity : CreateAppointmentResult
 Customer <-- AppointmentServicePage : Appointment Successfully Created
-
 @enduml
