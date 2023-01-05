@@ -368,7 +368,17 @@ requirements.*
 * [Sequence Diagram Here!](SequenceDiagrams/AddBookingAppointment.puml)
 
 ### 6.11 Update BookingAppointment EndPoint
-* Accepts PUT requests to /booking/userAccount/:id    
+* Accepts PUT requests to /Booking/Appointment.
+* Retrieves data from Appointment with the given Appointment ID. Returns appointment to update to an assigned BookingId
+  or creates new Booking ID assigned by ServiceProvider/Customer.
+
+* We have a utility class with a validation method, and a method to generate a unique Booking ID.
+* For security concerns, we will validate that the provided Booking ID do not contain any invalid characters
+  such as ``` "'\ ```.
+* If the appointment ID contains any invalid characters, will throw an `InvalidAttributeValueException`.
+* This API must create the Appointment with inactive status.
+* [Sequence Diagram Here!](SequenceDiagrams/UpdateBookingAppointment.puml)
+
 ### 6.12 Get Booking EndPoint
     *Accepts GET requests to /userAccount/:id
 ### 6.13 Get BookingByCustomer EndPoint
