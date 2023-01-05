@@ -317,7 +317,7 @@ requirements.*
 ## SPS Service
 ### 6.5 Create Service EndPoint
 * Accepts POST requests to /Services
-* Accepts data to create a new service with a provided serviceId, serviceName, time, date, service, addressId, status. Returns the new service, including a unique serviceId assigned by the SPS service.
+* Accepts data to create a new service with a provided serviceId, serviceName, serviceTypeCost, category, serviceType, and status. Returns the new service, including a unique serviceId assigned by the SPS service.
 * We have a utility class with a validation method, and a method to generate a new, unique user serviceId.
 * For security concerns, we will validate that the provided serviceId and service name do not contain any invalid characters: ``` "'\ ```
 * If the serviceId and service name contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
@@ -389,3 +389,14 @@ pages. It should be clear what the interactions will be on the page, especially
 where customers enter and submit data. You may want to accompany the mockups
 with some description of behaviors of the page (e.g. “When customer submits the
 submit-dog-photo button, the customer is sent to the doggie detail page”)*
+
+![](images/design_document/1.png)
+![](images/design_document/2.png)
+![](images/design_document/3.png)
+![](images/design_document/4.png)
+![](images/design_document/5.png)
+![](images/design_document/6.png)
+![](images/design_document/7.png)
+![](images/design_document/8.png)
+![](images/design_document/9.png)
+![](images/design_document/10.png)
