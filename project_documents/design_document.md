@@ -492,6 +492,36 @@ translate that to a table structure, like with the *`Playlist` POJO* versus the
 -	String serviceType
 -	String status
 ```
+#### c. `Inbox`
+```
+-	String serviceId
+-	String uaId
+-	String name
+-	BigDecimal serviceTypeCost
+-	String category
+-	String serviceType
+-	String status
+```
+#### d. `Messages`
+```
+-	String serviceId
+-	String uaId
+-	String name
+-	BigDecimal serviceTypeCost
+-	String category
+-	String serviceType
+-	String status
+```
+#### e. `Reviews`
+```
+-	String serviceId
+-	String uaId
+-	String name
+-	BigDecimal serviceTypeCost
+-	String category
+-	String serviceType
+-	String status
+```
 
 # 8. Pages
 
