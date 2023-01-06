@@ -153,9 +153,10 @@ your design.*
 design?*
 - Creating, retrieving and updating user account
 - Creating, retrieving and updating Service
-- Creating appointment
+- Creating, updating and canceling appointment
 - Adding to and retrieve saved appointment to booking
 - Creating, sending and retrieving Message
+- - Creating, sending and retrieving Reviews
 
 ### 4.2. Out of Scope
 
@@ -164,6 +165,9 @@ you are not planning to solve? Do potential expansions or related problems occur
 to you that you want to explicitly say you are not worrying about now? Feel free
 to put anything here that you think your team can't accomplish in the unit, but
 would love to do with more time.*
+- Admin Page
+- Billing
+- Gift Cards and Referal bonus
 - Service provider as Group/Company
 - Ability to manage personnel
 
@@ -291,69 +295,103 @@ requirements.*
 - Integer appointmentCount
 ```
 ## UserAccount Service
-### 6.2 Create UserAccount EndPoint*
+### 6.2 Create UserAccount EndPoint
 * Accepts POST requests to /UserAccounts
 * Accepts data to create a new user account with a provided uaId, userType, email, hashed password, first name, last name, and an inactive status. Returns the new user account, including a unique user account ID (uaId) assigned by the user account service.
 * We have a utility class with a validation method, and a method to generate a new, unique user account ID (uaId).
 * For security concerns, we will validate that the provided user account ID(uaId) do not contain any invalid characters: ``` "'\ ```
 * If the user account ID contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
 * This API must create the user account with an empty list of inbox.
-* [Sequence Diagram Here!](SequenceDiagrams/Create UserAccount.puml)
+* ![Sequence Diagram Here!](images/design_document/createUserAccount.PNG)
+* [Sequence Diagram Here!](SequenceDiagrams/CreateUserAccount.puml)
 
 ### 6.3 Get UserAccount EndPoint
 * Accepts GET requests to /UserAccounts/:id
 * Accepts a userAccount ID and returns the corresponding userAccountModel.
     * If the given user account ID (uaId) is not found, will throw a
       `UserAccountNotFoundException`
-* [Sequence Diagram Here!](SequenceDiagrams/GetUserAccount.puml)
+* ![Sequence Diagram Here!](images/design_document/getUserAccount.PNG)
   
 ### 6.4 Update UserAccount EndPoint
 * Accepts PUT requests to /UserAccounts/:id
 * Accepts data to update a user account including a uaId, userType, an updated password name, (optional) image, addressId, and contact number. Returns the updated user account.
 * If the user account ID (uaId) is not found, will throw a `UserAccountNotFoundException`
 * If the user account ID  contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
-* [Sequence Diagram Here!](SequenceDiagrams/UpdateUserAccount.puml)
+*![Sequence Diagram Here!](images/design_document/updateUserAccount.PNG)
 
 ## SPS Service
 ### 6.5 Create Service EndPoint
 * Accepts POST requests to /Services
-* Accepts data to create a new service with a provided serviceId, serviceName, time, date, service, addressId, status. Returns the new service, including a unique serviceId assigned by the SPS service.
+* Accepts data to create a new service with a provided serviceId, serviceName, serviceTypeCost, category, serviceType, and status. Returns the new service, including a unique serviceId assigned by the SPS service.
 * We have a utility class with a validation method, and a method to generate a new, unique user serviceId.
 * For security concerns, we will validate that the provided serviceId and service name do not contain any invalid characters: ``` "'\ ```
 * If the serviceId and service name contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
 * This API must create the user account with an empty list of inbox.
-* * [Sequence Diagram Here!](SequenceDiagrams/CreateService.puml)
+* ![Sequence Diagram Here!](images/design_document/createService.PNG)
 ### 6.6 Get Service EndPoint
 * Accepts GET requests to /Services
 * Returns the list of ServiceModel.
 
-[//]: # (* [Sequence Diagram Here!]&#40;SequenceDiagrams/GetServices.puml&#41;)
 ### 6.7 Get ServicesByServiceProvider EndPoint
 * Accepts GET requests to /UserAccounts/:id/Services/:id
 * Accepts a serviceId and user account ID(uaId) and returns the corresponding list of ServiceModel.
     * If the given serviceId is not found, will throw a
       `ServiceNotFoundException`
-* [Sequence Diagram Here!](SequenceDiagrams/GetServiceByServiceProvider.puml)
+* ![Sequence Diagram Here!](images/design_document/getServiceBySP.PNG)
 ### 6.8 Update Service EndPoint
 * Accepts PUT requests to /UserAccounts/:id/Services/:id
 * Accepts data to update a service including a serviceId, uaId, updated: name, serviceTypeCost, category, serviceType, and status. Returns the updated service.
 * If the serviceId is not found, will throw a `ServiceNotFoundException`
 * If the serviceId  contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
-* [Sequence Diagram Here!](SequenceDiagrams/UpdateService.puml)
+* ![Sequence Diagram Here!](images/design_document/updateService.PNG)
+
 
 ## Appointment Service
 ### 6.9 Create Appointments EndPoint
-     *Accepts POST requests to /appointment/:id
+* Accepts POST requests to /Appointment.
+* Accepts data to create a new Appointment with a provided appointmentId, time, date, service, addressId, status.
+  Returns the newly created appointment appointmentId assigned by Appointment Service.
+* We have a utility class with a validation method, and a method to generate a unique Appointment ID.
+* For security concerns, we will validate that the provided Appointment ID do not contain any invalid characters
+  such as ``` "'\ ```.
+* If the appointment ID contains any invalid characters, will throw an `InvalidAttributeValueException`.
+* This API must create the Appointment with inactive status.
+* [Sequence Diagram Here!](SequenceDiagrams/CreateAppointment.puml)
 ### 6.10 Add BookingAppointment EndPoint
-    *Accepts GET requests to /booking/appointment/:id    
+* Accepts GET requests to /Booking/Appointment.
+* Retrieves data from Appointment with the given Appointment ID. Returns appointment to save to an assigned 
+  BookingId or creates new Booking ID assigned by ServiceProvider/Customer.
+* We have a utility class with a validation method, and a method to generate a unique Booking ID.
+* For security concerns, we will validate that the provided Booking ID do not contain any invalid characters
+  such as ``` "'\ ```.
+* If the Appointment ID contains any invalid characters, will throw an `InvalidAttributeValueException`.
+* This API must create the Appointment with inactive status.
+* [Sequence Diagram Here!](SequenceDiagrams/AddBookingAppointment.puml)
 ### 6.11 Update BookingAppointment EndPoint
-    *Accepts PUT requests to /booking/userAccount/:id    
+* Accepts PUT requests to /Booking/Appointment.
+* Retrieves data from Booking with the given Booking ID. Returns Booking to retrieve the Appointment 
+  with the given Appointment ID by Customer. Returns appointment to update to the assigned Booking ID.
+* We have a utility class with a validation method.
+* For security concerns, we will validate that the provided Booking ID and Appointment ID do not contain any 
+  invalid characters such as ``` "'\ ```.
+* If the Appointment ID or Booking ID contains any invalid characters, will throw an `InvalidAttributeValueException`.
+* [Sequence Diagram Here!](SequenceDiagrams/UpdateBookingAppointment.puml)
 ### 6.12 Get Booking EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /UserAccount.
+* Retrieves Booking from each of the UserAccount. Returns each Booking with Appointments 
+  to view by UserAccount.
+* [Sequence Diagram Here!](SequenceDiagrams/GetBookingAppointment.puml)
 ### 6.13 Get BookingByCustomer EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /UserAccount.
+* Retrieves Booking from each of the Customer. Returns each Booking with Appointments
+  to view by Customer.
+* [Sequence Diagram Here!](SequenceDiagrams/GetBookingByCustomerAppointment.puml)
 ### 6.14 Get BookingByServiceProvider EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /UserAccount.
+* Retrieves Booking from each of the ServiceProvider. Returns each Booking with Appointments
+  to view by ServiceProvider.
+* [Sequence Diagram Here!](SequenceDiagrams/GetBookingByServiceProviderAppointment.puml)
+
 
 ## Review Service
 ### 6.15 Create Review EndPoint
@@ -415,6 +453,46 @@ may be helpful to first think of what objects your service will need, then
 translate that to a table structure, like with the *`Playlist` POJO* versus the
 `playlists` table in the Unit 3 project.*
 
+####  a. `UserAccount`
+```
+-	String uaId (Hash)
+-	Email
+-	Password
+-	String userType (Range)
+-	String status
+-	String lastName
+-	String firstName
+-	String contactNumber
+-	String addressId
+-	String birthdate
+-	String gender
+-	String image
+-	Hashset<String> inbox
+-	String serviceProvideId
+-	String accountStatus – (inactive, active)
+-	String backgroundChecked – (yes / no)
+-	String experience
+-	Language[] language
+-	String [] businessHours (Monday – Sunday)  - 8am-5pm
+-	LocalDateTime[] availability
+-	String uaId
+-	String customerId
+-	Address[] propertyLocation
+-	String id1
+-	String id2
+-	String proofOfBilling
+-	String bookingId
+```
+#### b. `Service`
+```
+-	String serviceId
+-	String uaId
+-	String name
+-	BigDecimal serviceTypeCost
+-	String category
+-	String serviceType
+-	String status
+```
 
 # 8. Pages
 
@@ -425,3 +503,14 @@ pages. It should be clear what the interactions will be on the page, especially
 where customers enter and submit data. You may want to accompany the mockups
 with some description of behaviors of the page (e.g. “When customer submits the
 submit-dog-photo button, the customer is sent to the doggie detail page”)*
+
+![](images/design_document/1.png)
+![](images/design_document/2.png)
+![](images/design_document/3.png)
+![](images/design_document/4.png)
+![](images/design_document/5.png)
+![](images/design_document/6.png)
+![](images/design_document/7.png)
+![](images/design_document/8.png)
+![](images/design_document/9.png)
+![](images/design_document/10.png)
