@@ -38,11 +38,11 @@ you are still debating internally that you might like help working through.*
 would like to do (and why). You may also include use cases for yourselves, or
 for the organization providing the product to customers.*
 
-U1. As Customer, I want to Signup, when I provide Email as Username and password
+U1. As user, I want to Signup, when I provide Email as Username and password
 
-U2.	As Customer, I want to Login, When I provide Username and password
+U2.	As User, I want to Login, When I provide Username and password
 
-U3.	As Customer, I want to Create a Profile
+U3.	As User, I want to Create a Profile
 
 U4.	As Customer, I want to Retrieve specific service
 
@@ -72,13 +72,7 @@ U16. As Customer, I want to view upcoming Appointment
 
 U17. As Customer, I want to view Appointment History
 
-U18. As SP, I want to Signup, when I provide Email as Username and password
-
-U19. As SP, I want to Login, When I provide Username and password
-
-U20. As SP, I want to Create a Profile
-
-U21. As SP, I want to create a service
+U21. As an SP, I want to create a service with provided serviceName, serviceTypeCost, category and serviceType.
 
 U22. As SP, I want to Update a service
 
