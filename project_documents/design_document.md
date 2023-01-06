@@ -303,6 +303,7 @@ requirements.*
 * If the user account ID contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
 * This API must create the user account with an empty list of inbox.
 * ![Sequence Diagram Here!](images/design_document/createUserAccount.PNG)
+* [Sequence Diagram Here!](SequenceDiagrams/CreateUserAccount.puml)
 
 ### 6.3 Get UserAccount EndPoint
 * Accepts GET requests to /UserAccounts/:id
@@ -344,19 +345,53 @@ requirements.*
 * If the serviceId  contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
 * ![Sequence Diagram Here!](images/design_document/updateService.PNG)
 
+
 ## Appointment Service
 ### 6.9 Create Appointments EndPoint
-     *Accepts POST requests to /appointment/:id
+* Accepts POST requests to /Appointment.
+* Accepts data to create a new Appointment with a provided appointmentId, time, date, service, addressId, status.
+  Returns the newly created appointment appointmentId assigned by Appointment Service.
+* We have a utility class with a validation method, and a method to generate a unique Appointment ID.
+* For security concerns, we will validate that the provided Appointment ID do not contain any invalid characters
+  such as ``` "'\ ```.
+* If the appointment ID contains any invalid characters, will throw an `InvalidAttributeValueException`.
+* This API must create the Appointment with inactive status.
+* [Sequence Diagram Here!](SequenceDiagrams/CreateAppointment.puml)
 ### 6.10 Add BookingAppointment EndPoint
-    *Accepts GET requests to /booking/appointment/:id    
+* Accepts GET requests to /Booking/Appointment.
+* Retrieves data from Appointment with the given Appointment ID. Returns appointment to save to an assigned 
+  BookingId or creates new Booking ID assigned by ServiceProvider/Customer.
+* We have a utility class with a validation method, and a method to generate a unique Booking ID.
+* For security concerns, we will validate that the provided Booking ID do not contain any invalid characters
+  such as ``` "'\ ```.
+* If the Appointment ID contains any invalid characters, will throw an `InvalidAttributeValueException`.
+* This API must create the Appointment with inactive status.
+* [Sequence Diagram Here!](SequenceDiagrams/AddBookingAppointment.puml)
 ### 6.11 Update BookingAppointment EndPoint
-    *Accepts PUT requests to /booking/userAccount/:id    
+* Accepts PUT requests to /Booking/Appointment.
+* Retrieves data from Booking with the given Booking ID. Returns Booking to retrieve the Appointment 
+  with the given Appointment ID by Customer. Returns appointment to update to the assigned Booking ID.
+* We have a utility class with a validation method.
+* For security concerns, we will validate that the provided Booking ID and Appointment ID do not contain any 
+  invalid characters such as ``` "'\ ```.
+* If the Appointment ID or Booking ID contains any invalid characters, will throw an `InvalidAttributeValueException`.
+* [Sequence Diagram Here!](SequenceDiagrams/UpdateBookingAppointment.puml)
 ### 6.12 Get Booking EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /UserAccount.
+* Retrieves Booking from each of the UserAccount. Returns each Booking with Appointments 
+  to view by UserAccount.
+* [Sequence Diagram Here!](SequenceDiagrams/GetBookingAppointment.puml)
 ### 6.13 Get BookingByCustomer EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /UserAccount.
+* Retrieves Booking from each of the Customer. Returns each Booking with Appointments
+  to view by Customer.
+* [Sequence Diagram Here!](SequenceDiagrams/GetBookingByCustomerAppointment.puml)
 ### 6.14 Get BookingByServiceProvider EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /UserAccount.
+* Retrieves Booking from each of the ServiceProvider. Returns each Booking with Appointments
+  to view by ServiceProvider.
+* [Sequence Diagram Here!](SequenceDiagrams/GetBookingByServiceProviderAppointment.puml)
+
 
 ## Review Service
 ### 6.15 Create Review EndPoint
