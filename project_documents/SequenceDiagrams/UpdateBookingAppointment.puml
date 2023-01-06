@@ -27,7 +27,7 @@ Utility <-- UpdateAppointmentBookingActivity : Appointment ID
 Utility <-- Utility : validate Appointment ID
 Utility -> Appointment : find Appointment by Appointment ID
 
-alt Appointment not Found
+alt Appointment does not exist
 AppointmentServicePage <-- Appointment : throw AppointmentNotFoundException
 Customer <-- AppointmentServicePage : Appointment not Found
 end
