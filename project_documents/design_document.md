@@ -429,7 +429,7 @@ requirements.*
 ### 6.21 Get InboxByUserAccount EndPoint
 * Accepts GET requests to /Inbox/?senderId=uaId
 * Accepts GET requests to /Inbox/?receiverId=uaId
-* Accepts data to fetch inbox provided uaId. Returns the inbox including the senderId, receiverId, messageBody, dateTimeSent.
+* Accepts data to fetch inbox provided logged in uaId. Returns the inbox including the senderId, receiverId, messageBody, dateTimeSent.
 * We have a utility class with a validation method that validates the user account ID (uaId).
 * For security concerns, we will validate that the provided user account to do not contain any invalid characters: ``` "'\ ```
 * If the user account ID contains any of the invalid characters, will throw an InvalidAttributeValueException.
