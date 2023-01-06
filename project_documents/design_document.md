@@ -44,8 +44,6 @@ U2.	As User, I want to Login, When I provide Username and password
 
 U3.	As User, I want to Create a Profile
 
-U4.	As Customer, I want to Retrieve specific service
-
 U5.	As Customer, I want to Create a message SP
 
 U6.	As Customer, I want to Create a review to a service
@@ -89,10 +87,6 @@ U27. As SP, I want to view Ongoing Appointment
 U28. As SP, I want to view upcoming Appointment
 
 U29. As SP, I want to view Appointment History
-
-U30. As SP, I want to create Service cost
-
-U31. As SP, I want to Update Service cost
 
 U32. As Admin, I want to create new SP
 
