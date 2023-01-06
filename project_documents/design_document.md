@@ -463,7 +463,6 @@ translate that to a table structure, like with the *`Playlist` POJO* versus the
 -	Language[] language
 -	String [] businessHours (Monday – Sunday)  - 8am-5pm
 -	LocalDateTime[] availability
--	String uaId
 -	String customerId
 -	Address[] propertyLocation
 -	String id1
