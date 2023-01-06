@@ -2,7 +2,7 @@
 'https://plantuml.com/sequence-diagram
 
 title Update User Account
-actor Client as c
+actor User as c
 participant "Website Profile page" as wrp
 participant CreateUserAccountActivity as cua
 database UserAccounts

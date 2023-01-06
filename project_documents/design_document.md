@@ -297,6 +297,7 @@ requirements.*
 * If the user account ID contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
 * This API must create the user account with an empty list of inbox.
 * ![Sequence Diagram Here!](images/design_document/createUserAccount.PNG)
+* [Sequence Diagram Here!](SequenceDiagrams/CreateUserAccount.puml)
 
 ### 6.3 Get UserAccount EndPoint
 * Accepts GET requests to /UserAccounts/:id
@@ -338,37 +339,106 @@ requirements.*
 * If the serviceId  contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
 * ![Sequence Diagram Here!](images/design_document/updateService.PNG)
 
+
 ## Appointment Service
 ### 6.9 Create Appointments EndPoint
-     *Accepts POST requests to /appointment/:id
+* Accepts POST requests to /Appointment.
+* Accepts data to create a new Appointment with a provided appointmentId, time, date, service, addressId, status.
+  Returns the newly created appointment appointmentId assigned by Appointment Service.
+* We have a utility class with a validation method, and a method to generate a unique Appointment ID.
+* For security concerns, we will validate that the provided Appointment ID do not contain any invalid characters
+  such as ``` "'\ ```.
+* If the appointment ID contains any invalid characters, will throw an `InvalidAttributeValueException`.
+* This API must create the Appointment with inactive status.
+* [Sequence Diagram Here!](SequenceDiagrams/CreateAppointment.puml)
 ### 6.10 Add BookingAppointment EndPoint
-    *Accepts GET requests to /booking/appointment/:id    
+* Accepts GET requests to /Booking/Appointment.
+* Retrieves data from Appointment with the given Appointment ID. Returns appointment to save to an assigned 
+  BookingId or creates new Booking ID assigned by ServiceProvider/Customer.
+* We have a utility class with a validation method, and a method to generate a unique Booking ID.
+* For security concerns, we will validate that the provided Booking ID do not contain any invalid characters
+  such as ``` "'\ ```.
+* If the Appointment ID contains any invalid characters, will throw an `InvalidAttributeValueException`.
+* This API must create the Appointment with inactive status.
+* [Sequence Diagram Here!](SequenceDiagrams/AddBookingAppointment.puml)
 ### 6.11 Update BookingAppointment EndPoint
-    *Accepts PUT requests to /booking/userAccount/:id    
+* Accepts PUT requests to /Booking/Appointment.
+* Retrieves data from Booking with the given Booking ID. Returns Booking to retrieve the Appointment 
+  with the given Appointment ID by Customer. Returns appointment to update to the assigned Booking ID.
+* We have a utility class with a validation method.
+* For security concerns, we will validate that the provided Booking ID and Appointment ID do not contain any 
+  invalid characters such as ``` "'\ ```.
+* If the Appointment ID or Booking ID contains any invalid characters, will throw an `InvalidAttributeValueException`.
+* [Sequence Diagram Here!](SequenceDiagrams/UpdateBookingAppointment.puml)
 ### 6.12 Get Booking EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /UserAccount.
+* Retrieves Booking from each of the UserAccount. Returns each Booking with Appointments 
+  to view by UserAccount.
+* [Sequence Diagram Here!](SequenceDiagrams/GetBookingAppointment.puml)
 ### 6.13 Get BookingByCustomer EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /UserAccount.
+* Retrieves Booking from each of the Customer. Returns each Booking with Appointments
+  to view by Customer.
+* [Sequence Diagram Here!](SequenceDiagrams/GetBookingByCustomerAppointment.puml)
 ### 6.14 Get BookingByServiceProvider EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /UserAccount.
+* Retrieves Booking from each of the ServiceProvider. Returns each Booking with Appointments
+  to view by ServiceProvider.
+* [Sequence Diagram Here!](SequenceDiagrams/GetBookingByServiceProviderAppointment.puml)
+
 
 ## Review Service
 ### 6.15 Create Review EndPoint
-    *Accepts POST requests to /userAccount/:id
+* Accepts POST requests to /Reviews/
+* Accepts data to create a new service review with a provided reviewId, serviceId, rating, feedback and status. Returns the new Service review, including the assigned unique review ID (reviewId).
+* We have a utility class with a validation method, and a method to generate a new unique review ID (reviewId).
+* For security concerns, we will validate that the provided review ID and feedback do not contain any invalid characters: ``` "'\ ```
+* If the review ID and feedback contains any of the invalid characters, will throw an InvalidAttributeValueException.
+
 ### 6.16 Get ReviewByService EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /Reviews/:serviceId
+* Accepts data to fetch reviews with a provided serviceId. Returns reviewId, serviceId, rating, feedback and status.
+* We have a utility class with a validation method to validate serviceId ID (serviceId).
+* For security concerns, we will validate that the provided service ID do not contain any invalid characters: ``` "'\ ```
+* If the service ID contains any of the invalid characters, will throw an InvalidAttributeValueException.
+
 ### 6.17 Update Review EndPoint
-    *Accepts PUT requests to /userAccount/:id
+* Accepts PUT requests to /Reviews/:reviewId
+* Accepts data to Update reviews with a provided reviewId. Returns updated rating, feedback and status.
+* We have a utility class with a validation method to validate review ID (reviewId).
+* For security concerns, we will validate that the provided review ID do not contain any invalid characters: ``` "'\ ```
+* If the review ID contains any of the invalid characters, will throw an InvalidAttributeValueException.
 
 ## Message Service
-### 6.18 Create Message EndPoint
-    *Accepts GET requests to /userAccount/:id
-### 6.19 Send Message EndPoint
-    *Accepts GET requests to /userAccount/:id
+
+### 6.18 Create Inbox EndPoint
+* Accepts POST requests to /Inbox
+* Accepts data to create an inbox provided inboxId, senderId, receiverId, messageBody, dateTimeSent . Returns the new inbox, including the assigned unique inbox ID (inboxId).
+* We have a utility class with a validation method, and a method to generate a new unique inbox ID (inboxId).
+* For security concerns, we will validate that the provided inbox ID and message body to do not contain any invalid characters: ``` "'\ ```
+* If the inbox ID and message body contains any of the invalid characters, will throw an InvalidAttributeValueException.
+
+### 6.19 Create Message EndPoint
+* Accepts POST requests to /Messages
+* Accepts data to create a new message provided messageId, inboxId, senderId, receiverId, messageBody, dateTimeSent. Returns the new message, including the assigned unique message ID (messageId).
+* We have a utility class with a validation method, and a method to generate a new unique message ID (messageId).
+* For security concerns, we will validate that the provided message ID and message body to do not contain any invalid characters: ``` "'\ ```
+* If the message ID and message body contains any of the invalid characters, will throw an InvalidAttributeValueException.
+
 ### 6.20 Get MessageByInboxId EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /Messages/:inboxId
+* Accepts data to fetch messages provided inboxId. Returns messageId, senderId, receiverId, messageBody, dateTimeSent , including the assigned unique inbox ID (inboxId).
+* We have a utility class with a validation method that validates inbox ID (inboxId).
+* For security concerns, we will validate that the provided inbox ID and to do not contain any invalid characters: ``` "'\ ```
+* If the inbox ID body contains any of the invalid characters, will throw an InvalidAttributeValueException.
+
 ### 6.21 Get InboxByUserAccount EndPoint
-    *Accepts GET requests to /userAccount/:id
+* Accepts GET requests to /Inbox/?senderId=uaId
+* Accepts GET requests to /Inbox/?receiverId=uaId
+* Accepts data to fetch inbox provided uaId. Returns the inbox including the senderId, receiverId, messageBody, dateTimeSent.
+* We have a utility class with a validation method that validates the user account ID (uaId).
+* For security concerns, we will validate that the provided user account to do not contain any invalid characters: ``` "'\ ```
+* If the user account ID contains any of the invalid characters, will throw an InvalidAttributeValueException.
 
 # 7. Tables
 

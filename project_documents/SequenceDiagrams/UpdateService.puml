@@ -2,7 +2,7 @@
 'https://plantuml.com/sequence-diagram
 
 title Update Service
-actor Client as c
+actor SP as c
 participant "Website SP Service page" as wrp
 participant UpdateServiceActivity as cua
 database Services as s
