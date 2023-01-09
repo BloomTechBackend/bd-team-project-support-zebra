@@ -4,7 +4,7 @@
 
 
 
-## *Project Title* Design
+## *OXIFIED* Design
 
 ## 1. Problem Statement
   It is important for businesses and individuals to consider the potential impacts of a lack of  online presence in 
