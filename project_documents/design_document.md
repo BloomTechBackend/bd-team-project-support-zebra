@@ -456,11 +456,11 @@ translate that to a table structure, like with the *`Playlist` POJO* versus the
 -	String image
 -	Hashset<String> inbox
 -	String serviceProvideId
--	String accountStatus – (inactive, active)
--	String backgroundChecked – (yes / no)
+-	String accountStatus
+-	String backgroundChecked
 -	String experience
 -	Language[] language
--	String [] businessHours (Monday – Sunday)  - 8am-5pm
+-	String [] businessHours
 -	LocalDateTime[] availability
 -	String customerId
 -	Address[] propertyLocation
@@ -471,7 +471,7 @@ translate that to a table structure, like with the *`Playlist` POJO* versus the
 ```
 #### b. `Service`
 ```
--	String serviceId
+-	String serviceId (Hash)
 -	String uaId
 -	String name
 -	BigDecimal serviceTypeCost
