@@ -108,7 +108,7 @@ becoming a software engineer?**
 
 * Analita Autida: Amazing!
 * Don Dioscoro Jones Platan:
-* Gerzon Udang:
+* Gerzon Udang: About becoming a software engineer.
 
 **What each team member wants to achieve: e.g. improve analytical skills, learn
 project management skills, develop public speaking skills, speak up more, speak
@@ -116,7 +116,7 @@ up less, etc.**
 
 * Analita Autida: Amazing!
 * Don Dioscoro Jones Platan:
-* Gerzon Udang:
+* Gerzon Udang: Professional Development.
 
 ## Team Member Roles and Responsibilities
 
