@@ -439,6 +439,11 @@ requirements.*
 may be helpful to first think of what objects your service will need, then
 translate that to a table structure, like with the *`Playlist` POJO* versus the
 `playlists` table in the Unit 3 project.*
+``` 
+Useraccount and Service Table CLI Command:
+ 
+aws cloudformation create-stack --region us-west-2 --stack-name supportzebrauseraccountservice-createtables --template-body file://main/cloudformation/dynamodbdesignandusage/useraccount_service_table.yaml --capabilities CAPABILITY_IAM
+```
 
 ####  a. `UserAccount`
 ```
