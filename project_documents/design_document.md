@@ -522,6 +522,10 @@ translate that to a table structure, like with the *`Playlist` POJO* versus the
 -	String serviceType
 -	String status
 ```
+### f. `Appointment`
+```
+
+```
 
 # 8. Pages
 
