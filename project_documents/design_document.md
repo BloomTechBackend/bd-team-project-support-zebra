@@ -511,6 +511,23 @@ aws cloudformation create-stack --region us-west-2 --stack-name supportzebrauser
 -	String status
 ```
 
+#### f. `Booking`
+```
+-	String bookingId
+-	Appointment[] appointments
+-	Integer appointmentCount 
+```
+
+#### g. `Appointment`
+```
+-	String appointmentId
+-	String date
+-	String time 
+-   Service service
+-   String addressId
+-	String status
+```
+
 # 8. Pages
 
 *Include mock-ups of the web pages you expect to build. These can be as
