@@ -4,7 +4,7 @@
 
 
 
-## *Project Title* Design
+## *OXIFIED* Design
 
 ## 1. Problem Statement
   It is important for businesses and individuals to consider the potential impacts of a lack of  online presence in 
@@ -38,13 +38,11 @@ you are still debating internally that you might like help working through.*
 would like to do (and why). You may also include use cases for yourselves, or
 for the organization providing the product to customers.*
 
-U1. As Customer, I want to Signup, when I provide Email as Username and password
+U1. As user, I want to Signup, when I provide Email as Username and password
 
-U2.	As Customer, I want to Login, When I provide Username and password
+U2.	As User, I want to Login, When I provide Username and password
 
-U3.	As Customer, I want to Create a Profile
-
-U4.	As Customer, I want to Retrieve specific service
+U3.	As User, I want to Create a Profile
 
 U5.	As Customer, I want to Create a message SP
 
@@ -72,13 +70,7 @@ U16. As Customer, I want to view upcoming Appointment
 
 U17. As Customer, I want to view Appointment History
 
-U18. As SP, I want to Signup, when I provide Email as Username and password
-
-U19. As SP, I want to Login, When I provide Username and password
-
-U20. As SP, I want to Create a Profile
-
-U21. As SP, I want to create a service
+U21. As an SP, I want to create a service with provided serviceName, serviceTypeCost, category and serviceType.
 
 U22. As SP, I want to Update a service
 
@@ -95,10 +87,6 @@ U27. As SP, I want to view Ongoing Appointment
 U28. As SP, I want to view upcoming Appointment
 
 U29. As SP, I want to view Appointment History
-
-U30. As SP, I want to create Service cost
-
-U31. As SP, I want to Update Service cost
 
 U32. As Admin, I want to create new SP
 
@@ -451,12 +439,17 @@ requirements.*
 may be helpful to first think of what objects your service will need, then
 translate that to a table structure, like with the *`Playlist` POJO* versus the
 `playlists` table in the Unit 3 project.*
+``` 
+Useraccount and Service Table CLI Command:
+ 
+aws cloudformation create-stack --region us-west-2 --stack-name supportzebrauseraccountservice-createtables --template-body file://main/cloudformation/dynamodbdesignandusage/useraccount_service_table.yaml --capabilities CAPABILITY_IAM
+```
 
 ####  a. `UserAccount`
 ```
 -	String uaId (Hash)
--	Email
--	Password
+-	String Email
+-	String Password
 -	String userType (Range)
 -	String status
 -	String lastName
@@ -465,26 +458,32 @@ translate that to a table structure, like with the *`Playlist` POJO* versus the
 -	String addressId
 -	String birthdate
 -	String gender
--	String image
 -	Hashset<String> inbox
--	String serviceProvideId
--	String accountStatus – (inactive, active)
--	String backgroundChecked – (yes / no)
+-	String accountStatus
+-	Boolean backgroundChecked
 -	String experience
 -	Language[] language
--	String [] businessHours (Monday – Sunday)  - 8am-5pm
+-	String [] businessHours
 -	LocalDateTime[] availability
--	String uaId
--	String customerId
 -	Address[] propertyLocation
--	String id1
--	String id2
--	String proofOfBilling
 -	String bookingId
+```
+#### aa. `Address`
+```
+-	String addressId
+-	String houseNumber
+-	String lotNumber
+-	String blockNumber
+-	String street
+-	String barangay
+-	String City/Municipality
+-	String Province
+-	Int zipCode
+
 ```
 #### b. `Service`
 ```
--	String serviceId
+-	String serviceId (Hash)
 -	String uaId
 -	String name
 -	BigDecimal serviceTypeCost
@@ -494,32 +493,45 @@ translate that to a table structure, like with the *`Playlist` POJO* versus the
 ```
 #### c. `Inbox`
 ```
--	String serviceId
--	String uaId
--	String name
--	BigDecimal serviceTypeCost
--	String category
--	String serviceType
--	String status
+-	String inboxId
+-	String sender
+-	String reciever
+-	String message
+-	localDateTIME messageSent 
 ```
 #### d. `Messages`
 ```
--	String serviceId
--	String uaId
--	String name
--	BigDecimal serviceTypeCost
--	String category
--	String serviceType
--	String status
+-	String messageId
+-	String inboxId
+-	String sender
+-	String reciever
+-   String message
+-	localDateTIME messageSent
 ```
 #### e. `Reviews`
 ```
--	String serviceId
+-	String reviewsId
 -	String uaId
--	String name
--	BigDecimal serviceTypeCost
--	String category
--	String serviceType
+-	String serviceId 
+-   String feedback
+-   Integer rating
+-	String status
+```
+
+#### f. `Booking`
+```
+-	String bookingId
+-	Appointment[] appointments
+-	Integer appointmentCount 
+```
+
+#### g. `Appointment`
+```
+-	String appointmentId
+-	String date
+-	String time 
+-   Service service
+-   String addressId
 -	String status
 ```
 ### f. `Appointment`
@@ -547,3 +559,9 @@ submit-dog-photo button, the customer is sent to the doggie detail page”)*
 ![](images/design_document/8.png)
 ![](images/design_document/9.png)
 ![](images/design_document/10.png)
+![](images/design_document/11.png)
+![](images/design_document/12.png)
+![](images/design_document/13.png)
+![](images/design_document/14.png)
+![](images/design_document/15.png)
+![](images/design_document/16.png)
