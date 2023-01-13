@@ -6,6 +6,7 @@ import com.oxified.message.service.converter.ModelConverter;
 import com.oxified.message.service.dynamodb.MessageDAO;
 import com.oxified.message.service.dynamodb.MessageInboxDAO;
 import com.oxified.message.service.dynamodb.models.Message;
+import com.oxified.message.service.models.MessageModel;
 import com.oxified.message.service.models.requests.CreateMessageRequest;
 import com.oxified.message.service.models.results.CreateMessageResult;
 import org.apache.logging.log4j.LogManager;
@@ -35,8 +36,10 @@ public class CreateMessageActivity implements RequestHandler<CreateMessageReques
         Message createdMessage = new Message();
         createdMessage = messageDAO.saveMessage(createdMessage);
 
-        ModelConverter modelConverter = new ModelConverter();
+        MessageModel messageModel = new ModelConverter().toMessageModel(createdMessage);
 
-        return new CreateMessageResult.CreateMessageBuilder().withMessageModel(modelConverter.toMessageModel(createdMessage)).build();
+        return new CreateMessageResult.CreateMessageBuilder()
+                .withMessageModel(messageModel)
+                .build();
     }
 }
