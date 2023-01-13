@@ -448,8 +448,8 @@ aws cloudformation create-stack --region us-west-2 --stack-name supportzebrauser
 ####  a. `UserAccount`
 ```
 -	String uaId (Hash)
--	Email
--	Password
+-	String Email
+-	String Password
 -	String userType (Range)
 -	String status
 -	String lastName
@@ -458,21 +458,28 @@ aws cloudformation create-stack --region us-west-2 --stack-name supportzebrauser
 -	String addressId
 -	String birthdate
 -	String gender
--	String image
 -	Hashset<String> inbox
--	String serviceProvideId
 -	String accountStatus
--	String backgroundChecked
+-	Boolean backgroundChecked
 -	String experience
 -	Language[] language
 -	String [] businessHours
 -	LocalDateTime[] availability
--	String customerId
 -	Address[] propertyLocation
--	String id1
--	String id2
--	String proofOfBilling
 -	String bookingId
+```
+#### aa. `Address`
+```
+-	String addressId
+-	String houseNumber
+-	String lotNumber
+-	String blockNumber
+-	String street
+-	String barangay
+-	String City/Municipality
+-	String Province
+-	Int zipCode
+
 ```
 #### b. `Service`
 ```
