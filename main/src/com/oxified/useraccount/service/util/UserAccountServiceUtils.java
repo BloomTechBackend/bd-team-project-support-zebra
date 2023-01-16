@@ -22,7 +22,7 @@ public class UserAccountServiceUtils {
         return !INVALID_CHARACTER_PATTERN.matcher(stringToValidate).find();
     }
 
-    public static String generateAddressId() {
+    public static String generateUaId() {
         return RandomStringUtils.randomAlphanumeric(PLAYLIST_ID_LENGTH);
     }
 }

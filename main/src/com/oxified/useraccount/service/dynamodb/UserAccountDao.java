@@ -13,4 +13,9 @@ public class UserAccountDao {
     public UserAccount getUserAccount(String uaId, String userType) {
         return dynamoDBMapper.load(UserAccount.class, uaId, userType);
     }
+
+    public UserAccount saveUserAccount(UserAccount userAccount) {
+        dynamoDBMapper.save(userAccount);
+        return userAccount;
+    }
 }
