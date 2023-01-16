@@ -1,0 +1,32 @@
+Resources:
+  ServicesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: "serviceId"
+          AttributeType: "S"
+        - AttributeName: "uaId"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "serviceId"
+          KeyType: "HASH"
+        - AttributeName: "uaId"
+          KeyType: "RANGE"
+      BillingMode: "PAY_PER_REQUEST"
+      TableName: "services"
+
+  UserAccountsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: "uaId"
+          AttributeType: "S"
+        - AttributeName: "userType"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "uaId"
+          KeyType: "HASH"
+        - AttributeName: "userType"
+          KeyType: "RANGE"
+      BillingMode: "PAY_PER_REQUEST"
+      TableName: "user_accounts"
