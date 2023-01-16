@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c2e9bdc-7545-4416-aa44-54138e960307" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/main/build.gradle" afterDir="false" />
-    </list>
+    <list default="true" id="3c2e9bdc-7545-4416-aa44-54138e960307" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +25,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "project.structure.last.edited": "Project",
+    "last_opened_file_path": "C:/Users/SZ-Agent/BloomTech/Sprint-17/bd-team-project-support-zebra/src/src",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.29425287",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.file-colors"
@@ -140,6 +138,19 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="UnitProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="UnitProject" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Gradle.C:/Users/SZ-Agent/BloomTech/Sprint-17/bd-team-project-support-zebra/main/build.gradle [buildZip]" />
       <item itemvalue="Gradle.C:/Users/SZ-Agent/BloomTech/Sprint-17/bd-team-project-support-zebra/main/build.gradle [buildZip] (1)" />
@@ -159,5 +170,16 @@
   </component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
