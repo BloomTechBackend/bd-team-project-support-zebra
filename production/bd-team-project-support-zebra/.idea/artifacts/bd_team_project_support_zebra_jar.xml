@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="bd-team-project-support-zebra:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/bd_team_project_support_zebra_jar</output-path>
-    <root id="archive" name="bd-team-project-support-zebra.jar">
-      <element id="module-output" name="bd-team-project-support-zebra" />
-    </root>
-  </artifact>
-</component>
