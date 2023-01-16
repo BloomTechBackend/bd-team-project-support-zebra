@@ -120,6 +120,39 @@ public class AddressModel {
             this.houseNumber = houseNumberToUse;
             return this;
         }
+        public Builder withLotNumber(String lotNumberToUse) {
+            this.lotNumber = lotNumberToUse;
+            return this;
+        }
+
+        public Builder withBlockNumber(String blockNumberToUse) {
+            this.blockNumber = blockNumberToUse;
+            return this;
+        }
+
+        public Builder withStreet(String streetToUse) {
+            this.street = streetToUse;
+            return this;
+        }
+
+        public Builder withBaranggay(String baranggayToUse) {
+            this.baranggay = baranggayToUse;
+            return this;
+        }
+
+        public Builder withCity(String cityToUse) {
+            this.city = cityToUse;
+            return this;
+        }
+
+        public Builder withProvince(String provinceToUse) {
+            this.province = provinceToUse;
+            return this;
+        }
+        public Builder withZipcode(int zipCodeToUse) {
+            this.zipCode = zipCodeToUse;
+            return this;
+        }
 
         public AddressModel build() {return new AddressModel(this);}
     }
