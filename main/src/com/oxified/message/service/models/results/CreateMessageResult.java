@@ -10,13 +10,13 @@ public class CreateMessageResult {
     }
 
     public static final class CreateMessageBuilder {
-        private MessageModel messageModel;
+        private static MessageModel messageModel;
     public CreateMessageBuilder builder() {
         return new CreateMessageBuilder();
     }
         public CreateMessageBuilder() {
         }
-        public CreateMessageBuilder withMessageModel( MessageModel messageModel) {
+        public CreateMessageBuilder withMessageModel(MessageModel messageModel) {
             this.messageModel = messageModel;
             return this;
         }
