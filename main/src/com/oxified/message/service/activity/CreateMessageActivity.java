@@ -7,7 +7,7 @@ import com.oxified.message.service.dynamodb.MessageDAO;
 import com.oxified.message.service.dynamodb.MessageInboxDAO;
 import com.oxified.message.service.dynamodb.models.Message;
 import com.oxified.message.service.models.MessageModel;
-import com.oxified.message.service.models.requests.CreateMessageRequest;
+import com.oxified.message.service.models.results.requests.CreateMessageRequest;
 import com.oxified.message.service.models.results.CreateMessageResult;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
