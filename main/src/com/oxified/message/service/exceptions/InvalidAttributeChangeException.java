@@ -1,4 +1,4 @@
-package com.oxified.message.service.exceptions;
+package com.oxified.appointment.service.exceptions;
 
 public class InvalidAttributeChangeException {
 }

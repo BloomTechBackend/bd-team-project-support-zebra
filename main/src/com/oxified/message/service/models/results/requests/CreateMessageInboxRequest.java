@@ -1,4 +1,4 @@
-package com.oxified.message.service.models.results.requests;
+package com.oxified.message.service.models.requests;
 
 public class CreateMessageInboxRequest {
 
