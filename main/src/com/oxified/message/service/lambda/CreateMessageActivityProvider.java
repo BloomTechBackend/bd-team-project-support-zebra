@@ -18,8 +18,7 @@ public class CreateMessageActivityProvider implements RequestHandler<CreateMessa
      */
     @Override
     public CreateMessageResult handleRequest(CreateMessageRequest createMessageRequest, Context context) {
-
-        return null;
+        return  getApp().provideCreateMessageActivity().handleRequest(createMessageRequest, context);
     }
 
     private ServiceComponent getApp() {
