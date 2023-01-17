@@ -5,5 +5,17 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+=======
+    <orderEntry type="library" name="amazonaws.aws.java.sdk.dynamodb" level="application" />
+    <orderEntry type="library" name="LibrariesAndUtilities" level="project" />
+    <orderEntry type="library" name="ATAResources" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.13.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.amazonaws:aws-lambda-java-core:1.2.1" level="project" />
+    <orderEntry type="library" name="amazonaws.aws.java.sdk.lambda" level="application" />
+    <orderEntry type="library" name="amazonaws.aws.lambda.java.core" level="application" />
+    <orderEntry type="library" name="apache.logging.log4j.1.2.api" level="application" />
+>>>>>>> reset
   </component>
 </module>
