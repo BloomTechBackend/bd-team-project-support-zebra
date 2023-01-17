@@ -5,26 +5,109 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4b29ddf-538d-4aca-b02c-ca092d0de71b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/bd-team-project-support-zebra.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bd-team-project-support-zebra.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app1.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app1.test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/7.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/7.4/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/7.4/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/7.4/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/7.4/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/7.4/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/7.4/dependencies-accessors/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gradle/7.4/dependencies-accessors/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/7.4/fileChanges/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gradle/7.4/fileChanges/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/7.4/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gradle/7.4/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/.gradle/vcs-1/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/aws-java-sdk-core-1.12.237.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/aws-java-sdk-core-1.12.381.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/aws-java-sdk-dynamodb-1.12.381.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/aws-java-sdk-kms-1.12.381.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/aws-java-sdk-lambda-1.12.237.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/aws-java-sdk-s3-1.12.381.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/aws-lambda-java-core-1.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/commons-codec-1.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/commons-logging-1.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/httpclient-4.5.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/httpcore-4.4.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/ion-java-1.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/jackson-annotations-2.12.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/jackson-annotations-2.12.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/jackson-core-2.12.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/jackson-core-2.12.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/jackson-databind-2.12.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/jackson-databind-2.12.7.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/jackson-dataformat-cbor-2.12.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/jmespath-java-1.12.237.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/jmespath-java-1.12.381.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/joda-time-2.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/log4j-1.2-api-2.19.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/LibrariesAndUtilities/log4j-api-2.19.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/src/main/java/services/useraccount/activity/CreateUserAccountActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/src/main/java/services/useraccount/dynamodb/AddressDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/src/main/java/services/useraccount/dynamodb/UserAccountDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/src/main/java/services/useraccount/dynamodb/model/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/src/main/java/services/useraccount/dynamodb/model/UserAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/src/main/java/services/useraccount/model/AddressModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/src/main/java/services/useraccount/model/UserAccountModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/src/main/java/services/useraccount/model/request/CreateUserAccountRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/oxified/src/main/java/services/useraccount/model/result/CreateUserAccountResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/oxified/services/useraccount/dynamodb/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/oxified/services/useraccount/dynamodb/model/Address.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/app">
+      <ProjectState />
+    </projectState>
+  </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/app1">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -47,14 +130,55 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/SZ-Agent/BloomTech/Unit5/updated/toReset/bd-team-project-support-zebra"
-  }
-}]]></component>
+  <component name="PropertiesComponent">{
+    &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/SZ-Agent/BloomTech/Unit5/updated/toReset/bd-team-project-support-zebra&quot;
+    }
+    }</component>
+  <component name="RunManager">
+    <configuration name="C:/Users/SZ-Agent/BloomTech/Sprint-17/bd-team-project-support-zebra/app [buildZip]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildZip" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="app" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.C:/Users/SZ-Agent/BloomTech/Sprint-17/bd-team-project-support-zebra/app [buildZip]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
