@@ -1,9 +1,10 @@
 package main.java.org.service.useraccount.converter;
 
-import com.oxified.useraccount.service.dynamodb.model.Address;
-import com.oxified.useraccount.service.dynamodb.model.UserAccount;
-import com.oxified.useraccount.service.model.AddressModel;
-import com.oxified.useraccount.service.model.UserAccountModel;
+
+import main.java.org.service.useraccount.dynamodb.model.Address;
+import main.java.org.service.useraccount.dynamodb.model.UserAccount;
+import main.java.org.service.useraccount.model.AddressModel;
+import main.java.org.service.useraccount.model.UserAccountModel;
 
 public class ModelConverter {
     public AddressModel toAddressModel(Address address) {

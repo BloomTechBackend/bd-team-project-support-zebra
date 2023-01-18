@@ -1,7 +1,8 @@
 package main.java.org.service.useraccount.dynamodb;
 
+
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
-import com.oxified.useraccount.service.dynamodb.model.UserAccount;
+import main.java.org.service.useraccount.dynamodb.model.UserAccount;
 
 public class UserAccountDao {
     private final DynamoDBMapper dynamoDBMapper;
