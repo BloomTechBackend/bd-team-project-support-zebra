@@ -1,4 +1,4 @@
-package com.oxified.useraccount.service.util;
+package main.java.org.services.useraccount.util;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;

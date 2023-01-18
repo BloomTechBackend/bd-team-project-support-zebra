@@ -1,4 +1,4 @@
-package com.oxified.useraccount.service.model.result;
+package main.java.org.services.useraccount.model.result;
 
 public class GetUserAccountResult {
 }

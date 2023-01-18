@@ -1,4 +1,4 @@
-package com.oxified.useraccount.service.model;
+package main.java.org.services.useraccount.model;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;

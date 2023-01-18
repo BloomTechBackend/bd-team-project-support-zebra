@@ -1,4 +1,4 @@
-package com.oxified.useraccount.service.model.request;
+package main.java.org.services.useraccount.model.request;
 
 public class UpdateUserAccountRequest {
 }

@@ -1,14 +1,14 @@
-package com.oxified.useraccount.service.activity;
+package main.java.org.services.useraccount.activity;
 
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
-import com.oxified.useraccount.service.converter.ModelConverter;
-import com.oxified.useraccount.service.dynamodb.UserAccountDao;
-import com.oxified.useraccount.service.dynamodb.model.UserAccount;
-import com.oxified.useraccount.service.model.request.CreateUserAccountRequest;
-import com.oxified.useraccount.service.model.result.CreateUserAccountResult;
-import com.oxified.useraccount.service.util.UserAccountServiceUtils;
+import main.java.org.services.useraccount.converter.ModelConverter;
+import main.java.org.services.useraccount.dynamodb.UserAccountDao;
+import main.java.org.services.useraccount.dynamodb.model.UserAccount;
+import main.java.org.services.useraccount.model.request.CreateUserAccountRequest;
+import main.java.org.services.useraccount.model.result.CreateUserAccountResult;
+import main.java.org.services.useraccount.util.UserAccountServiceUtils;
 
 public class CreateUserAccountActivity implements RequestHandler<CreateUserAccountRequest, CreateUserAccountResult> {
 
@@ -33,4 +33,6 @@ public class CreateUserAccountActivity implements RequestHandler<CreateUserAccou
                 .withUserAccount(new ModelConverter().toUserAccountModel(userAccountDao.saveUserAccount(userAccount)))
                 .build();
     }
+
+
 }

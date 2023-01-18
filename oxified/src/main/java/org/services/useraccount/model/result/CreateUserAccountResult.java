@@ -1,6 +1,7 @@
-package com.oxified.useraccount.service.model.result;
+package main.java.org.services.useraccount.model.result;
 
-import com.oxified.useraccount.service.model.UserAccountModel;
+
+import main.java.org.services.useraccount.model.UserAccountModel;
 
 public class CreateUserAccountResult {
     private UserAccountModel userAccount;
