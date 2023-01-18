@@ -1,6 +1,5 @@
-package com.oxified.useraccount.service.model.request;
+package main.java.org.services.useraccount.model.request;
 
-import com.oxified.useraccount.service.model.UserAccountModel;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package com.oxified.useraccount.service.dynamodb.model;
+package main.java.org.services.useraccount.dynamodb.model;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
