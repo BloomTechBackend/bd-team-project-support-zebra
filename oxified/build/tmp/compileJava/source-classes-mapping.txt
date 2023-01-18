@@ -1,0 +1,40 @@
+main/java/org/services/useraccount/model/AddressModel.java
+ main.java.org.services.useraccount.model.AddressModel
+ main.java.org.services.useraccount.model.AddressModel$Builder
+main/java/org/services/useraccount/activity/CreateUserAccountActivity.java
+ main.java.org.services.useraccount.activity.CreateUserAccountActivity
+main/java/org/services/useraccount/activity/GetUserAccountActivity.java
+ com.oxified.useraccount.service.activity.GetUserAccountActivity
+main/java/org/services/useraccount/converter/ModelConverter.java
+ main.java.org.services.useraccount.converter.ModelConverter
+main/java/org/services/useraccount/model/result/GetUserAccountResult.java
+ main.java.org.services.useraccount.model.result.GetUserAccountResult
+main/java/org/services/useraccount/model/result/UpdateUserAccountResult.java
+ main.java.org.services.useraccount.model.result.UpdateUserAccountResult
+main/java/org/services/useraccount/model/result/CreateUserAccountResult.java
+ main.java.org.services.useraccount.model.result.CreateUserAccountResult
+ main.java.org.services.useraccount.model.result.CreateUserAccountResult$Builder
+main/java/org/services/useraccount/model/UserAccountModel.java
+ main.java.org.services.useraccount.model.UserAccountModel
+ main.java.org.services.useraccount.model.UserAccountModel$Builder
+main/java/org/services/useraccount/dynamodb/model/UserAccount.java
+ main.java.org.services.useraccount.dynamodb.model.UserAccount
+main/java/org/services/useraccount/model/request/CreateUserAccountRequest.java
+ main.java.org.services.useraccount.model.request.CreateUserAccountRequest
+ main.java.org.services.useraccount.model.request.CreateUserAccountRequest$Builder
+main/java/org/services/useraccount/util/UserAccountServiceUtils.java
+ main.java.org.services.useraccount.util.UserAccountServiceUtils
+main/java/org/services/useraccount/dynamodb/AddressDao.java
+ main.java.org.services.useraccount.dynamodb.AddressDao
+main/java/org/services/useraccount/model/request/GetUserAccountRequest.java
+ main.java.org.services.useraccount.model.request.GetUserAccountRequest
+main/java/org/services/useraccount/model/request/UpdateUserAccountRequest.java
+ main.java.org.services.useraccount.model.request.UpdateUserAccountRequest
+main/java/org/example/Main.java
+ org.example.Main
+main/java/org/services/useraccount/dynamodb/model/Address.java
+ main.java.org.services.useraccount.dynamodb.model.Address
+main/java/org/services/useraccount/activity/UpdateUserAccountActivity.java
+ com.oxified.useraccount.service.activity.UpdateUserAccountActivity
+main/java/org/services/useraccount/dynamodb/UserAccountDao.java
+ main.java.org.services.useraccount.dynamodb.UserAccountDao
