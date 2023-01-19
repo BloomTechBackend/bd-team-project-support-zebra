@@ -285,10 +285,10 @@ requirements.*
 ## UserAccount Service
 ### 6.2 Create UserAccount EndPoint
 * Accepts POST requests to /UserAccounts
-* Accepts data to create a new user account with a provided uaId, userType, email, hashed password, first name, last name, and an inactive status. Returns the new user account, including a unique user account ID (uaId) assigned by the user account service.
+* Accepts data to create a new user account with a provided uaId, userType, email, hashed password and an inactive status. Returns the new user account, including a unique user account ID (uaId) assigned by the user account service.
 * We have a utility class with a validation method, and a method to generate a new, unique user account ID (uaId).
-* For security concerns, we will validate that the provided user account ID(uaId) do not contain any invalid characters: ``` "'\ ```
-* If the user account ID contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
+* For security concerns, we will validate that the provided user's email do not contain any invalid characters: ``` "'\ ```
+* If the user's email contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
 * This API must create the user account with an empty list of inbox.
 * ![Sequence Diagram Here!](images/design_document/createUserAccount.PNG)
 * [Sequence Diagram Here!](SequenceDiagrams/CreateUserAccount.puml)

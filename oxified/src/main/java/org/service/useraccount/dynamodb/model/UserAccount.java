@@ -1,9 +1,7 @@
 package main.java.org.service.useraccount.dynamodb.model;
 
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+import com.amazonaws.services.dynamodbv2.datamodeling.*;
+import main.java.org.service.useraccount.converter.UserAccountLinkedListConverter;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -151,22 +149,24 @@ public class UserAccount {
     public void setExperience(String experience) {
         this.experience = experience;
     }
-    @DynamoDBAttribute(attributeName = "businessHours")
-    public List<String> getBusinessHours() {
-        return businessHours;
-    }
-
-    public void setBusinessHours(List<String> businessHours) {
-        this.businessHours = businessHours;
-    }
-    @DynamoDBAttribute(attributeName = "availability")
-    public List<LocalDateTime> getAvailability() {
-        return availability;
-    }
-
-    public void setAvailability(List<LocalDateTime> availability) {
-        this.availability = availability;
-    }
+//    @DynamoDBTypeConverted(converter = UserAccountLinkedListConverter.class)
+//    @DynamoDBAttribute(attributeName = "businessHours")
+//    public List<String> getBusinessHours() {
+//        return businessHours;
+//    }
+//
+//    public void setBusinessHours(List<String> businessHours) {
+//        this.businessHours = businessHours;
+//    }
+//    @DynamoDBTypeConverted(converter = UserAccountLinkedListConverter.class)
+//    @DynamoDBAttribute(attributeName = "availability")
+//    public List<LocalDateTime> getAvailability() {
+//        return availability;
+//    }
+//
+//    public void setAvailability(List<LocalDateTime> availability) {
+//        this.availability = availability;
+//    }
     @DynamoDBAttribute(attributeName = "booking")
     public String getBookingId() {
         return bookingId;
