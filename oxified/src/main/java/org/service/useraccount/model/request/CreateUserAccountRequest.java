@@ -12,6 +12,8 @@ public class CreateUserAccountRequest {
     private String lastName;
     private String firstName;
 
+    public CreateUserAccountRequest() {
+    }
 
     public CreateUserAccountRequest(Builder builder) {
         this.uaId = builder.uaId;

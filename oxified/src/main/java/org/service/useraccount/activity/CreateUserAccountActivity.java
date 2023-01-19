@@ -29,6 +29,11 @@ public class CreateUserAccountActivity implements RequestHandler<CreateUserAccou
 //        }
 
         UserAccount userAccount = new UserAccount();
+        userAccount.setEmail(createUserAccountRequest.getEmail());
+        userAccount.setPassword(createUserAccountRequest.getPassword());
+        userAccount.setUserType(createUserAccountRequest.getUserType());
+        userAccount.setStatus(createUserAccountRequest.getStatus());
+        userAccount.setLastName(createUserAccountRequest.getLastName());
         userAccount.setFirstName(createUserAccountRequest.getFirstName());
         userAccount.setUaId(UserAccountServiceUtils.generateUaId());
         return CreateUserAccountResult.builder()

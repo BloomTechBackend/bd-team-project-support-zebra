@@ -11,13 +11,13 @@ public class CreateUserAccountProvider implements RequestHandler<CreateUserAccou
     /**
      * Handles a Lambda Function request
      *
-     * @param input   The Lambda Function input
+     * @param createUserAccountRequest   The Lambda Function input
      * @param context The Lambda execution environment context object.
      * @return The Lambda Function output
      */
     @Override
-    public CreateUserAccountResult handleRequest(CreateUserAccountRequest input, Context context) {
-        return null;
+    public CreateUserAccountResult handleRequest(CreateUserAccountRequest createUserAccountRequest, Context context) {
+        return getService().provideCreateUserAccountActivity().handleRequest(createUserAccountRequest, context);
     }
 
     private ServiceComponent getService() {

@@ -48,5 +48,8 @@ main/java/org/service/spservice/dynamodb/ServiceDao.java
  main.java.org.service.spservice.dynamodb.ServiceDao
 main/java/org/service/dependency/ServiceComponent.java
  main.java.org.service.dependency.ServiceComponent
+main/java/org/service/useraccount/converter/UserAccountLinkedListConverter.java
+ main.java.org.service.useraccount.converter.UserAccountLinkedListConverter
+ main.java.org.service.useraccount.converter.UserAccountLinkedListConverter$1
 main/java/org/service/useraccount/dynamodb/UserAccountDao.java
  main.java.org.service.useraccount.dynamodb.UserAccountDao

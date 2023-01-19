@@ -7,6 +7,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @DynamoDBTable(tableName = "user_accounts")
@@ -26,8 +27,8 @@ public class UserAccount {
     private String accountStatus;
     private Boolean backgroundChecked;
     private String experience;
-    private String [] businessHours;
-    private LocalDateTime[] availability;
+    private List<String> businessHours;
+    private List<LocalDateTime> availability;
     private String bookingId;
 
     @DynamoDBHashKey(attributeName = "uaId")
@@ -151,19 +152,19 @@ public class UserAccount {
         this.experience = experience;
     }
     @DynamoDBAttribute(attributeName = "businessHours")
-    public String[] getBusinessHours() {
+    public List<String> getBusinessHours() {
         return businessHours;
     }
 
-    public void setBusinessHours(String[] businessHours) {
+    public void setBusinessHours(List<String> businessHours) {
         this.businessHours = businessHours;
     }
     @DynamoDBAttribute(attributeName = "availability")
-    public LocalDateTime[] getAvailability() {
+    public List<LocalDateTime> getAvailability() {
         return availability;
     }
 
-    public void setAvailability(LocalDateTime[] availability) {
+    public void setAvailability(List<LocalDateTime> availability) {
         this.availability = availability;
     }
     @DynamoDBAttribute(attributeName = "booking")
