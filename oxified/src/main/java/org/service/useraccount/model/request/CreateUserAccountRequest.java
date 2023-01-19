@@ -1,36 +1,33 @@
 package main.java.org.service.useraccount.model.request;
 
-
+import java.util.List;
 import java.util.Objects;
 
 public class CreateUserAccountRequest {
-    private String uaId;
+
     private String email;
     private String password;
     private String userType;
     private String status;
-    private String lastName;
-    private String firstName;
+    private List<String> inboxes; //list of inbox ids
 
+    public CreateUserAccountRequest(String email, String password, String userType, String status, List<String> inboxes) {
+        this.email = email;
+        this.password = password;
+        this.userType = userType;
+        this.status = status;
+        this.inboxes = inboxes;
+    }
 
+    public CreateUserAccountRequest() {
+    }
     public CreateUserAccountRequest(Builder builder) {
-        this.uaId = builder.uaId;
         this.email = builder.email;
         this.password = builder.password;
         this.userType = builder.userType;
         this.status = builder.status;
-        this.lastName = builder.lastName;
-        this.firstName = builder.firstName;
+        this.inboxes = builder.inboxes;
     }
-
-    public String getUaId() {
-        return uaId;
-    }
-
-    public void setUaId(String uaId) {
-        this.uaId = uaId;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -63,36 +60,21 @@ public class CreateUserAccountRequest {
         this.status = status;
     }
 
-    public String getLastName() {
-        return lastName;
+    public List<String> getInboxes() {
+        return inboxes;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setInboxes(List<String> inboxes) {
+        this.inboxes = inboxes;
     }
 
     public static final Builder builder() {return new Builder();}
     public static final class Builder {
-        private String uaId;
         private String email;
         private String password;
         private String userType;
         private String status;
-        private String lastName;
-        private String firstName;
-
-        public Builder withUaId(String uaId) {
-            this.uaId = uaId;
-            return this;
-        }
+        private List<String> inboxes;
 
         public Builder withEmail(String email) {
             this.email = email;
@@ -110,15 +92,10 @@ public class CreateUserAccountRequest {
             this.status = status;
             return this;
         }
-        public Builder withLastName(String lastName) {
-            this.lastName = lastName;
+        public Builder withInboxes(List<String> inboxes) {
+            this.inboxes = inboxes;
             return this;
         }
-        public Builder withFirstName(String firstName) {
-            this.firstName = firstName;
-            return this;
-        }
-
         public CreateUserAccountRequest build(){ return new CreateUserAccountRequest(this);}
     }
 
@@ -127,13 +104,21 @@ public class CreateUserAccountRequest {
         if (this == o) return true;
         if (!(o instanceof CreateUserAccountRequest)) return false;
         CreateUserAccountRequest that = (CreateUserAccountRequest) o;
-        return Objects.equals(uaId, that.uaId) && Objects.equals(email, that.email) && Objects.equals(password, that.password) && Objects.equals(userType, that.userType) && Objects.equals(status, that.status) && Objects.equals(lastName, that.lastName) && Objects.equals(firstName, that.firstName);
+        return Objects.equals(getEmail(), that.getEmail()) && Objects.equals(getPassword(), that.getPassword()) && getUserType().equals(that.getUserType()) && Objects.equals(getStatus(), that.getStatus());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(uaId, email, password, userType, status, lastName, firstName);
+        return Objects.hash(getEmail(), getPassword(), getUserType(), getStatus());
     }
 
-
+    @Override
+    public String toString() {
+        return "CreateUserAccountRequest{" +
+                "email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", userType='" + userType + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }

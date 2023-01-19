@@ -1,10 +1,7 @@
 package main.java.org.service.useraccount.model;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class UserAccountModel {
     private String uaId;
@@ -22,8 +19,8 @@ public class UserAccountModel {
     private String accountStatus;
     private Boolean backgroundChecked;
     private String experience;
-    private String [] businessHours;
-    private LocalDateTime[] availability;
+    private List<String> businessHours;
+    private List<LocalDateTime> availability;
     private String bookingId;
 
 
@@ -167,19 +164,19 @@ public class UserAccountModel {
         this.experience = experience;
     }
 
-    public String[] getBusinessHours() {
+    public List<String> getBusinessHours() {
         return businessHours;
     }
 
-    public void setBusinessHours(String[] businessHours) {
+    public void setBusinessHours(List<String> businessHours) {
         this.businessHours = businessHours;
     }
 
-    public LocalDateTime[] getAvailability() {
+    public List<LocalDateTime> getAvailability() {
         return availability;
     }
 
-    public void setAvailability(LocalDateTime[] availability) {
+    public void setAvailability(List<LocalDateTime> availability) {
         this.availability = availability;
     }
 
@@ -191,12 +188,26 @@ public class UserAccountModel {
         this.bookingId = bookingId;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserAccountModel)) return false;
+        UserAccountModel that = (UserAccountModel) o;
+        return getUaId().equals(that.getUaId()) && getEmail().equals(that.getEmail()) && getPassword().equals(that.getPassword()) && Objects.equals(getUserType(), that.getUserType()) && Objects.equals(getStatus(), that.getStatus()) && Objects.equals(getLastName(), that.getLastName()) && Objects.equals(getFirstName(), that.getFirstName()) && Objects.equals(getContactNumber(), that.getContactNumber()) && Objects.equals(getAddressId(), that.getAddressId()) && Objects.equals(getBirthdate(), that.getBirthdate()) && Objects.equals(getGender(), that.getGender()) && Objects.equals(getInbox(), that.getInbox()) && Objects.equals(getAccountStatus(), that.getAccountStatus()) && Objects.equals(getBackgroundChecked(), that.getBackgroundChecked()) && Objects.equals(getExperience(), that.getExperience()) && Objects.equals(getBusinessHours(), that.getBusinessHours()) && Objects.equals(getAvailability(), that.getAvailability()) && Objects.equals(getBookingId(), that.getBookingId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUaId(), getEmail(), getPassword(), getUserType(), getStatus(), getLastName(), getFirstName(), getContactNumber(), getAddressId(), getBirthdate(), getGender(), getInbox(), getAccountStatus(), getBackgroundChecked(), getExperience(), getBusinessHours(), getAvailability(), getBookingId());
+    }
+
     @Override
     public String toString() {
         return "UserAccountModel{" +
                 "uaId='" + uaId + '\'' +
-                ", Email='" + email + '\'' +
-                ", Password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 ", userType='" + userType + '\'' +
                 ", status='" + status + '\'' +
                 ", lastName='" + lastName + '\'' +
@@ -209,26 +220,10 @@ public class UserAccountModel {
                 ", accountStatus='" + accountStatus + '\'' +
                 ", backgroundChecked=" + backgroundChecked +
                 ", experience='" + experience + '\'' +
-                ", businessHours=" + Arrays.toString(businessHours) +
-                ", availability=" + Arrays.toString(availability) +
+                ", businessHours=" + businessHours +
+                ", availability=" + availability +
                 ", bookingId='" + bookingId + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof UserAccountModel)) return false;
-        UserAccountModel that = (UserAccountModel) o;
-        return Objects.equals(uaId, that.uaId) && Objects.equals(email, that.email) && Objects.equals(password, that.password) && Objects.equals(userType, that.userType) && Objects.equals(status, that.status) && Objects.equals(lastName, that.lastName) && Objects.equals(firstName, that.firstName) && Objects.equals(contactNumber, that.contactNumber) && Objects.equals(addressId, that.addressId) && Objects.equals(birthdate, that.birthdate) && Objects.equals(gender, that.gender) && Objects.equals(inbox, that.inbox) && Objects.equals(accountStatus, that.accountStatus) && Objects.equals(backgroundChecked, that.backgroundChecked) && Objects.equals(experience, that.experience) && Arrays.equals(businessHours, that.businessHours) && Arrays.equals(availability, that.availability) && Objects.equals(bookingId, that.bookingId);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(uaId, email, password, userType, status, lastName, firstName, contactNumber, addressId, birthdate, gender, inbox, accountStatus, backgroundChecked, experience, bookingId);
-        result = 31 * result + Arrays.hashCode(businessHours);
-        result = 31 * result + Arrays.hashCode(availability);
-        return result;
     }
 
     public static Builder builder() { return new Builder();}
@@ -248,8 +243,8 @@ public class UserAccountModel {
         private String accountStatus;
         private Boolean backgroundChecked;
         private String experience;
-        private String [] businessHours;
-        private LocalDateTime[] availability;
+        private List<String> businessHours;
+        private List<LocalDateTime> availability;
         private String bookingId;
 
         public Builder withUaId(String uaId) {
@@ -313,11 +308,11 @@ public class UserAccountModel {
             this.experience = experience;
             return this;
         }
-        public Builder withBusinessHours(String[] businessHours) {
+        public Builder withBusinessHours(List<String> businessHours) {
             this.businessHours = businessHours;
             return this;
         }
-        public Builder withAvailability(LocalDateTime[] availability) {
+        public Builder withAvailability(List<LocalDateTime> availability) {
             this.availability = availability;
             return this;
         }
