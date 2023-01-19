@@ -1,0 +1,165 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Solway', serif;
+    background-color: #E5EDFF;
+    //z-index: 1;
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+$home-left-bg-color : #252B47;
+    @media (min-width : 720px) {
+        .buttons-primary {
+            padding: 10px 30px;
+            background-color: #F2EFEB;
+            color: #000;
+        }
+        div.main-container {
+            position: relative;     
+            width: 100%;
+            display: flex;
+            color: #E5EDFF ;
+            z-index: 1;
+           .main-content{
+                width: 1300px;
+                height: 100vh;
+                margin-left: auto;
+                margin-right: auto;
+                ul.nav-list {
+                    display: flex;
+                    height: 40px;
+                    margin: 0;
+                    padding: 0;
+                    align-items: center;
+                    justify-content: space-between;
+                    
+                    li {
+                        display: inline-flex;
+                    }
+                    
+                    
+                    .nav-btn-join{
+                      @extend .buttons-primary;
+                      text-transform: capitalize;
+                      
+                    }
+                }
+                .btn-home-service-cta {
+                    text-transform: uppercase;
+                }
+                .nav-split-container{
+                    display: flex;
+                    .nav-split-content {
+                        display: flex;
+                        padding: 20px 30px;
+                        width: 100%;
+                        align-items: center;
+                        .nav-list {
+                            width: 500px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            display: flex;
+                            color: #E5EDFF;
+                            .logo {
+                                font-size: 30px;
+                                display: inline-block;
+                                margin-left: auto;
+                                margin-right: auto;
+                                text-transform: uppercase;
+                                font-family: 'Playfair Display SC', serif;
+                            }
+                        }
+                    }
+                }
+                
+                .hero-container {
+                    display: flex;
+                    height: 100%;
+                    align-items: center;
+
+                    .hero {
+                        width: 1000px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        .title {
+                            font-size: 75px;
+                            text-align: center;
+                            font-family: 'Playfair Display SC', serif;
+                        }
+                        .cta-container {
+                           display: flex;
+                           justify-content: center;
+                            .cta-content {
+                                display: flex;
+                                justify-content: center;
+                                padding: 15px;
+                                width: 450px;
+                                .btn-home-service-cta {
+                                    padding: 20px 30px;
+                                    background-color: #F2EFEB;
+                                    color: #000;
+                                    
+                                }
+                                .find {
+                                    margin-right: 10px;
+                                }
+                                .offer {
+                                    margin-left: 10px;
+                                }
+                            }
+
+                        }
+                    }
+                }
+                    
+            }
+
+
+
+
+            .home-bg-container {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: -1;
+                .home-bg-content {
+                    display: flex;
+                    width: 1300px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    .home-bg-split-content{
+                        height: 95vh;
+                        width: 100%;
+                    }
+                    .left {
+                        background-color: $home-left-bg-color;
+                       
+                        z-index: 9;
+                        
+                    }
+                    .right {
+                       position: relative;
+                        background-size: cover;
+                        transform: scale();
+                        .img-home-bg-right {
+                            position: absolute;
+                            height: 100%;
+                            width: 100%;
+                            background-color: #252B47;
+                            background-image: url("../images/Photo - home.jpg");
+                            background-size: cover;
+                            background-clip: border-box;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-blend-mode: overlay;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}

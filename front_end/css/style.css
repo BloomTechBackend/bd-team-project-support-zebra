@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Solway", serif;
+  background-color: #E5EDFF;
+}
+body .center {
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 720px) {
+  body .buttons-primary, body div.main-container .main-content ul.nav-list .nav-btn-join {
+    padding: 10px 30px;
+    background-color: #F2EFEB;
+    color: #000;
+  }
+  body div.main-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    color: #E5EDFF;
+    z-index: 1;
+  }
+  body div.main-container .main-content {
+    width: 1300px;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body div.main-container .main-content ul.nav-list {
+    display: flex;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+  }
+  body div.main-container .main-content ul.nav-list li {
+    display: inline-flex;
+  }
+  body div.main-container .main-content ul.nav-list .nav-btn-join {
+    text-transform: capitalize;
+  }
+  body div.main-container .main-content .btn-home-service-cta {
+    text-transform: uppercase;
+  }
+  body div.main-container .main-content .nav-split-container {
+    display: flex;
+  }
+  body div.main-container .main-content .nav-split-container .nav-split-content {
+    display: flex;
+    padding: 20px 30px;
+    width: 100%;
+    align-items: center;
+  }
+  body div.main-container .main-content .nav-split-container .nav-split-content .nav-list {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    color: #E5EDFF;
+  }
+  body div.main-container .main-content .nav-split-container .nav-split-content .nav-list .logo {
+    font-size: 30px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    font-family: "Playfair Display SC", serif;
+  }
+  body div.main-container .main-content .hero-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+  body div.main-container .main-content .hero-container .hero {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body div.main-container .main-content .hero-container .hero .title {
+    font-size: 75px;
+    text-align: center;
+    font-family: "Playfair Display SC", serif;
+  }
+  body div.main-container .main-content .hero-container .hero .cta-container {
+    display: flex;
+    justify-content: center;
+  }
+  body div.main-container .main-content .hero-container .hero .cta-container .cta-content {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    width: 450px;
+  }
+  body div.main-container .main-content .hero-container .hero .cta-container .cta-content .btn-home-service-cta {
+    padding: 20px 30px;
+    background-color: #F2EFEB;
+    color: #000;
+  }
+  body div.main-container .main-content .hero-container .hero .cta-container .cta-content .find {
+    margin-right: 10px;
+  }
+  body div.main-container .main-content .hero-container .hero .cta-container .cta-content .offer {
+    margin-left: 10px;
+  }
+  body div.main-container .home-bg-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+  body div.main-container .home-bg-container .home-bg-content {
+    display: flex;
+    width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body div.main-container .home-bg-container .home-bg-content .home-bg-split-content {
+    height: 95vh;
+    width: 100%;
+  }
+  body div.main-container .home-bg-container .home-bg-content .left {
+    background-color: #252B47;
+    z-index: 9;
+  }
+  body div.main-container .home-bg-container .home-bg-content .right {
+    position: relative;
+    background-size: cover;
+    transform: scale();
+  }
+  body div.main-container .home-bg-container .home-bg-content .right .img-home-bg-right {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #252B47;
+    background-image: url("../images/Photo - home.jpg");
+    background-size: cover;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: overlay;
+  }
+}/*# sourceMappingURL=style.css.map */
