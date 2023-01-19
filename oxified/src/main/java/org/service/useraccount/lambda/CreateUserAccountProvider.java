@@ -1,0 +1,27 @@
+package main.java.org.service.useraccount.lambda;
+
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
+import main.java.org.service.dependency.DaggerServiceComponent;
+import main.java.org.service.dependency.ServiceComponent;
+import main.java.org.service.useraccount.model.request.CreateUserAccountRequest;
+import main.java.org.service.useraccount.model.result.CreateUserAccountResult;
+
+public class CreateUserAccountProvider implements RequestHandler<CreateUserAccountRequest, CreateUserAccountResult> {
+    /**
+     * Handles a Lambda Function request
+     *
+     * @param input   The Lambda Function input
+     * @param context The Lambda execution environment context object.
+     * @return The Lambda Function output
+     */
+    @Override
+    public CreateUserAccountResult handleRequest(CreateUserAccountRequest input, Context context) {
+        return null;
+    }
+
+    private ServiceComponent getService() {
+        ServiceComponent component = DaggerServiceComponent.create();
+        return component;
+    }
+}
