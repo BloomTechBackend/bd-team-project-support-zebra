@@ -4,30 +4,29 @@ body {
   font-family: "Solway", serif;
   background-color: #E5EDFF;
 }
-body .center {
+
+.center {
   margin-left: auto;
   margin-right: auto;
 }
+
 @media (min-width: 720px) {
-  body .buttons-primary, body div.main-container .main-content ul.nav-list .nav-btn-join {
+  .buttons-primary, .header .nav-container ul.nav-list .nav-btn-join {
     padding: 10px 30px;
     background-color: #F2EFEB;
     color: #000;
   }
-  body div.main-container {
-    position: relative;
+  .header, .header.pages {
+    color: #000;
     width: 100%;
-    display: flex;
-    color: #E5EDFF;
-    z-index: 1;
+    z-index: 333;
   }
-  body div.main-container .main-content {
+  .header .nav-container .nav-split-container, .header.pages .nav-container .nav-split-container {
     width: 1300px;
-    height: 100vh;
     margin-left: auto;
     margin-right: auto;
   }
-  body div.main-container .main-content ul.nav-list {
+  .header .nav-container ul.nav-list, .header.pages .nav-container ul.nav-list {
     display: flex;
     height: 40px;
     margin: 0;
@@ -35,32 +34,32 @@ body .center {
     align-items: center;
     justify-content: space-between;
   }
-  body div.main-container .main-content ul.nav-list li {
+  .header .nav-container ul.nav-list li, .header.pages .nav-container ul.nav-list li {
     display: inline-flex;
   }
-  body div.main-container .main-content ul.nav-list .nav-btn-join {
+  .header .nav-container ul.nav-list .nav-btn-join {
     text-transform: capitalize;
   }
-  body div.main-container .main-content .btn-home-service-cta {
+  .header .btn-home-service-cta {
     text-transform: uppercase;
   }
-  body div.main-container .main-content .nav-split-container {
+  .header .nav-split-container {
     display: flex;
   }
-  body div.main-container .main-content .nav-split-container .nav-split-content {
+  .header .nav-split-container .nav-split-content {
     display: flex;
     padding: 20px 30px;
     width: 100%;
     align-items: center;
   }
-  body div.main-container .main-content .nav-split-container .nav-split-content .nav-list {
+  .header .nav-split-container .nav-split-content .nav-list {
     width: 500px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     color: #E5EDFF;
   }
-  body div.main-container .main-content .nav-split-container .nav-split-content .nav-list .logo {
+  .header .nav-split-container .nav-split-content .nav-list .logo {
     font-size: 30px;
     display: inline-block;
     margin-left: auto;
@@ -68,68 +67,82 @@ body .center {
     text-transform: uppercase;
     font-family: "Playfair Display SC", serif;
   }
-  body div.main-container .main-content .hero-container {
+  .header.pages {
+    background-color: #252B47;
+  }
+  div.main-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    color: #E5EDFF;
+  }
+  div.main-container .main-content {
+    width: 1300px;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div.main-container .main-content .hero-container {
     display: flex;
     height: 100%;
     align-items: center;
   }
-  body div.main-container .main-content .hero-container .hero {
+  div.main-container .main-content .hero-container .hero {
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
   }
-  body div.main-container .main-content .hero-container .hero .title {
+  div.main-container .main-content .hero-container .hero .title {
     font-size: 75px;
     text-align: center;
     font-family: "Playfair Display SC", serif;
   }
-  body div.main-container .main-content .hero-container .hero .cta-container {
+  div.main-container .main-content .hero-container .hero .cta-container {
     display: flex;
     justify-content: center;
   }
-  body div.main-container .main-content .hero-container .hero .cta-container .cta-content {
+  div.main-container .main-content .hero-container .hero .cta-container .cta-content {
     display: flex;
     justify-content: center;
     padding: 15px;
     width: 450px;
   }
-  body div.main-container .main-content .hero-container .hero .cta-container .cta-content .btn-home-service-cta {
+  div.main-container .main-content .hero-container .hero .cta-container .cta-content .btn-home-service-cta {
     padding: 20px 30px;
     background-color: #F2EFEB;
     color: #000;
   }
-  body div.main-container .main-content .hero-container .hero .cta-container .cta-content .find {
+  div.main-container .main-content .hero-container .hero .cta-container .cta-content .find {
     margin-right: 10px;
   }
-  body div.main-container .main-content .hero-container .hero .cta-container .cta-content .offer {
+  div.main-container .main-content .hero-container .hero .cta-container .cta-content .offer {
     margin-left: 10px;
   }
-  body div.main-container .home-bg-container {
+  div.main-container .home-bg-container {
     position: absolute;
-    top: 0;
+    top: -78px;
     width: 100%;
-    z-index: -1;
+    z-index: -999;
   }
-  body div.main-container .home-bg-container .home-bg-content {
+  div.main-container .home-bg-container .home-bg-content {
     display: flex;
     width: 1300px;
     margin-left: auto;
     margin-right: auto;
   }
-  body div.main-container .home-bg-container .home-bg-content .home-bg-split-content {
+  div.main-container .home-bg-container .home-bg-content .home-bg-split-content {
     height: 95vh;
     width: 100%;
   }
-  body div.main-container .home-bg-container .home-bg-content .left {
+  div.main-container .home-bg-container .home-bg-content .left {
     background-color: #252B47;
-    z-index: 9;
   }
-  body div.main-container .home-bg-container .home-bg-content .right {
+  div.main-container .home-bg-container .home-bg-content .right {
     position: relative;
     background-size: cover;
     transform: scale();
   }
-  body div.main-container .home-bg-container .home-bg-content .right .img-home-bg-right {
+  div.main-container .home-bg-container .home-bg-content .right .img-home-bg-right {
     position: absolute;
     height: 100%;
     width: 100%;

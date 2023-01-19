@@ -4,12 +4,13 @@ body {
     padding: 0;
     font-family: 'Solway', serif;
     background-color: #E5EDFF;
-    //z-index: 1;
-.center {
-    margin-left: auto;
-    margin-right: auto;
 }
-
+    //z-index: 1;
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
 $home-left-bg-color : #252B47;
     @media (min-width : 720px) {
         .buttons-primary {
@@ -17,17 +18,16 @@ $home-left-bg-color : #252B47;
             background-color: #F2EFEB;
             color: #000;
         }
-        div.main-container {
-            position: relative;     
+         .header {
+            color: #000;
             width: 100%;
-            display: flex;
-            color: #E5EDFF ;
-            z-index: 1;
-           .main-content{
-                width: 1300px;
-                height: 100vh;
-                margin-left: auto;
-                margin-right: auto;
+            z-index: 333;
+            .nav-container {
+                .nav-split-container {
+                    width: 1300px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
                 ul.nav-list {
                     display: flex;
                     height: 40px;
@@ -44,37 +44,52 @@ $home-left-bg-color : #252B47;
                     .nav-btn-join{
                       @extend .buttons-primary;
                       text-transform: capitalize;
-                      
                     }
                 }
-                .btn-home-service-cta {
-                    text-transform: uppercase;
-                }
-                .nav-split-container{
+            }
+            
+            .btn-home-service-cta {
+                text-transform: uppercase;
+            }
+            .nav-split-container{
+                display: flex;
+                .nav-split-content {
                     display: flex;
-                    .nav-split-content {
+                    padding: 20px 30px;
+                    width: 100%;
+                    align-items: center;
+                    .nav-list {
+                        width: 500px;
+                        margin-left: auto;
+                        margin-right: auto;
                         display: flex;
-                        padding: 20px 30px;
-                        width: 100%;
-                        align-items: center;
-                        .nav-list {
-                            width: 500px;
+                        color:#E5EDFF;
+                        .logo {
+                            font-size: 30px;
+                            display: inline-block;
                             margin-left: auto;
                             margin-right: auto;
-                            display: flex;
-                            color: #E5EDFF;
-                            .logo {
-                                font-size: 30px;
-                                display: inline-block;
-                                margin-left: auto;
-                                margin-right: auto;
-                                text-transform: uppercase;
-                                font-family: 'Playfair Display SC', serif;
-                            }
+                            text-transform: uppercase;
+                            font-family: 'Playfair Display SC', serif;
                         }
                     }
                 }
-                
+            }
+         }
+         .header.pages {
+            @extend .header;
+           background-color: $home-left-bg-color;
+         }
+        div.main-container {
+            position: relative;     
+            width: 100%;
+            display: flex;
+            color: #E5EDFF ;
+           .main-content{
+                width: 1300px;
+                height: 100vh;
+                margin-left: auto;
+                margin-right: auto;
                 .hero-container {
                     display: flex;
                     height: 100%;
@@ -114,17 +129,12 @@ $home-left-bg-color : #252B47;
                         }
                     }
                 }
-                    
             }
-
-
-
-
             .home-bg-container {
                 position: absolute;
-                top: 0;
+                top: -78px;
                 width: 100%;
-                z-index: -1;
+                z-index: -999;
                 .home-bg-content {
                     display: flex;
                     width: 1300px;
@@ -136,9 +146,6 @@ $home-left-bg-color : #252B47;
                     }
                     .left {
                         background-color: $home-left-bg-color;
-                       
-                        z-index: 9;
-                        
                     }
                     .right {
                        position: relative;
@@ -162,4 +169,3 @@ $home-left-bg-color : #252B47;
         }
         
     }
-}
