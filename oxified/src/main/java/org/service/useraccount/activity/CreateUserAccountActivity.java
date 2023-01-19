@@ -10,10 +10,12 @@ import main.java.org.service.useraccount.model.request.CreateUserAccountRequest;
 import main.java.org.service.useraccount.model.result.CreateUserAccountResult;
 import main.java.org.service.useraccount.util.UserAccountServiceUtils;
 
+import javax.inject.Inject;
+
 public class CreateUserAccountActivity implements RequestHandler<CreateUserAccountRequest, CreateUserAccountResult> {
 
     private final UserAccountDao userAccountDao;
-
+    @Inject
     public CreateUserAccountActivity(UserAccountDao userAccountDao) {
         this.userAccountDao = userAccountDao;
     }
