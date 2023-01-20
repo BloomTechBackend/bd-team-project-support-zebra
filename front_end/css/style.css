@@ -4,6 +4,12 @@ body {
   font-family: "Solway", serif;
   background-color: #E5EDFF;
 }
+body .weight-normal {
+  font-weight: 300;
+}
+body label {
+  font-weight: 700;
+}
 
 .center {
   margin-left: auto;
@@ -153,5 +159,52 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-blend-mode: overlay;
+  }
+  section {
+    width: 100%;
+  }
+  section .section-content {
+    width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  section .section-content .card.service {
+    display: inline-block;
+    text-align: center;
+    margin-top: 50px;
+  }
+  section .section-content .card.service .card-service-title {
+    margin: 10px;
+    text-transform: capitalize;
+    font-family: "Playfair Display SC", serif;
+    font-size: 20px;
+  }
+  section .section-content .grid {
+    display: grid;
+    height: 100px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+  }
+  section .section-content .grid .card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  section .section-content .grid .card-container .card {
+    display: inline-block;
+    width: auto;
+    text-align: center;
+  }
+  section .section-content .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+  section .section-content .service-img {
+    width: 271px;
+    height: 173px;
+  }
+  section .section-content .card-details {
+    margin-top: 10px;
+    text-align: left;
   }
 }/*# sourceMappingURL=style.css.map */
