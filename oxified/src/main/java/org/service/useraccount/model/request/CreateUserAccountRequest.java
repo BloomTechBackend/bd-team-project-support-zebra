@@ -10,14 +10,8 @@ public class CreateUserAccountRequest {
     private String userType;
     private String status;
     private List<String> inboxes; //list of inbox ids
+    private String bookingId;
 
-    public CreateUserAccountRequest(String email, String password, String userType, String status, List<String> inboxes) {
-        this.email = email;
-        this.password = password;
-        this.userType = userType;
-        this.status = status;
-        this.inboxes = inboxes;
-    }
 
     public CreateUserAccountRequest() {
     }
@@ -27,6 +21,7 @@ public class CreateUserAccountRequest {
         this.userType = builder.userType;
         this.status = builder.status;
         this.inboxes = builder.inboxes;
+        this.bookingId = builder.bookingId;
     }
     public String getEmail() {
         return email;
@@ -68,6 +63,15 @@ public class CreateUserAccountRequest {
         this.inboxes = inboxes;
     }
 
+    public String getBookingId() {
+        return bookingId;
+    }
+
+    public CreateUserAccountRequest setBookingId(String bookingId) {
+        this.bookingId = bookingId;
+        return this;
+    }
+
     public static final Builder builder() {return new Builder();}
     public static final class Builder {
         private String email;
@@ -75,6 +79,7 @@ public class CreateUserAccountRequest {
         private String userType;
         private String status;
         private List<String> inboxes;
+        private String bookingId;
 
         public Builder withEmail(String email) {
             this.email = email;
@@ -96,6 +101,12 @@ public class CreateUserAccountRequest {
             this.inboxes = inboxes;
             return this;
         }
+
+        public Builder setBookingId(String bookingId) {
+            this.bookingId = bookingId;
+            return this;
+        }
+
         public CreateUserAccountRequest build(){ return new CreateUserAccountRequest(this);}
     }
 

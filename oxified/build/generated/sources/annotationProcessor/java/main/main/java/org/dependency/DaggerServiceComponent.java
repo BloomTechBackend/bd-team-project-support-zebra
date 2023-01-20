@@ -7,6 +7,8 @@ import dagger.internal.Preconditions;
 import javax.annotation.processing.Generated;
 import javax.inject.Provider;
 import main.java.org.service.useraccount.activity.CreateUserAccountActivity;
+import main.java.org.service.useraccount.activity.GetUserAccountActivity;
+import main.java.org.service.useraccount.activity.UpdateUserAccountActivity;
 import main.java.org.service.useraccount.dynamodb.UserAccountDao;
 
 @DaggerGenerated
@@ -72,6 +74,16 @@ public final class DaggerServiceComponent {
     @Override
     public CreateUserAccountActivity provideCreateUserAccountActivity() {
       return new CreateUserAccountActivity(userAccountDao());
+    }
+
+    @Override
+    public GetUserAccountActivity provideGetUserAccountActivity() {
+      return new GetUserAccountActivity(userAccountDao());
+    }
+
+    @Override
+    public UpdateUserAccountActivity provideUpdateUserAccountActivity() {
+      return new UpdateUserAccountActivity(userAccountDao());
     }
   }
 }

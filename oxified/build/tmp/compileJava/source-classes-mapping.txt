@@ -1,65 +1,75 @@
 main/java/org/service/useraccount/model/AddressModel.java
  main.java.org.service.useraccount.model.AddressModel
  main.java.org.service.useraccount.model.AddressModel$Builder
-main/java/org/service/main.java
- main.java.org.service.main
-main/java/org/service/useraccount/model/result/GetUserAccountResult.java
- main.java.org.service.useraccount.model.result.GetUserAccountResult
-main/java/org/service/useraccount/dynamodb/model/Address.java
- main.java.org.service.useraccount.dynamodb.model.Address
+main/java/org/exceptions/InvalidAttributeException.java
+ main.java.org.exceptions.InvalidAttributeException
 main/java/org/service/useraccount/model/result/UpdateUserAccountResult.java
  main.java.org.service.useraccount.model.result.UpdateUserAccountResult
+ main.java.org.service.useraccount.model.result.UpdateUserAccountResult$Builder
+main/java/org/service/useraccount/activity/CreateUserAccountActivity.java
+ main.java.org.service.useraccount.activity.CreateUserAccountActivity
+main/java/org/enumeratedtype/userType.java
+ main.java.org.enumeratedtype.userType
+main/java/org/exceptions/InvalidAttributeChangeException.java
+ main.java.org.exceptions.InvalidAttributeChangeException
+main/java/org/service/useraccount/util/UserAccountServiceUtils.java
+ main.java.org.service.useraccount.util.UserAccountServiceUtils
+main/java/org/enumeratedtype/Time.java
+ main.java.org.enumeratedtype.Time
+main/java/org/service/useraccount/converter/ModelConverter.java
+ main.java.org.service.useraccount.converter.ModelConverter
+main/java/org/enumeratedtype/Status.java
+ main.java.org.enumeratedtype.Status
+main/java/org/service/useraccount/activity/UpdateUserAccountActivity.java
+ main.java.org.service.useraccount.activity.UpdateUserAccountActivity
+main/java/org/exceptions/UserAccntNotFoundException.java
+ main.java.org.exceptions.UserAccntNotFoundException
+main/java/org/service/spservice/dynamodb/models/Service.java
+ main.java.org.service.spservice.dynamodb.models.Service
+main/java/org/dependency/DaoModule.java
+ main.java.org.dependency.DaoModule
+main/java/org/service/spservice/dynamodb/ServiceDao.java
+ main.java.org.service.spservice.dynamodb.ServiceDao
 main/java/org/service/useraccount/converter/UserAccountLinkedListConverter.java
  main.java.org.service.useraccount.converter.UserAccountLinkedListConverter
  main.java.org.service.useraccount.converter.UserAccountLinkedListConverter$1
+main/java/org/service/useraccount/model/result/GetUserAccountResult.java
+ main.java.org.service.useraccount.model.result.GetUserAccountResult
+ main.java.org.service.useraccount.model.result.GetUserAccountResult$Builder
 main/java/org/service/useraccount/model/request/UpdateUserAccountRequest.java
  main.java.org.service.useraccount.model.request.UpdateUserAccountRequest
+ main.java.org.service.useraccount.model.request.UpdateUserAccountRequest$Builder
 main/java/org/service/useraccount/dynamodb/model/UserAccount.java
  main.java.org.service.useraccount.dynamodb.model.UserAccount
-main/java/org/service/useraccount/dynamodb/AddressDao.java
- main.java.org.service.useraccount.dynamodb.AddressDao
-main/java/org/service/dependency/DaoModule.java
- main.java.org.service.dependency.DaoModule
-main/java/org/service/useraccount/util/UserAccountServiceUtils.java
- main.java.org.service.useraccount.util.UserAccountServiceUtils
+main/java/org/dependency/ServiceComponent.java
+ main.java.org.dependency.ServiceComponent
 main/java/org/service/useraccount/activity/GetUserAccountActivity.java
  main.java.org.service.useraccount.activity.GetUserAccountActivity
+main/java/org/exceptions/InvalidAttributeValueException.java
+ main.java.org.exceptions.InvalidAttributeValueException
 main/java/org/service/useraccount/model/result/CreateUserAccountResult.java
  main.java.org.service.useraccount.model.result.CreateUserAccountResult
  main.java.org.service.useraccount.model.result.CreateUserAccountResult$Builder
-main/java/org/service/spservice/dynamodb/ServiceDao.java
- main.java.org.service.spservice.dynamodb.ServiceDao
+main/java/org/enumeratedtype/ServiceType.java
+ main.java.org.enumeratedtype.ServiceType
+main/java/org/enumeratedtype/Language.java
+ main.java.org.enumeratedtype.Language
 main/java/org/service/useraccount/model/UserAccountModel.java
  main.java.org.service.useraccount.model.UserAccountModel
  main.java.org.service.useraccount.model.UserAccountModel$Builder
-main/java/org/service/enumeratedtype/Language.java
- main.java.org.service.enumeratedtype.Language
-main/java/org/service/useraccount/activity/UpdateUserAccountActivity.java
- main.java.org.service.useraccount.activity.UpdateUserAccountActivity
-main/java/org/service/useraccount/model/request/GetUserAccountRequest.java
- main.java.org.service.useraccount.model.request.GetUserAccountRequest
-main/java/org/service/spservice/models/ServiceModel.java
- main.java.org.service.spservice.models.ServiceModel
-main/java/org/service/spservice/dynamodb/models/Service.java
- main.java.org.service.spservice.dynamodb.models.Service
-main/java/org/service/enumeratedtype/userType.java
- main.java.org.service.enumeratedtype.userType
-main/java/org/service/enumeratedtype/Status.java
- main.java.org.service.enumeratedtype.Status
-main/java/org/service/enumeratedtype/Time.java
- main.java.org.service.enumeratedtype.Time
-main/java/org/service/enumeratedtype/ServiceType.java
- main.java.org.service.enumeratedtype.ServiceType
-main/java/org/service/useraccount/converter/ModelConverter.java
- main.java.org.service.useraccount.converter.ModelConverter
-main/java/org/service/useraccount/dynamodb/UserAccountDao.java
- main.java.org.service.useraccount.dynamodb.UserAccountDao
 main/java/org/service/useraccount/lambda/CreateUserAccountProvider.java
  main.java.org.service.useraccount.lambda.CreateUserAccountProvider
-main/java/org/service/useraccount/activity/CreateUserAccountActivity.java
- main.java.org.service.useraccount.activity.CreateUserAccountActivity
+main/java/org/service/useraccount/lambda/GetUserAccountProvider.java
+ main.java.org.service.useraccount.lambda.GetUserAccountProvider
+main/java/org/service/useraccount/model/request/GetUserAccountRequest.java
+ main.java.org.service.useraccount.model.request.GetUserAccountRequest
+ main.java.org.service.useraccount.model.request.GetUserAccountRequest$Builder
+main/java/org/service/spservice/models/ServiceModel.java
+ main.java.org.service.spservice.models.ServiceModel
 main/java/org/service/useraccount/model/request/CreateUserAccountRequest.java
  main.java.org.service.useraccount.model.request.CreateUserAccountRequest
  main.java.org.service.useraccount.model.request.CreateUserAccountRequest$Builder
-main/java/org/service/dependency/ServiceComponent.java
- main.java.org.service.dependency.ServiceComponent
+main/java/org/service/useraccount/lambda/UpdateUserAccountProvider.java
+ main.java.org.service.useraccount.lambda.UpdateUserAccountProvider
+main/java/org/service/useraccount/dynamodb/UserAccountDao.java
+ main.java.org.service.useraccount.dynamodb.UserAccountDao

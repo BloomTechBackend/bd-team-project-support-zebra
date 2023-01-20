@@ -44,6 +44,7 @@ public class CreateUserAccountActivity implements RequestHandler<CreateUserAccou
         userAccount.setPassword(createUserAccountRequest.getPassword());
         userAccount.setUserType(createUserAccountRequest.getUserType());
         userAccount.setStatus(createUserAccountRequest.getStatus());
+        userAccount.setBookingId(createUserAccountRequest.getBookingId());
         userAccount.setInbox(inboxes);
 
         return CreateUserAccountResult.builder()
