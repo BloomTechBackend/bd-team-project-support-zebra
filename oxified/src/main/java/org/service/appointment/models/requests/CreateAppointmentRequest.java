@@ -1,9 +1,11 @@
 package main.java.org.service.appointment.models.requests;
 
+import main.java.org.service.appointment.util.ServiceUtils;
+
 import java.util.Objects;
 
 public class CreateAppointmentRequest {
-    private String appointmentId;
+    private String appointmentId = ServiceUtils.generateId();
     private String date;
     private String time;
     private String serviceId;
@@ -14,9 +16,8 @@ public class CreateAppointmentRequest {
 
     }
 
-    public CreateAppointmentRequest(String appointmentId, String date, String time,
+    public CreateAppointmentRequest(String date, String time,
                                     String serviceId, String addressId, String status) {
-        this.appointmentId = appointmentId;
         this.date = date;
         this.time = time;
         this.serviceId = serviceId;
@@ -25,7 +26,6 @@ public class CreateAppointmentRequest {
     }
 
     public CreateAppointmentRequest(Builder builder) {
-        this.appointmentId = builder.appointmentId;
         this.date = builder.date;
         this.time = builder.time;
         this.serviceId = builder.serviceId;
@@ -111,17 +111,11 @@ public class CreateAppointmentRequest {
     }
 
     public static final class Builder {
-        private String appointmentId;
         private String date;
         private String time;
         private String serviceId;
         private String addressId;
         private String status;
-
-        public Builder withAppointmentId(String appointmentId) {
-            this.appointmentId = appointmentId;
-            return this;
-        }
 
         public Builder withDate(String date) {
             this.date = date;

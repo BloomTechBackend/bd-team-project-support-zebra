@@ -5,6 +5,9 @@ import main.java.org.service.appointment.dynamodb.models.Booking;
 import main.java.org.service.appointment.models.AppointmentModel;
 import main.java.org.service.appointment.models.BookingModel;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class ModelConverter {
     public AppointmentModel toAppointmentModel(Appointment appointment) {
         return AppointmentModel.builder()
@@ -23,5 +26,14 @@ public class ModelConverter {
                 .withAppointmentList(booking.getAppointmentList())
                 .withAppointmentCount(booking.getAppointmentCount())
                 .build();
+    }
+
+    public List<AppointmentModel> toAppointmentModelList(List<Appointment> appointmentList) {
+        List<AppointmentModel> appointmentModelList= new LinkedList<>();
+        for (Appointment appointment : appointmentList) {
+            AppointmentModel appointmentModel = toAppointmentModel(appointment);
+            appointmentModelList.add(appointmentModel);
+        }
+        return appointmentModelList;
     }
 }

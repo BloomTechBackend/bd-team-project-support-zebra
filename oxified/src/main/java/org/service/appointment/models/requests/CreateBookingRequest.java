@@ -1,18 +1,18 @@
 package main.java.org.service.appointment.models.requests;
 
 import main.java.org.service.appointment.dynamodb.models.Appointment;
+import main.java.org.service.appointment.util.ServiceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class CreateBookingRequest {
-    private String bookingId;
+    private String bookingId = ServiceUtils.generateId();
     private List<Appointment> appointmentList = new ArrayList<>();
     private Integer appointmentCount;
 
-    public CreateBookingRequest(String bookingId, List<Appointment> appointmentList, Integer appointmentCount) {
-        this.bookingId = bookingId;
+    public CreateBookingRequest(List<Appointment> appointmentList, Integer appointmentCount) {
         this.appointmentList = appointmentList;
         this.appointmentCount = appointmentCount;
     }
@@ -22,7 +22,6 @@ public class CreateBookingRequest {
     }
 
     public CreateBookingRequest(Builder builder) {
-        this.bookingId = builder.bookingId;
         this.appointmentList = builder.appointmentList;
         this.appointmentCount = builder.appointmentCount;
     }
@@ -78,14 +77,8 @@ public class CreateBookingRequest {
     }
 
     public static final class Builder {
-        private String bookingId;
         private List<Appointment> appointmentList = new ArrayList<>();
         private Integer appointmentCount;
-
-        public Builder withBookingId(String bookingId) {
-            this.bookingId = bookingId;
-            return this;
-        }
 
         public Builder withAppointmentList(List<Appointment> appointmentList) {
             this.appointmentList = appointmentList;

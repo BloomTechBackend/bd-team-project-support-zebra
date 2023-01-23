@@ -14,8 +14,7 @@ import org.apache.logging.log4j.Logger;
 import javax.inject.Inject;
 import javax.management.InvalidAttributeValueException;
 
-public class CreateAppointmentActivity
-        implements RequestHandler<CreateAppointmentRequest, CreateAppointmentResult> {
+public class CreateAppointmentActivity implements RequestHandler<CreateAppointmentRequest, CreateAppointmentResult> {
     private final Logger log = LogManager.getLogger();
     private final AppointmentDao appointmentDao;
 
@@ -27,7 +26,6 @@ public class CreateAppointmentActivity
     @Override
     public CreateAppointmentResult handleRequest(CreateAppointmentRequest request, Context context) {
         log.info("Received CreateAppointRequest {}", request);
-
         Appointment appointment = new Appointment();
         appointment.setAppointmentId(request.getAppointmentId());
         appointment.setDate(request.getDate());
