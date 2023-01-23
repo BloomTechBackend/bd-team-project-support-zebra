@@ -33,22 +33,22 @@ public class AddAppointmentToBookingActivity
     }
 
     @Override
-    public AddAppointmentToBookingResult handleRequest(AddAppointmentToBookingRequest input, Context context) {
-        log.info("Received AddAppointmentToBookingRequest {}", input);
+    public AddAppointmentToBookingResult handleRequest(AddAppointmentToBookingRequest request, Context context) {
+        log.info("Received AddAppointmentToBookingRequest {}", request);
 
         List<AppointmentModel> appointmentModelList = new LinkedList<>();
         AddAppointmentToBookingResult result;
         try {
 
-            Appointment inputAppointment = appointmentDao.getAppointment(input.getAppointmentId(), input.getDate());
+            Appointment inputAppointment = appointmentDao.getAppointment(request.getAppointmentId(), request.getDate());
             AppointmentModel inputAppointmentModel = new ModelConverter().toAppointmentModel(inputAppointment);
-            if (input.isQueueNext()) {
+            if (request.isQueueNext()) {
                 appointmentModelList.add(0, inputAppointmentModel);
             } else {
                 appointmentModelList.add(inputAppointmentModel);
             }
 
-            Booking booking = bookingDao.getBooking(input.getId());
+            Booking booking = bookingDao.getBooking(request.getId());
 
             List<Appointment> appointments = new ArrayList<>(booking.getAppointmentList());
             for (Appointment appointment : appointments ) {
