@@ -41,6 +41,10 @@ public class UpdateUserAccountRequest {
         this.businessHours = builder.businessHours;
         this.availability = builder.availability;
     }
+
+    public UpdateUserAccountRequest() {
+    }
+
     public String getEmail() {
         return email;
     }

@@ -36,9 +36,9 @@ public class UpdateUserAccountActivity  implements RequestHandler<UpdateUserAcco
         if(userAccount == null) {
             throw new UserAccntNotFoundException("User account not found!");
         }
-
         userAccount.setPassword(input.getPassword());
         userAccount.setStatus(input.getStatus());
+        userAccount.setEmail(input.getEmail());
         userAccount.setLastName(input.getLastName());
         userAccount.setFirstName(input.getFirstName());
         userAccount.setContactNumber(input.getContactNumber());
