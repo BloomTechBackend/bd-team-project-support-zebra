@@ -2,6 +2,7 @@ package main.java.org.service.useraccount.model.request;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class UpdateUserAccountRequest {
@@ -287,5 +288,41 @@ public class UpdateUserAccountRequest {
         }
 
         public UpdateUserAccountRequest build() {return new UpdateUserAccountRequest(this);}
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UpdateUserAccountRequest)) return false;
+        UpdateUserAccountRequest that = (UpdateUserAccountRequest) o;
+        return Objects.equals(getUaId(), that.getUaId()) && Objects.equals(getEmail(), that.getEmail()) && Objects.equals(getPassword(), that.getPassword()) && Objects.equals(getUserType(), that.getUserType()) && Objects.equals(getStatus(), that.getStatus()) && Objects.equals(getLastName(), that.getLastName()) && Objects.equals(getFirstName(), that.getFirstName()) && Objects.equals(getContactNumber(), that.getContactNumber()) && Objects.equals(getAddress(), that.getAddress()) && Objects.equals(getBirthdate(), that.getBirthdate()) && Objects.equals(getGender(), that.getGender()) && Objects.equals(getInbox(), that.getInbox()) && Objects.equals(getAccountStatus(), that.getAccountStatus()) && Objects.equals(getBackgroundChecked(), that.getBackgroundChecked()) && Objects.equals(getExperience(), that.getExperience()) && Objects.equals(getBusinessHours(), that.getBusinessHours()) && Objects.equals(getAvailability(), that.getAvailability());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUaId(), getEmail(), getPassword(), getUserType(), getStatus(), getLastName(), getFirstName(), getContactNumber(), getAddress(), getBirthdate(), getGender(), getInbox(), getAccountStatus(), getBackgroundChecked(), getExperience(), getBusinessHours(), getAvailability());
+    }
+
+    @Override
+    public String toString() {
+        return "UpdateUserAccountRequest{" +
+                "uaId='" + uaId + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", userType='" + userType + '\'' +
+                ", status='" + status + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", contactNumber='" + contactNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", birthdate='" + birthdate + '\'' +
+                ", gender='" + gender + '\'' +
+                ", inbox=" + inbox +
+                ", accountStatus='" + accountStatus + '\'' +
+                ", backgroundChecked=" + backgroundChecked +
+                ", experience='" + experience + '\'' +
+                ", businessHours=" + businessHours +
+                ", availability=" + availability +
+                '}';
     }
 }

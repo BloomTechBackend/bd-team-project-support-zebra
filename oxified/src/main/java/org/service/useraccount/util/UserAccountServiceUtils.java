@@ -18,7 +18,6 @@ public class UserAccountServiceUtils {
         if (StringUtils.isBlank(stringToValidate)) {
             return false;
         }
-
         return !INVALID_CHARACTER_PATTERN.matcher(stringToValidate).find();
     }
 

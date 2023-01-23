@@ -192,7 +192,7 @@ requirements.*
 ```
 -	String serviceId
 -	String uaId
--	String name
+-	String description
 -	BigDecimal serviceTypeCost
 -	String category
 -	String serviceType
@@ -309,11 +309,10 @@ requirements.*
 ## SPS Service
 ### 6.5 Create Service EndPoint
 * Accepts POST requests to /Services
-* Accepts data to create a new service with a provided serviceId, serviceName, serviceTypeCost, category, serviceType, and status. Returns the new service, including a unique serviceId assigned by the SPS service.
+* Accepts data to create a new service with a provided serviceId, uaId, description, serviceTypeCost, category, serviceType, and status. Returns the new service, including a unique serviceId assigned by the SPS service.
 * We have a utility class with a validation method, and a method to generate a new, unique user serviceId.
 * For security concerns, we will validate that the provided serviceId and service name do not contain any invalid characters: ``` "'\ ```
 * If the serviceId and service name contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
-* This API must create the user account with an empty list of inbox.
 * ![Sequence Diagram Here!](images/design_document/createService.PNG)
 ### 6.6 Get Service EndPoint
 * Accepts GET requests to /Services
@@ -477,7 +476,7 @@ aws cloudformation create-stack --region us-west-2 --stack-name supportzebrauser
 ```
 -	String serviceId (Hash)
 -	String uaId
--	String name
+-	String description
 -	BigDecimal serviceTypeCost
 -	String category
 -	String serviceType

@@ -2,7 +2,6 @@ package main.java.org.service.useraccount.converter;
 
 
 import main.java.org.service.useraccount.dynamodb.model.UserAccount;
-import main.java.org.service.useraccount.model.AddressModel;
 import main.java.org.service.useraccount.model.UserAccountModel;
 
 public class ModelConverter {
