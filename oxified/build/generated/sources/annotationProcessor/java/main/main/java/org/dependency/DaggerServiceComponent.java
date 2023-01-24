@@ -6,7 +6,12 @@ import dagger.internal.DoubleCheck;
 import dagger.internal.Preconditions;
 import javax.annotation.processing.Generated;
 import javax.inject.Provider;
+import main.java.org.service.spservice.acitivity.CreateServiceActivity;
+import main.java.org.service.spservice.acitivity.GetServiceActivity;
+import main.java.org.service.spservice.dynamodb.ServiceDao;
 import main.java.org.service.useraccount.activity.CreateUserAccountActivity;
+import main.java.org.service.useraccount.activity.GetUserAccountActivity;
+import main.java.org.service.useraccount.activity.UpdateUserAccountActivity;
 import main.java.org.service.useraccount.dynamodb.UserAccountDao;
 
 @DaggerGenerated
@@ -64,6 +69,10 @@ public final class DaggerServiceComponent {
       return new UserAccountDao(provideDBMapperProvider.get());
     }
 
+    private ServiceDao serviceDao() {
+      return new ServiceDao(provideDBMapperProvider.get());
+    }
+
     @SuppressWarnings("unchecked")
     private void initialize(final DaoModule daoModuleParam) {
       this.provideDBMapperProvider = DoubleCheck.provider(DaoModule_ProvideDBMapperFactory.create(daoModuleParam));
@@ -72,6 +81,26 @@ public final class DaggerServiceComponent {
     @Override
     public CreateUserAccountActivity provideCreateUserAccountActivity() {
       return new CreateUserAccountActivity(userAccountDao());
+    }
+
+    @Override
+    public GetUserAccountActivity provideGetUserAccountActivity() {
+      return new GetUserAccountActivity(userAccountDao());
+    }
+
+    @Override
+    public UpdateUserAccountActivity provideUpdateUserAccountActivity() {
+      return new UpdateUserAccountActivity(userAccountDao());
+    }
+
+    @Override
+    public GetServiceActivity provideGetServiceActivity() {
+      return new GetServiceActivity(serviceDao());
+    }
+
+    @Override
+    public CreateServiceActivity provideCreateService() {
+      return new CreateServiceActivity(serviceDao());
     }
   }
 }

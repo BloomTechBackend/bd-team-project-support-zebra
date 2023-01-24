@@ -9,7 +9,7 @@ public class UserAccountServiceUtils {
 
     private static final Pattern INVALID_CHARACTER_PATTERN = Pattern.compile("[\"\'\\\\]");
 
-    static final int PLAYLIST_ID_LENGTH = 5;
+    static final int ID_LENGTH = 5;
 
     public UserAccountServiceUtils() {
     }
@@ -18,11 +18,14 @@ public class UserAccountServiceUtils {
         if (StringUtils.isBlank(stringToValidate)) {
             return false;
         }
-
         return !INVALID_CHARACTER_PATTERN.matcher(stringToValidate).find();
     }
 
     public static String generateUaId() {
-        return RandomStringUtils.randomAlphanumeric(PLAYLIST_ID_LENGTH);
+        return RandomStringUtils.randomAlphanumeric(ID_LENGTH);
+    }
+
+    public static String generateBookingId() {
+        return RandomStringUtils.randomAlphanumeric(ID_LENGTH);
     }
 }

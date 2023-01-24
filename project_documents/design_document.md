@@ -185,14 +185,14 @@ requirements.*
 -	String time
 -	String date
 -	Service service
--	String addressId (appointmentLocation -> Address Class)
+-	String address (appointmentLocation -> Address Class)
 -	String status
 ```
 ### b. `ServiceModel`
 ```
 -	String serviceId
 -	String uaId
--	String name
+-	String description
 -	BigDecimal serviceTypeCost
 -	String category
 -	String serviceType
@@ -216,7 +216,7 @@ requirements.*
 -	String lastName
 -	String firstName
 -	String contactNumber
--	String addressId
+-	String address
 -	String birthdate
 -	String gender
 -	String image
@@ -224,7 +224,7 @@ requirements.*
 ```
 ###  e. `AddressModel`
 ```
--	String addressId
+-	String address
 -	String houseNumber
 -	String lotNumber
 -	String blockNumber
@@ -302,19 +302,17 @@ requirements.*
   
 ### 6.4 Update UserAccount EndPoint
 * Accepts PUT requests to /UserAccounts/:id
-* Accepts data to update a user account including a uaId, userType, an updated password name, (optional) image, addressId, and contact number. Returns the updated user account.
+* Accepts data to update a user account including a uaId, userType, an updated password name, (optional) image, address, and contact number. Returns the updated user account.
 * If the user account ID (uaId) is not found, will throw a `UserAccountNotFoundException`
-* If the user account ID  contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
 *![Sequence Diagram Here!](images/design_document/updateUserAccount.PNG)
 
 ## SPS Service
 ### 6.5 Create Service EndPoint
 * Accepts POST requests to /Services
-* Accepts data to create a new service with a provided serviceId, serviceName, serviceTypeCost, category, serviceType, and status. Returns the new service, including a unique serviceId assigned by the SPS service.
+* Accepts data to create a new service with a provided serviceId, uaId, description, serviceTypeCost, category, serviceType, and status. Returns the new service, including a unique serviceId assigned by the SPS service.
 * We have a utility class with a validation method, and a method to generate a new, unique user serviceId.
 * For security concerns, we will validate that the provided serviceId and service name do not contain any invalid characters: ``` "'\ ```
 * If the serviceId and service name contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
-* This API must create the user account with an empty list of inbox.
 * ![Sequence Diagram Here!](images/design_document/createService.PNG)
 ### 6.6 Get Service EndPoint
 * Accepts GET requests to /Services
@@ -337,7 +335,7 @@ requirements.*
 ## Appointment Service
 ### 6.9 Create Appointments EndPoint
 * Accepts POST requests to /Appointment.
-* Accepts data to create a new Appointment with a provided appointmentId, time, date, service, addressId, status.
+* Accepts data to create a new Appointment with a provided appointmentId, time, date, service, address, status.
   Returns the newly created appointment appointmentId assigned by Appointment Service.
 * We have a utility class with a validation method, and a method to generate a unique Appointment ID.
 * For security concerns, we will validate that the provided Appointment ID do not contain any invalid characters
@@ -455,7 +453,7 @@ aws cloudformation create-stack --region us-west-2 --stack-name supportzebrauser
 -	String lastName
 -	String firstName
 -	String contactNumber
--	String addressId
+-	String address
 -	String birthdate
 -	String gender
 -	String image
@@ -478,7 +476,7 @@ aws cloudformation create-stack --region us-west-2 --stack-name supportzebrauser
 ```
 -	String serviceId (Hash)
 -	String uaId
--	String name
+-	String description
 -	BigDecimal serviceTypeCost
 -	String category
 -	String serviceType
@@ -524,7 +522,7 @@ aws cloudformation create-stack --region us-west-2 --stack-name supportzebrauser
 -	String date
 -	String time 
 -   Service service
--   String addressId
+-   String address
 -	String status
 ```
 

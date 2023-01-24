@@ -18,10 +18,10 @@ public class UserAccount {
     private String lastName;
     private String firstName;
     private String contactNumber;
-    private String addressId;
+    private String address;
     private String birthdate;
     private String gender;
-    private Set<String> inbox = new HashSet<>();
+    private Set<String> inbox;
     private String accountStatus;
     private Boolean backgroundChecked;
     private String experience;
@@ -93,13 +93,13 @@ public class UserAccount {
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
-    @DynamoDBAttribute(attributeName = "addressId")
-    public String getAddressId() {
-        return addressId;
+    @DynamoDBAttribute(attributeName = "address")
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddressId(String addressId) {
-        this.addressId = addressId;
+    public void setAddress(String address) {
+        this.address = address;
     }
     @DynamoDBAttribute(attributeName = "birthDate")
     public String getBirthdate() {
@@ -149,24 +149,24 @@ public class UserAccount {
     public void setExperience(String experience) {
         this.experience = experience;
     }
-//    @DynamoDBTypeConverted(converter = UserAccountLinkedListConverter.class)
-//    @DynamoDBAttribute(attributeName = "businessHours")
-//    public List<String> getBusinessHours() {
-//        return businessHours;
-//    }
-//
-//    public void setBusinessHours(List<String> businessHours) {
-//        this.businessHours = businessHours;
-//    }
-//    @DynamoDBTypeConverted(converter = UserAccountLinkedListConverter.class)
-//    @DynamoDBAttribute(attributeName = "availability")
-//    public List<LocalDateTime> getAvailability() {
-//        return availability;
-//    }
-//
-//    public void setAvailability(List<LocalDateTime> availability) {
-//        this.availability = availability;
-//    }
+    @DynamoDBTypeConverted(converter = UserAccountLinkedListConverter.class)
+    @DynamoDBAttribute(attributeName = "businessHours")
+    public List<String> getBusinessHours() {
+        return businessHours;
+    }
+
+    public void setBusinessHours(List<String> businessHours) {
+        this.businessHours = businessHours;
+    }
+    @DynamoDBTypeConverted(converter = UserAccountLinkedListConverter.class)
+    @DynamoDBAttribute(attributeName = "availability")
+    public List<LocalDateTime> getAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(List<LocalDateTime> availability) {
+        this.availability = availability;
+    }
     @DynamoDBAttribute(attributeName = "booking")
     public String getBookingId() {
         return bookingId;
