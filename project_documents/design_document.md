@@ -326,7 +326,7 @@ requirements.*
 * ![Sequence Diagram Here!](images/design_document/getServiceBySP.PNG)
 ### 6.8 Update Service EndPoint
 * Accepts PUT requests to /UserAccounts/:id/Services/:id
-* Accepts data to update a service including a serviceId, uaId, updated: name, serviceTypeCost, category, serviceType, and status. Returns the updated service.
+* Accepts data to update a service including a serviceId, uaId, updated: description, serviceTypeCost, category, serviceType, and status. Returns the updated service.
 * If the serviceId is not found, will throw a `ServiceNotFoundException`
 * ![Sequence Diagram Here!](images/design_document/updateService.PNG)
 

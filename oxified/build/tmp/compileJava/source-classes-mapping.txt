@@ -71,10 +71,10 @@ main/java/org/service/spservice/converter/CostToStringConverter.java
 main/java/org/service/spservice/models/result/UpdateServiceResult.java
  main.java.org.service.spservice.models.result.UpdateServiceResult
  main.java.org.service.spservice.models.result.UpdateServiceResult$Builder
-main/java/org/service/spservice/acitivity/UpdateServiceActivity.java
- main.java.org.service.spservice.acitivity.UpdateServiceActivity
-main/java/org/dependency/ServiceComponent.java
- main.java.org.dependency.ServiceComponent
+main/java/org/service/spservice/lambda/CreateServiceActivityProvider.java
+ main.java.org.service.spservice.lambda.CreateServiceActivityProvider
+main/java/org/service/spservice/acitivity/CreateServiceActivity.java
+ main.java.org.service.spservice.acitivity.CreateServiceActivity
 main/java/org/service/spservice/lambda/GetServiceActivityProvider.java
  main.java.org.service.spservice.lambda.GetServiceActivityProvider
 main/java/org/service/useraccount/activity/GetUserAccountActivity.java
@@ -106,9 +106,9 @@ main/java/org/service/useraccount/model/request/CreateUserAccountRequest.java
  main.java.org.service.useraccount.model.request.CreateUserAccountRequest$Builder
 main/java/org/service/useraccount/lambda/UpdateUserAccountProvider.java
  main.java.org.service.useraccount.lambda.UpdateUserAccountProvider
-main/java/org/service/spservice/acitivity/CreateServiceActivity.java
- main.java.org.service.spservice.acitivity.CreateServiceActivity
-main/java/org/service/spservice/lambda/CreateServiceActivityProvider.java
- main.java.org.service.spservice.lambda.CreateServiceActivityProvider
 main/java/org/service/spservice/lambda/UpdateServiceActivityProvider.java
  main.java.org.service.spservice.lambda.UpdateServiceActivityProvider
+main/java/org/service/spservice/acitivity/UpdateServiceActivity.java
+ main.java.org.service.spservice.acitivity.UpdateServiceActivity
+main/java/org/dependency/ServiceComponent.java
+ main.java.org.dependency.ServiceComponent
