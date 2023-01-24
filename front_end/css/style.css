@@ -2,6 +2,15 @@
   font-weight: 300;
 }
 
+.message-inbox {
+  padding: 1px;
+}
+
+.message-inbox:hover {
+  background-color: #252B47;
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -12,48 +21,18 @@ body label {
   font-weight: 700;
 }
 
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 @media (min-width: 720px) {
-  .one-column {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: auto;
-  }
-  .two-columns {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-  }
-  .three-columns, section .section-content .grid.booking {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-  }
-  .four-columns, section .section-content .grid.manpower {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-  }
-  .button-primary, .text-base-content .card-buttons .btn, section .section-content .button.edit-profile, .header .nav-container ul.nav-list .nav-btn-join {
-    padding: 10px 30px;
-    background-color: #F2EFEB;
-    color: #000;
-  }
   .header, .header.pages {
     color: #000;
     width: 100%;
     z-index: 333;
   }
-  .header .nav-container .nav-split-container, .header.pages .nav-container .nav-split-container {
+  .header .nav-container .nav-split-container {
     width: 1300px;
     margin-left: auto;
     margin-right: auto;
   }
-  .header .nav-container ul.nav-list, .header.pages .nav-container ul.nav-list {
+  .header .nav-container ul.nav-list {
     display: flex;
     height: 40px;
     margin: 0;
@@ -61,10 +40,13 @@ body label {
     align-items: center;
     justify-content: space-between;
   }
-  .header .nav-container ul.nav-list li, .header.pages .nav-container ul.nav-list li {
+  .header .nav-container ul.nav-list li {
     display: inline-flex;
   }
   .header .nav-container ul.nav-list .nav-btn-join {
+    padding: 10px 30px;
+    background-color: #F2EFEB;
+    color: #000;
     text-transform: capitalize;
   }
   .header .btn-home-service-cta {
@@ -190,16 +172,26 @@ body label {
     margin-left: auto;
     margin-right: auto;
   }
-  section .section-content .card.service {
+  section .section-content .card-service {
     display: inline-block;
     text-align: center;
     margin-top: 50px;
   }
-  section .section-content .card.service .card-service-title {
+  section .section-content .card-service .card-service-title {
     margin: 20px;
     text-transform: capitalize;
     font-family: "Playfair Display SC", serif;
     font-size: 20px;
+  }
+  section .section-content .grid.manpower, section .section-content .grid.services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+  }
+  section .section-content .grid.booking {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
   }
   section .section-content .profile-img {
     width: 200px;
@@ -214,6 +206,9 @@ body label {
     text-align: left;
   }
   section .section-content .button.edit-profile {
+    padding: 10px 30px;
+    background-color: #F2EFEB;
+    color: #000;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -265,6 +260,9 @@ body label {
     display: flex;
   }
   .text-base-content .card-buttons .btn {
+    padding: 10px 30px;
+    background-color: #F2EFEB;
+    color: #000;
     padding-left: 10px;
     padding-right: 10px;
     margin: 0 5px;
@@ -303,24 +301,52 @@ body label {
     justify-content: center;
   }
   .modal-container .modal-content .search-content .search {
-    width: 90%;
+    width: 100%;
     height: 30px;
-    margin: 5px;
+    margin: 5px 0;
   }
   .modal-container .messenger {
     position: absolute;
-    right: 0;
+    right: 40px;
     bottom: 75px;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 5px 5px 8px rgba(37, 43, 71, 0.5);
+    /* This timing applies on the way OUT */
+    transition-timing-function: ease-in;
+    /* Quick on the way out */
+    transition: 0.5s;
+    /* Hide thing by pushing it outside by default */
+  }
+  .modal-container .messenger .message-inbox-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 1px 0;
+    background-color: rgb(221, 214, 214);
+  }
+  .modal-container .messenger .message-inbox-content .not-my-profile-picture {
+    padding: 5px;
+  }
+  .modal-container .messenger .message-inbox-content .not-my-profile-picture .inbox-profile-picture {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+  }
+  .modal-container .messenger .message-inbox-content .not-my-name-last-message {
+    width: 100%;
+    padding: 0 5px;
   }
   .modal-container .messenger.hide {
     height: 0px;
     width: 0px;
-    display: none;
-    transition: width 2s, height 4s;
+    opacity: 0;
   }
   .modal-container .messenger.show {
+    opacity: 100;
     height: 500px;
     width: 300px;
-    background-color: rgb(173, 165, 165);
+    background-color: rgb(236, 231, 231);
   }
 }/*# sourceMappingURL=style.css.map */

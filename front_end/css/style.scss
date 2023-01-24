@@ -1,8 +1,41 @@
 $minwidth720query : 1300;
+$home-left-bg-color : #252B47;
+$theme-color-primary : #252B47;
 .weight-normal {
     font-weight: 300;
 }
-
+.message-inbox {
+    padding: 1px;
+}
+.message-inbox:hover {
+    background-color: $theme-color-primary;
+    cursor: pointer;
+}
+@mixin one-column {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+}
+@mixin two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+}
+@mixin three-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}
+@mixin four-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+}
+@mixin button-primary {
+    padding: 10px 30px;
+    background-color: #F2EFEB;
+    color: #000;
+}
 body {
     margin: 0;
     padding: 0;
@@ -15,38 +48,12 @@ body {
     }
 }
     //z-index: 1;
-    .center {
+    @mixin center {
         margin-left: auto;
         margin-right: auto;
     }
-    
-$home-left-bg-color : #252B47;
     @media (min-width : 720px) {
-        .one-column {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: auto;
-        }
-        .two-columns {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: auto;
-        }
-        .three-columns {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto;
-        }
-        .four-columns {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: auto;
-        }
-        .button-primary {
-            padding: 10px 30px;
-            background-color: #F2EFEB;
-            color: #000;
-        }
+        
          .header {
             color: #000;
             width: 100%;
@@ -68,7 +75,7 @@ $home-left-bg-color : #252B47;
                         display: inline-flex;
                     }
                     .nav-btn-join{
-                      @extend .button-primary;
+                      @include button-primary;
                       text-transform: capitalize;
                     }
                 }
@@ -104,7 +111,7 @@ $home-left-bg-color : #252B47;
          }
          .header.pages {
             @extend .header;
-           background-color: $home-left-bg-color;
+           background-color: $theme-color-primary;
          }
         div.main-container {
             position: relative;     
@@ -172,7 +179,7 @@ $home-left-bg-color : #252B47;
                         width: 100%;
                     }
                     .left {
-                        background-color: $home-left-bg-color;
+                        background-color: $theme-color-primary;
                     }
                     .right {
                        position: relative;
@@ -200,7 +207,7 @@ $home-left-bg-color : #252B47;
                 width: 1300px;
                 margin-left: auto;
                 margin-right: auto;
-                .card.service {
+                .card-service {
                     display: inline-block;
                     text-align: center;
                     margin-top: 50px;
@@ -211,13 +218,13 @@ $home-left-bg-color : #252B47;
                         font-size: 20px;
                     }
                 }
-                .grid.manpower{
-                    @extend .four-columns;
+                .grid.manpower, .grid.services{
+                    @include four-columns;
                 }
                 .grid.booking{
-                    @extend .three-columns;
+                    @include three-columns;
                 }
-                
+              
                 .profile-img {
                     width:200px;
                     height: 200px;
@@ -231,7 +238,7 @@ $home-left-bg-color : #252B47;
                     text-align: left;
                 }
                 .button.edit-profile {
-                    @extend .button-primary; 
+                    @include button-primary; 
                     display: flex;  
                     flex-direction: column;
                     justify-content: center;
@@ -287,7 +294,7 @@ $home-left-bg-color : #252B47;
                 
                 .btn {
 
-                    @extend .button-primary;
+                    @include button-primary;
                     padding-left: 10px;
                     padding-right: 10px;
                     margin: 0 5px;
@@ -306,8 +313,7 @@ $home-left-bg-color : #252B47;
             }
        }
        .modal-container {
-        
-        
+
         position: absolute;
         bottom: 0;
         right: 0;
@@ -331,27 +337,63 @@ $home-left-bg-color : #252B47;
                     display: flex;
                     justify-content: center;
                     .search {
-                        width: 90%;
+                        width: 100%;
                         height: 30px;
-                        margin: 5px;
+                        margin: 5px 0;
                     }
                 }
             }
             .messenger {
                 position: absolute;
-                right: 0;
+                right: 40px;
                 bottom: 75px;
+                border-radius: 5px;
+                padding: 5px;
+                box-shadow: 5px 5px 8px rgba(37,43,71, 0.5);
+                 /* This timing applies on the way OUT */
+                 transition-timing-function: ease-in;
+
+                 /* Quick on the way out */
+                 transition: 0.5s;
+ 
+                 /* Hide thing by pushing it outside by default */
+                 //transform: translateY(0%);
+                 
+                 .message-inbox-content {
+                   
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 5px;
+                    margin: 1px 0;
+                    background-color: rgb(221, 214, 214);
+                    .not-my-profile-picture {
+                        padding: 5px;
+                        .inbox-profile-picture {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50px;
+                        }
+                    }
+                    .not-my-name-last-message {
+                         width: 100%;
+                         padding: 0 5px;
+                    }
+                   
+                   
+                 }
             }
             .messenger.hide {
                 height: 0px;
                 width: 0px;
-                display: none;
-                transition: width 2s, height 4s;
+                opacity: 0;
             }
             .messenger.show {
+                opacity: 100;
                 height: 500px;
                 width: 300px;
-                background-color: rgb(173, 165, 165);
+                background-color: rgb(236, 231, 231);
             }
        }
-    }
+
+    } //@view-port min 720px media query ends here
