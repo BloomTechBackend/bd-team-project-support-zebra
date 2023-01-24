@@ -2,7 +2,7 @@ $(document).ready(function(){
     let modal = $(".modal")
     modal.append(`<div class="modal-container">
     <div class="modal-content">
-        <div class="messenger show">
+        <div class="messenger">
             <div class="search-container">
                 <div class="search-content">
                     <input type="text" class="search" placeholder="Search"/>
@@ -58,10 +58,12 @@ $(document).ready(function(){
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
+        </div>
+        <div class = "convo">
         </div>
         <div class="btn-messenger" data-open = false> Open </div>
     </div>
@@ -72,16 +74,19 @@ $(document).ready(function(){
         let messenger = $(".messenger")
         
         let messengerIsOpen = btn.attr("data-open") == 'true' 
+        messenger.toggleClass("show")
         if(!messengerIsOpen) {
-            messenger.removeClass("hide")
-            messenger.addClass("show")
             btn.text("Close")
         } else {
-            messenger.removeClass("show")
-            messenger.addClass("hide")
             btn.text("Open")
+            messenger.removeClass("clicked")
         }
+
         btn.attr("data-open", !messengerIsOpen) 
         
     })
+    $(".message-inbox-content").on("click", ()=>{
+        $(".messenger.show").toggleClass("clicked")
+        $(".convo").toggleClass("show")
+    }) 
 })

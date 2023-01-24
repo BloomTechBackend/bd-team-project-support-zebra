@@ -11,6 +11,25 @@
   cursor: pointer;
 }
 
+@-webkit-keyframes slideaway {
+  from {
+    display: block;
+  }
+  to {
+    transform: translatex(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideaway {
+  from {
+    display: block;
+  }
+  to {
+    transform: translatex(-100%);
+    opacity: 0;
+  }
+}
 body {
   margin: 0;
   padding: 0;
@@ -295,15 +314,28 @@ body label {
     position: absolute;
     right: 0;
     bottom: 0;
+    box-shadow: 5px 5px 8px rgba(37, 43, 71, 0.5);
+  }
+  .modal-container .modal-content .btn-messenger:hover {
+    width: 77px;
+    height: 77px;
   }
   .modal-container .modal-content .search-content {
     display: flex;
     justify-content: center;
+    position: relative;
+  }
+  .modal-container .modal-content .search-content::before {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    content: url("../images/search-icon.svg");
   }
   .modal-container .modal-content .search-content .search {
     width: 100%;
     height: 30px;
     margin: 5px 0;
+    padding-left: 30px;
   }
   .modal-container .messenger {
     position: absolute;
@@ -312,11 +344,11 @@ body label {
     border-radius: 5px;
     padding: 5px;
     box-shadow: 5px 5px 8px rgba(37, 43, 71, 0.5);
-    /* This timing applies on the way OUT */
     transition-timing-function: ease-in;
-    /* Quick on the way out */
     transition: 0.5s;
-    /* Hide thing by pushing it outside by default */
+    height: 0px;
+    width: 0px;
+    opacity: 0;
   }
   .modal-container .messenger .message-inbox-content {
     display: flex;
@@ -338,15 +370,34 @@ body label {
     width: 100%;
     padding: 0 5px;
   }
-  .modal-container .messenger.hide {
-    height: 0px;
-    width: 0px;
-    opacity: 0;
-  }
   .modal-container .messenger.show {
     opacity: 100;
     height: 500px;
     width: 300px;
     background-color: rgb(236, 231, 231);
+    z-index: 2;
+  }
+  .modal-container .messenger.show.clicked {
+    -webkit-animation: slideaway 0.5s;
+            animation: slideaway 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+  .modal-container .convo {
+    position: absolute;
+    height: 500px;
+    width: 0px;
+    background-color: rgb(114, 114, 160);
+    right: 40px;
+    bottom: 75px;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 5px 5px 8px rgba(37, 43, 71, 0.5);
+    transition-timing-function: ease-in;
+    transition: 0.5s;
+  }
+  .modal-container .convo.show {
+    width: 300px;
+    transition: width 0.5s;
   }
 }/*# sourceMappingURL=style.css.map */

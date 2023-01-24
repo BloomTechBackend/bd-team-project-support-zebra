@@ -1,5 +1,4 @@
 $minwidth720query : 1300;
-$home-left-bg-color : #252B47;
 $theme-color-primary : #252B47;
 .weight-normal {
     font-weight: 300;
@@ -36,6 +35,22 @@ $theme-color-primary : #252B47;
     background-color: #F2EFEB;
     color: #000;
 }
+@mixin transition($x...){
+    -webkit-transition: $x;
+    -moz-transition: $x;
+    -ms-transition: $x;
+    -o-transition: $x;
+    transition: $x;
+  }
+@mixin scrolltoleft($x){
+    from { width: 0px;  }
+    to { width: $x;  }
+  }
+@keyframes slideaway {
+    from { display: block;  }
+    to { transform: translatex(-100%); opacity: 0; }
+  }
+
 body {
     margin: 0;
     padding: 0;
@@ -44,7 +59,6 @@ body {
     
     label {
         font-weight: 700;
-    
     }
 }
     //z-index: 1;
@@ -332,14 +346,28 @@ body {
                     position: absolute;
                     right: 0;
                     bottom: 0;
+                    box-shadow: 5px 5px 8px rgba(37,43,71, 0.5);
+                    &:hover {
+                        width: 77px;
+                        height: 77px;
+                    }
                 }
                 .search-content {
                     display: flex;
                     justify-content: center;
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        left: 0;
+                        top: 10px;
+                        content: url("../images/search-icon.svg");
+                        }
                     .search {
                         width: 100%;
                         height: 30px;
                         margin: 5px 0;
+                        padding-left: 30px;
+                        
                     }
                 }
             }
@@ -350,17 +378,12 @@ body {
                 border-radius: 5px;
                 padding: 5px;
                 box-shadow: 5px 5px 8px rgba(37,43,71, 0.5);
-                 /* This timing applies on the way OUT */
-                 transition-timing-function: ease-in;
-
-                 /* Quick on the way out */
-                 transition: 0.5s;
- 
-                 /* Hide thing by pushing it outside by default */
-                 //transform: translateY(0%);
-                 
+                transition-timing-function: ease-in;
+                transition: 0.5s;
+                height: 0px;
+                width: 0px;
+                opacity: 0;
                  .message-inbox-content {
-                   
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -379,21 +402,38 @@ body {
                          width: 100%;
                          padding: 0 5px;
                     }
-                   
-                   
                  }
-            }
-            .messenger.hide {
-                height: 0px;
-                width: 0px;
-                opacity: 0;
             }
             .messenger.show {
                 opacity: 100;
                 height: 500px;
                 width: 300px;
                 background-color: rgb(236, 231, 231);
+                z-index: 2;
+                &.clicked {
+                    animation : slideaway 0.5s;
+                    animation-fill-mode: forwards;
+                    //display: none;
+                    // opacity: 0;
+                    // display: none;
+                   }
+            }
+            .convo {
+                position: absolute;
+                height: 500px;
+                width: 0px;
+                background-color: rgb(114, 114, 160);
+                right: 40px;
+                bottom: 75px;
+                border-radius: 5px;
+                padding: 5px;
+                box-shadow: 5px 5px 8px rgba(37,43,71, 0.5);
+                transition-timing-function: ease-in;
+                transition: 0.5s;
+                &.show{
+                    width: 300px;
+                    transition: width 0.5s;
+                }
             }
        }
-
     } //@view-port min 720px media query ends here
