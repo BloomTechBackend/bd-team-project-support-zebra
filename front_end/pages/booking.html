@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Solway:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 </head>
 <body>
     <header class="header pages">
@@ -87,7 +88,7 @@
                             <div class="card text-base-container">
                                 <div class="text-base-content">
                                     <div class="card-date-price"><span class="day">Monday</span><div class="price">$<span class="price">20.00</span></div></div>
-                                    <div class="card-date-time weight-normal"><span class="date">02/15-2021</span> at <span class="time">90:00AM</span></div>
+                                    <div class="card-date-time weight-normal"><span class="date">02/15-2021</span> at <span class="time"></span>09:00AM</span></div>
                                     <div class="card-provider">Provider : <span class="provider weight-normal">John Doe</span></div>
                                     <div class="card-service-category">
                                         <div class="label-info">
@@ -177,72 +178,13 @@
                                     </div>
                                 </div> 
                             </div>  
-                            
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="modal-container">
-            <div class="modal-content">
-                <div class="messenger show">
-                    <div class="search-container">
-                        <div class="search-content">
-                            <input type="text" class="search" placeholder="Search"/>
-                        </div>
-                    </div>
-                    <div class="inbox-container">
-                        <div class="inbox-content">
-                            <div class="grid messages">
-                                <div class="message-inbox">
-                                    <div class="message-inbox-container">
-                                        <div class="message-inbox-content">
-                                            <div class="not-my-profile-picture">
-                                                <img src="" alt="">
-                                            </div>
-                                            <div class="not-my-name-last-message">
-                                                <div class="not-my-name">
-                                                    John Doe
-                                                </div>
-                                                <div class="last-message">
-                                                    Last message..
-                                                </div>
-                                            </div>
-                                            <div class="message-time">
-                                                7:30AM
-                                            </div>
-                                            <div class="right-angle-icon">
-                                                <img src="" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="btn-messenger" data-open = false> Close </div>
-            </div>
-        </div>
+        <div class="modal"></div>
     </main>
-    <script>
-        $(".btn-messenger").click("click", ()=>{
-
-                let btn = $(".btn-messenger")
-                let messenger = $(".messenger")
-                
-                let messengerIsOpen = btn.attr("data-open") == 'false' ? false : true
-                if(!messengerIsOpen) {
-                    btn.text("Open")
-                    messenger.removeClass("show")
-                    messenger.toggleClass("hide")
-                } else {
-                    btn.text("Close")
-                    messenger.removeClass("hide")
-                    messenger.toggleClass("show")
-                }
-                btn.attr("data-open", !messengerIsOpen) 
-            })
-    </script>
+   <script src="../js/messenger.js"></script>
 </body>
 </html>
