@@ -1,4 +1,4 @@
-# [team name] Team Charter
+# Support Zebra Team Charter
 
 ## Instructions
 
