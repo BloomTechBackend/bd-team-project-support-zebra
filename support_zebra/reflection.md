@@ -25,8 +25,10 @@ underway?
 * How did you handle the ambiguity of defining your own project and user
   stories? What strategies did you use to decide on concrete work to do to
   satisfy your requirements?
+    - 
 * How did you deal with getting stuck on a problem? What strategies did you
   employ to get yourself unblocked?
+    - Whenever were getting stuck on a problem, we usually review sprints that is related.
 * Did any of your commitments you made in your team charter help navigate a
   difficult decision, situation, or collaboration challenge? How?
 
@@ -36,7 +38,8 @@ underway?
   anything you would want to do differently at stand-up to make it more useful
   to you?
 * Did you over or underestimate the work you could complete during your sprints?
-  What have you learned that will help you better estimate work next time?
+  - We underestimated the work we could complete the sprint
+* What have you learned that will help you better estimate work next time?
 
 ## Looking ahead
 
