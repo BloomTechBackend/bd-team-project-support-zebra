@@ -3,6 +3,7 @@ package main.java.org.service.useraccount.activity;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import main.java.org.enumeratedtype.Status;
 import main.java.org.exceptions.InvalidAttributeValueException;
 import main.java.org.service.useraccount.converter.ModelConverter;
 import main.java.org.service.useraccount.dynamodb.UserAccountDao;
@@ -43,7 +44,7 @@ public class CreateUserAccountActivity implements RequestHandler<CreateUserAccou
         userAccount.setEmail(createUserAccountRequest.getEmail());
         userAccount.setPassword(createUserAccountRequest.getPassword());
         userAccount.setUserType(createUserAccountRequest.getUserType());
-        userAccount.setStatus(createUserAccountRequest.getStatus());
+        userAccount.setStatus(String.valueOf(Status.INACTIVE));
         userAccount.setBookingId(UserAccountServiceUtils.generateBookingId());
         userAccount.setInbox(inboxes);
 

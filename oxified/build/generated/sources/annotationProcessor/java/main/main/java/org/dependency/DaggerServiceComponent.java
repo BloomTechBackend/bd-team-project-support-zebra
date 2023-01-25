@@ -7,6 +7,7 @@ import dagger.internal.Preconditions;
 import javax.annotation.processing.Generated;
 import javax.inject.Provider;
 import main.java.org.service.spservice.acitivity.CreateServiceActivity;
+import main.java.org.service.spservice.acitivity.GetAllServicesPerSPActivity;
 import main.java.org.service.spservice.acitivity.GetServiceActivity;
 import main.java.org.service.spservice.acitivity.UpdateServiceActivity;
 import main.java.org.service.spservice.dynamodb.ServiceDao;
@@ -107,6 +108,11 @@ public final class DaggerServiceComponent {
     @Override
     public UpdateServiceActivity provideUpdateServiceActivity() {
       return new UpdateServiceActivity(serviceDao());
+    }
+
+    @Override
+    public GetAllServicesPerSPActivity provideGetAllServicesPerSPActivity() {
+      return new GetAllServicesPerSPActivity(serviceDao());
     }
   }
 }

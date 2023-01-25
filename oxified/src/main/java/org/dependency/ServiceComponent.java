@@ -2,6 +2,7 @@ package main.java.org.dependency;
 
 import dagger.Component;
 import main.java.org.service.spservice.acitivity.CreateServiceActivity;
+import main.java.org.service.spservice.acitivity.GetAllServicesPerSPActivity;
 import main.java.org.service.spservice.acitivity.GetServiceActivity;
 import main.java.org.service.spservice.acitivity.UpdateServiceActivity;
 import main.java.org.service.useraccount.activity.CreateUserAccountActivity;
@@ -19,4 +20,5 @@ public interface ServiceComponent {
     GetServiceActivity provideGetServiceActivity();
     CreateServiceActivity provideCreateService();
     UpdateServiceActivity provideUpdateServiceActivity();
+    GetAllServicesPerSPActivity provideGetAllServicesPerSPActivity();
 }
