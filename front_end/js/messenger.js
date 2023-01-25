@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    let modal = $(".modal")
+    let modal = $("#messenger")
     modal.append(`<div class="modal-container">
     <div class="modal-content">
         <div class="messenger">
@@ -101,7 +101,9 @@ $(document).ready(function(){
                 </div>
             </div>
         </div>
-        <div class="btn-messenger" data-open = false> Open </div>
+        <div class="btn-messenger" data-open = false> 
+            <img class = "chatbox-icon" src = "../images/messages.svg">
+        </div>
     </div>
     </div>`)
     $(".btn-messenger").click("click", ()=>{
@@ -112,11 +114,13 @@ $(document).ready(function(){
         let messengerIsOpen = btn.attr("data-open") == 'true' 
         messenger.toggleClass("show")
         if(!messengerIsOpen) {
-            btn.text("Close")
+            $(".chatbox-icon").attr("src", "../images/cancel.svg")
+            
         } else {
-            btn.text("Open")
+        
             messenger.removeClass("clicked")
             $(".convo").removeClass("show")
+            $(".chatbox-icon").attr("src", "../images/messages.svg")
         }
 
         btn.attr("data-open", !messengerIsOpen) 
