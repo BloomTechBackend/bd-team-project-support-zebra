@@ -20,15 +20,13 @@ public interface ServiceComponent {
     UpdateUserAccountActivity provideUpdateUserAccountActivity();
     GetServiceActivity provideGetServiceActivity();
     CreateServiceActivity provideCreateService();
-<<<<<<< HEAD
+    UpdateServiceActivity provideUpdateServiceActivity();
+    GetAllServicesPerSPActivity provideGetAllServicesPerSPActivity();
     //  DON
     AddAppointmentToBookingActivity provideAddAppointmentToBookingActivity();
     CreateBookingActivity provideCreateBookingActivity();
     GetBookingActivity provideGetBookingActivity();
     GetBookingAppointmentsActivity provideGetBookingAppointmentsActivity();
     UpdateBookingAppointmentActivity provideUpdateBookingAppointmentActivity();
-=======
-    UpdateServiceActivity provideUpdateServiceActivity();
-    GetAllServicesPerSPActivity provideGetAllServicesPerSPActivity();
->>>>>>> ana
+
 }
