@@ -2,6 +2,7 @@ package main.java.org.service.spservice.acitivity;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import main.java.org.enumeratedtype.Status;
 import main.java.org.exceptions.InvalidAttributeValueException;
 import main.java.org.service.spservice.converter.ServiceConverter;
 import main.java.org.service.spservice.dynamodb.ServiceDao;
@@ -43,7 +44,7 @@ public class CreateServiceActivity implements RequestHandler<CreateServiceReques
         service.setDescription(input.getDescription());
         service.setServiceTypeCost(input.getServiceTypeCost());
         service.setServiceType(input.getServiceType());
-        service.setStatus(input.getStatus());
+        service.setStatus(String.valueOf(Status.AVAILABLE));
         service.setCategory(input.getCategory());
         ServiceModel serviceModel = ServiceConverter.toServiceModel(serviceDao.saveService(service));
         return CreateServiceResult.builder()

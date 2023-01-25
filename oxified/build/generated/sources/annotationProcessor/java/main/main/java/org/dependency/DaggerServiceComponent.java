@@ -14,7 +14,9 @@ import main.java.org.service.appointment.activity.UpdateBookingAppointmentActivi
 import main.java.org.service.appointment.dynamodb.AppointmentDao;
 import main.java.org.service.appointment.dynamodb.BookingDao;
 import main.java.org.service.spservice.acitivity.CreateServiceActivity;
+import main.java.org.service.spservice.acitivity.GetAllServicesPerSPActivity;
 import main.java.org.service.spservice.acitivity.GetServiceActivity;
+import main.java.org.service.spservice.acitivity.UpdateServiceActivity;
 import main.java.org.service.spservice.dynamodb.ServiceDao;
 import main.java.org.service.useraccount.activity.CreateUserAccountActivity;
 import main.java.org.service.useraccount.activity.GetUserAccountActivity;
@@ -119,6 +121,7 @@ public final class DaggerServiceComponent {
     }
 
     @Override
+<<<<<<< HEAD
     public AddAppointmentToBookingActivity provideAddAppointmentToBookingActivity() {
       return new AddAppointmentToBookingActivity(bookingDao(), appointmentDao());
     }
@@ -141,6 +144,15 @@ public final class DaggerServiceComponent {
     @Override
     public UpdateBookingAppointmentActivity provideUpdateBookingAppointmentActivity() {
       return new UpdateBookingAppointmentActivity(appointmentDao());
+=======
+    public UpdateServiceActivity provideUpdateServiceActivity() {
+      return new UpdateServiceActivity(serviceDao());
+    }
+
+    @Override
+    public GetAllServicesPerSPActivity provideGetAllServicesPerSPActivity() {
+      return new GetAllServicesPerSPActivity(serviceDao());
+>>>>>>> ana
     }
   }
 }
