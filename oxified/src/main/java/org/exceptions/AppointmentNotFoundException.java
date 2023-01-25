@@ -1,12 +1,15 @@
-package main.java.org.service.appointment.exceptions;
+package main.java.org.exceptions;
 
-public class InvalidAttributeChangeException extends RuntimeException {
-    private static final long serialVersionUID = -1640951770679107913L;
+/**
+ * Exception to throw when a given playlist ID is not found in the database.
+ */
+public class AppointmentNotFoundException extends RuntimeException {
+    private static final long serialVersionUID = -6773797107093649965L;
 
     /**
      * Exception with no message or cause.
      */
-    public InvalidAttributeChangeException() {
+    public AppointmentNotFoundException() {
         super();
     }
 
@@ -14,7 +17,7 @@ public class InvalidAttributeChangeException extends RuntimeException {
      * Exception with a message, but no cause.
      * @param message A descriptive message for this exception.
      */
-    public InvalidAttributeChangeException(String message) {
+    public AppointmentNotFoundException(String message) {
         super(message);
     }
 
@@ -22,7 +25,7 @@ public class InvalidAttributeChangeException extends RuntimeException {
      * Exception with no message, but with a cause.
      * @param cause The original throwable resulting in this exception.
      */
-    public InvalidAttributeChangeException(Throwable cause) {
+    public AppointmentNotFoundException(Throwable cause) {
         super(cause);
     }
 
@@ -31,7 +34,7 @@ public class InvalidAttributeChangeException extends RuntimeException {
      * @param message A descriptive message for this exception.
      * @param cause The original throwable resulting in this exception.
      */
-    public InvalidAttributeChangeException(String message, Throwable cause) {
+    public AppointmentNotFoundException(String message, Throwable cause) {
         super(message, cause);
     }
 }

@@ -2,12 +2,11 @@ package main.java.org.service.appointment.activity;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import main.java.org.exceptions.InvalidAttributeValueException;
 import main.java.org.service.appointment.converters.ModelConverter;
 import main.java.org.service.appointment.dynamodb.BookingDao;
 import main.java.org.service.appointment.dynamodb.models.Booking;
-import main.java.org.service.appointment.exceptions.BookingNotFoundException;
-import main.java.org.service.appointment.exceptions.InvalidAttributeValueException;
-import main.java.org.service.appointment.models.BookingModel;
+import main.java.org.exceptions.BookingNotFoundException;
 import main.java.org.service.appointment.models.requests.GetBookingRequest;
 import main.java.org.service.appointment.models.results.GetBookingResult;
 import main.java.org.service.appointment.util.ServiceUtils;

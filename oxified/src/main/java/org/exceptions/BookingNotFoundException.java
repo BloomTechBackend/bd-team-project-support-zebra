@@ -1,4 +1,4 @@
-package main.java.org.service.appointment.exceptions;
+package main.java.org.exceptions;
 
 /**
  * Exception to throw when a given playlist ID is not found in the database.
