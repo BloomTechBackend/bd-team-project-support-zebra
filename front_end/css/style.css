@@ -6,6 +6,63 @@
   padding: 1px;
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex.center {
+  justify-content: center;
+}
+.flex.space-between {
+  justify-content: space-between;
+}
+
+.flex-item {
+  display: inline-flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flex-column.center {
+  justify-content: center;
+}
+.flex-column.space-between {
+  justify-content: space-between;
+}
+
+.grid.one-column {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+}
+
+.grid.two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+}
+
+.grid.three-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+.grid.four-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+}
+
+.grid.five-columns {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+}
+
 .message-inbox:hover {
   background-color: #252B47;
   cursor: pointer;
@@ -28,6 +85,26 @@
   to {
     transform: translatex(-100%);
     opacity: 0;
+  }
+}
+@-webkit-keyframes slidein {
+  from {
+    transform: translatex(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translatex(0%);
+    opacity: 100;
+  }
+}
+@keyframes slidein {
+  from {
+    transform: translatex(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translatex(0%);
+    opacity: 100;
   }
 }
 body {
@@ -376,6 +453,10 @@ body label {
     width: 300px;
     background-color: rgb(236, 231, 231);
     z-index: 2;
+    -webkit-animation: slidein 0.5s;
+            animation: slidein 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
   }
   .modal-container .messenger.show.clicked {
     -webkit-animation: slideaway 0.5s;
@@ -387,7 +468,7 @@ body label {
     position: absolute;
     height: 500px;
     width: 0px;
-    background-color: rgb(114, 114, 160);
+    background-color: rgb(236, 231, 231);
     right: 40px;
     bottom: 75px;
     border-radius: 5px;
@@ -395,9 +476,67 @@ body label {
     box-shadow: 5px 5px 8px rgba(37, 43, 71, 0.5);
     transition-timing-function: ease-in;
     transition: 0.5s;
+    opacity: 0;
   }
   .modal-container .convo.show {
     width: 300px;
+    opacity: 100;
     transition: width 0.5s;
+  }
+  .modal-container .convo.show .convo-header {
+    padding: 5px 10px;
+    box-shadow: 1px 1px 4px 1px #000;
+  }
+  .modal-container .convo.show .convo-main-container .convo-main-content {
+    padding: 10px 10px;
+    margin: 10px 0;
+  }
+  .modal-container .convo.show .convo-main-container .convo-main-content .message-content {
+    margin-bottom: 10px;
+  }
+  .modal-container .convo.show .convo-main-container .convo-main-content .message-content .message-body {
+    border-radius: 50px 50px 0px 50px;
+    background-color: #acb1c5;
+  }
+  .modal-container .convo.show .convo-main-container .convo-main-content .message-content .message-body.not-mine {
+    border-radius: 50px 50px 50px 0;
+    background-color: #acb6e2;
+  }
+  .modal-container .convo.show .convo-main-container .message-profile-picture-container {
+    width: 32px;
+    height: 32px;
+    padding: 2px;
+  }
+  .modal-container .convo.show .convo-main-container .message-profile-picture-container img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+  }
+  .modal-container .convo.show .goto-icon, .modal-container .convo.show .btn-message-back {
+    width: 30px;
+    cursor: pointer;
+  }
+  .modal-container .convo.show img {
+    width: 20px;
+    height: 20px;
+  }
+  .modal-container .convo.show .message-body {
+    position: relative;
+    padding: 9px 5px;
+    background-color: rgb(209, 203, 203);
+    margin-bottom: 2px;
+  }
+  .modal-container .convo.show .message-body p {
+    display: inline;
+    padding-left: 5px;
+  }
+  .modal-container .convo.show .message-body .message-time {
+    position: absolute;
+    bottom: -9px;
+    right: 0;
+    padding: 0 10px;
+  }
+  .modal-container .convo.show .message-body .message-time.not-mine {
+    left: 0;
   }
 }/*# sourceMappingURL=style.css.map */

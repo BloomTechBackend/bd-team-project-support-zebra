@@ -64,6 +64,42 @@ $(document).ready(function(){
             </div>
         </div>
         <div class = "convo">
+            <div class = "convo-container">
+                <div class = "convo-header flex center space-between">    
+                    <div class = "btn-message-back"><img src = "../images/messages.svg" /></div>
+                    <div class ="not-my-name">John Doe</div>
+                    <div class ="goto-icon"><a href = "#"><img class = "more-info-icon" src="../images/more-info.png"/></a></div>
+                </div>
+                <div class = "convo-main-container">
+                    <div class = "convo-main-content">
+                        <div class = "grid convos one-column">
+
+                            <div class = "messages-container ">
+                                <div class = "message-content flex">
+                                    <div class = "message-profile-picture-container flex center">
+                                        <img class = "flex-item" src="../images/profile.png" />
+                                    </div>
+                                    <div class = "message-body not-mine">
+                                        <p>Not my Message here...</p>
+                                        <span class = "message-time not-mine">7:00AM</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class = "messages-container">
+                                <div class = "message-content">
+                                    <div class = "message-body">
+                                        <p> my Message here...</p>
+                                        <span class = "message-time">7:00AM</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
         <div class="btn-messenger" data-open = false> Open </div>
     </div>
@@ -80,6 +116,7 @@ $(document).ready(function(){
         } else {
             btn.text("Open")
             messenger.removeClass("clicked")
+            $(".convo").removeClass("show")
         }
 
         btn.attr("data-open", !messengerIsOpen) 
@@ -89,4 +126,8 @@ $(document).ready(function(){
         $(".messenger.show").toggleClass("clicked")
         $(".convo").toggleClass("show")
     }) 
+    $(".btn-message-back").on("click", ()=>{
+        $(".convo").removeClass("show")
+        $(".messenger.show").removeClass("clicked")
+    })
 })
