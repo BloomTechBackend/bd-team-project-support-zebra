@@ -3,7 +3,7 @@ package main.java.org.service.appointment.exceptions;
 /**
  * Exception to throw when a given playlist ID is not found in the database.
  */
-public class InvalidAttributeValueException extends BookingNotFoundException {
+public class InvalidAttributeValueException extends RuntimeException {
     private static final long serialVersionUID = 7814983402290178186L;
 
     /**

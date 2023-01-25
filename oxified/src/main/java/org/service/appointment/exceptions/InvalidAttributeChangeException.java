@@ -1,6 +1,6 @@
 package main.java.org.service.appointment.exceptions;
 
-public class InvalidAttributeChangeException extends BookingNotFoundException {
+public class InvalidAttributeChangeException extends RuntimeException {
     private static final long serialVersionUID = -1640951770679107913L;
 
     /**

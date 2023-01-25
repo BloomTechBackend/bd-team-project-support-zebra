@@ -6,14 +6,16 @@ import main.java.org.service.appointment.converters.ModelConverter;
 import main.java.org.service.appointment.dynamodb.BookingDao;
 import main.java.org.service.appointment.dynamodb.models.Appointment;
 import main.java.org.service.appointment.dynamodb.models.Booking;
+import main.java.org.service.appointment.exceptions.AppointmentNotFoundException;
+import main.java.org.service.appointment.exceptions.InvalidAttributeValueException;
 import main.java.org.service.appointment.models.AppointmentModel;
 import main.java.org.service.appointment.models.requests.GetBookingAppointmentsRequest;
 import main.java.org.service.appointment.models.results.GetBookingAppointmentsResult;
+import main.java.org.service.appointment.util.ServiceUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.inject.Inject;
-import javax.management.InvalidAttributeValueException;
 import java.util.List;
 
 public class GetBookingAppointmentsActivity
@@ -29,15 +31,16 @@ public class GetBookingAppointmentsActivity
     @Override
     public GetBookingAppointmentsResult handleRequest(GetBookingAppointmentsRequest request, Context context) {
         log.info("Received GetBookingAppointment {}", request);
-        try {
-            Booking booking = bookingDao.getBooking(request.getBookingId());
-            List<Appointment> appointmentList = booking.getAppointmentList();
-            List<AppointmentModel> appointmentModelList = new ModelConverter().toAppointmentModelList(appointmentList);
-            return GetBookingAppointmentsResult.builder()
-                    .withAppointmentList(appointmentModelList)
-                    .build();
-        } catch (InvalidAttributeValueException e) {
-            throw new RuntimeException(e);
+        if (ServiceUtils.isValidString(request.getBookingId())) {
+            throw new InvalidAttributeValueException("Invalid characters found, please try again.");
         }
+        Booking booking = bookingDao.getBooking(request.getBookingId());
+        if (booking == null) {
+            throw new AppointmentNotFoundException("Appointment not found.");
+        }
+        List<Appointment> appointmentList = booking.getAppointmentList();
+        return GetBookingAppointmentsResult.builder()
+                .withAppointmentList(new ModelConverter().toAppointmentModelList(appointmentList))
+                .build();
     }
 }

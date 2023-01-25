@@ -2,9 +2,9 @@ package main.java.org.service.appointment.dynamodb;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import main.java.org.service.appointment.dynamodb.models.Booking;
+import main.java.org.service.appointment.exceptions.InvalidAttributeValueException;
 
 import javax.inject.Inject;
-import javax.management.InvalidAttributeValueException;
 
 public class BookingDao {
     private final DynamoDBMapper dynamoDBMapper;
@@ -14,7 +14,7 @@ public class BookingDao {
         this.dynamoDBMapper = dynamoDBMapper;
     }
 
-    public Booking getBooking(String bookingId) throws InvalidAttributeValueException {
+    public Booking getBooking(String bookingId){
         Booking booking = this.dynamoDBMapper.load(Booking.class, bookingId);
         if (booking == null) {
             throw new InvalidAttributeValueException("Could not find playlist with id " + bookingId);
