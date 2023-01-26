@@ -2,6 +2,8 @@ package main.java.org.dependency;
 
 import dagger.Component;
 import main.java.org.service.appointment.activity.*;
+import main.java.org.service.message.activity.CreateMessageActivity;
+import main.java.org.service.message.activity.CreateMessageInboxIdActivity;
 import main.java.org.service.spservice.acitivity.CreateServiceActivity;
 import main.java.org.service.spservice.acitivity.GetAllServicesPerSPActivity;
 import main.java.org.service.spservice.acitivity.GetServiceActivity;
@@ -22,11 +24,12 @@ public interface ServiceComponent {
     CreateServiceActivity provideCreateService();
     UpdateServiceActivity provideUpdateServiceActivity();
     GetAllServicesPerSPActivity provideGetAllServicesPerSPActivity();
-    //  DON
     AddAppointmentToBookingActivity provideAddAppointmentToBookingActivity();
     CreateBookingActivity provideCreateBookingActivity();
     GetBookingActivity provideGetBookingActivity();
     GetBookingAppointmentsActivity provideGetBookingAppointmentsActivity();
     UpdateBookingAppointmentActivity provideUpdateBookingAppointmentActivity();
+    CreateMessageInboxIdActivity provideCreateMessageInboxActivity();
+    CreateMessageActivity provideCreateMessageActivity();
 
 }
