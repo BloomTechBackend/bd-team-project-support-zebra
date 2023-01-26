@@ -4,7 +4,7 @@ import main.java.org.service.message.dynamodb.models.UserMessage;
 import main.java.org.service.message.models.MessageModel;
 
 public class MessageConverter {
-    public MessageModel toMessageModel(UserMessage message) {
+    public static MessageModel toMessageModel(UserMessage message) {
         return MessageModel.builder()
                 .withInboxId(message.getInboxId())
                 .withMessageBody(message.getMessageBody())

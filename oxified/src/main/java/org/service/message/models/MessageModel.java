@@ -1,5 +1,9 @@
 package main.java.org.service.message.models;
 
+import main.java.org.service.message.models.results.CreateMessageResult;
+
+import java.util.Arrays;
+
 public class MessageModel {
 
     private String messageId;
@@ -79,9 +83,12 @@ public class MessageModel {
         private String messageBody;
         private String dateTime;
         private String senderUaid;
-        private String receiverUaid;
+        private String receiverUaid = "fdsa";
+
 
         public MessageModelBuilder() {
+
+
         }
 
         public MessageModelBuilder withMessageId(String messageId) {
