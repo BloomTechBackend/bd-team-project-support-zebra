@@ -30,7 +30,6 @@ public class CreateMessageInboxIdActivity implements RequestHandler<CreateMessag
      */
     @Override
     public CreateMessageInboxResult handleRequest(CreateMessageInboxRequest input, Context context) {
-
         UserMessageInbox inbox = new UserMessageInbox();
         inbox.setMessageBody(input.getMessageBody());
         inbox.setSenderUaid(input.getSenderUaid());
