@@ -15,6 +15,8 @@ import main.java.org.service.appointment.dynamodb.AppointmentDao;
 import main.java.org.service.appointment.dynamodb.BookingDao;
 import main.java.org.service.message.activity.CreateMessageActivity;
 import main.java.org.service.message.activity.CreateMessageInboxIdActivity;
+import main.java.org.service.message.activity.GetInboxPerLoggedInUserActivity;
+import main.java.org.service.message.activity.GetMessagesPerInboxIdActivity;
 import main.java.org.service.message.dynamodb.UserMessageDao;
 import main.java.org.service.message.dynamodb.UserMessageInboxDao;
 import main.java.org.service.spservice.acitivity.CreateServiceActivity;
@@ -175,6 +177,16 @@ public final class DaggerServiceComponent {
     @Override
     public CreateMessageActivity provideCreateMessageActivity() {
       return new CreateMessageActivity(userMessageDao());
+    }
+
+    @Override
+    public GetInboxPerLoggedInUserActivity provideGetInboxPerLoggedInUserActivity() {
+      return new GetInboxPerLoggedInUserActivity(userMessageInboxDao());
+    }
+
+    @Override
+    public GetMessagesPerInboxIdActivity provideGetMessagesPerInboxIdActivity() {
+      return new GetMessagesPerInboxIdActivity(userMessageDao());
     }
   }
 }
