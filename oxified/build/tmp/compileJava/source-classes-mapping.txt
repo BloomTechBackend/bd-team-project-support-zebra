@@ -217,3 +217,5 @@ main/java/org/service/useraccount/dynamodb/UserAccountDao.java
 main/java/org/service/appointment/models/requests/GetBookingRequest.java
  main.java.org.service.appointment.models.requests.GetBookingRequest
  main.java.org.service.appointment.models.requests.GetBookingRequest$Builder
+main/java/org/service/spservice/lambda/UpdateServiceActivityProvider.java
+ main.java.org.service.spservice.lambda.UpdateServiceActivityProvider
