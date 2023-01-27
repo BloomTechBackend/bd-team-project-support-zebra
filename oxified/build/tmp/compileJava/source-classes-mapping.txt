@@ -18,13 +18,15 @@ main/java/org/service/appointment/dynamodb/AppointmentDao.java
  main.java.org.service.appointment.dynamodb.AppointmentDao
 main/java/org/service/spservice/acitivity/GetAllServicesPerSPActivity.java
  main.java.org.service.spservice.acitivity.GetAllServicesPerSPActivity
+main/java/org/service/appointment/lambda/AddAppointmentToBookingActivityProvider.java
+ main.java.org.service.appointment.lambda.AddAppointmentToBookingActivityProvider
 main/java/org/service/spservice/models/request/UpdateServiceRequest.java
  main.java.org.service.spservice.models.request.UpdateServiceRequest
  main.java.org.service.spservice.models.request.UpdateServiceRequest$Builder
 main/java/org/exceptions/UserAccntNotFoundException.java
  main.java.org.exceptions.UserAccntNotFoundException
-main/java/org/service/spservice/lambda/GetServiceActivityProvider.java
- main.java.org.service.spservice.lambda.GetServiceActivityProvider
+main/java/org/service/spservice/lambda/UpdateServiceActivityProvider.java
+ main.java.org.service.spservice.lambda.UpdateServiceActivityProvider
 main/java/org/service/appointment/activity/GetBookingAppointmentsActivity.java
  main.java.org.service.appointment.activity.GetBookingAppointmentsActivity
 main/java/org/service/message/dynamodb/models/UserMessageInbox.java
@@ -40,6 +42,10 @@ main/java/org/service/appointment/util/ServiceUtils.java
 main/java/org/service/useraccount/model/result/GetUserAccountResult.java
  main.java.org.service.useraccount.model.result.GetUserAccountResult
  main.java.org.service.useraccount.model.result.GetUserAccountResult$Builder
+main/java/org/service/spservice/lambda/CreateServiceActivityProvider.java
+ main.java.org.service.spservice.lambda.CreateServiceActivityProvider
+main/java/org/service/appointment/lambda/GetBookingActivityProvider.java
+ main.java.org.service.appointment.lambda.GetBookingActivityProvider
 main/java/org/service/message/converter/MessageConverter.java
  main.java.org.service.message.converter.MessageConverter
 main/java/org/service/useraccount/model/result/CreateUserAccountResult.java
@@ -47,17 +53,20 @@ main/java/org/service/useraccount/model/result/CreateUserAccountResult.java
  main.java.org.service.useraccount.model.result.CreateUserAccountResult$Builder
 main/java/org/enumeratedtype/ServiceType.java
  main.java.org.enumeratedtype.ServiceType
-main/java/org/service/useraccount/lambda/CreateUserAccountProvider.java
- main.java.org.service.useraccount.lambda.CreateUserAccountProvider
-main/java/org/service/message/models/request/GetMesagePerInboxIdRequest.java
- main.java.org.service.message.models.request.GetMesagePerInboxIdRequest
+main/java/org/service/useraccount/lambda/GetUserAccountProvider.java
+ main.java.org.service.useraccount.lambda.GetUserAccountProvider
+main/java/org/service/appointment/models/requests/GetBookingRequest.java
+ main.java.org.service.appointment.models.requests.GetBookingRequest
+ main.java.org.service.appointment.models.requests.GetBookingRequest$Builder
+main/java/org/service/message/lambda/CreateMessageActivityProvider.java
+ main.java.org.service.message.lambda.CreateMessageActivityProvider
 main/java/org/service/message/dynamodb/models/UserMessage.java
  main.java.org.service.message.dynamodb.models.UserMessage
 main/java/org/service/spservice/models/ServiceModel.java
  main.java.org.service.spservice.models.ServiceModel
  main.java.org.service.spservice.models.ServiceModel$Builder
-main/java/org/service/message/models/results/GetinboxPerLoggedInUserResult.java
- main.java.org.service.message.models.results.GetinboxPerLoggedInUserResult
+main/java/org/service/appointment/lambda/GetBookingAppointmentsActivityProvider.java
+ main.java.org.service.appointment.lambda.GetBookingAppointmentsActivityProvider
 main/java/org/service/useraccount/model/request/CreateUserAccountRequest.java
  main.java.org.service.useraccount.model.request.CreateUserAccountRequest
  main.java.org.service.useraccount.model.request.CreateUserAccountRequest$Builder
@@ -88,6 +97,9 @@ main/java/org/enumeratedtype/Status.java
  main.java.org.enumeratedtype.Status
 main/java/org/service/useraccount/activity/UpdateUserAccountActivity.java
  main.java.org.service.useraccount.activity.UpdateUserAccountActivity
+main/java/org/service/useraccount/model/request/GetUserAccountRequest.java
+ main.java.org.service.useraccount.model.request.GetUserAccountRequest
+ main.java.org.service.useraccount.model.request.GetUserAccountRequest$Builder
 main/java/org/service/appointment/activity/CreateBookingActivity.java
  main.java.org.service.appointment.activity.CreateBookingActivity
 main/java/org/service/message/models/results/CreateMessageInboxResult.java
@@ -108,14 +120,16 @@ main/java/org/service/useraccount/model/request/UpdateUserAccountRequest.java
 main/java/org/service/spservice/models/result/UpdateServiceResult.java
  main.java.org.service.spservice.models.result.UpdateServiceResult
  main.java.org.service.spservice.models.result.UpdateServiceResult$Builder
-main/java/org/service/spservice/lambda/CreateServiceActivityProvider.java
- main.java.org.service.spservice.lambda.CreateServiceActivityProvider
+main/java/org/service/spservice/lambda/GetServiceActivityProvider.java
+ main.java.org.service.spservice.lambda.GetServiceActivityProvider
 main/java/org/exceptions/InvalidAttributeValueException.java
  main.java.org.exceptions.InvalidAttributeValueException
+main/java/org/service/appointment/lambda/UpdateBookingAppointmentActivityProvider.java
+ main.java.org.service.appointment.lambda.UpdateBookingAppointmentActivityProvider
 main/java/org/enumeratedtype/Language.java
  main.java.org.enumeratedtype.Language
-main/java/org/service/useraccount/lambda/GetUserAccountProvider.java
- main.java.org.service.useraccount.lambda.GetUserAccountProvider
+main/java/org/service/useraccount/lambda/UpdateUserAccountProvider.java
+ main.java.org.service.useraccount.lambda.UpdateUserAccountProvider
 main/java/org/service/appointment/models/results/UpdateBookingAppointmentResult.java
  main.java.org.service.appointment.models.results.UpdateBookingAppointmentResult
  main.java.org.service.appointment.models.results.UpdateBookingAppointmentResult$Builder
@@ -130,8 +144,9 @@ main/java/org/service/useraccount/model/AddressModel.java
  main.java.org.service.useraccount.model.AddressModel$Builder
 main/java/org/enumeratedtype/userType.java
  main.java.org.enumeratedtype.userType
-main/java/org/service/message/dynamodb/UserMessageInboxDao.java
- main.java.org.service.message.dynamodb.UserMessageInboxDao
+main/java/org/service/useraccount/model/UserAccountModel.java
+ main.java.org.service.useraccount.model.UserAccountModel
+ main.java.org.service.useraccount.model.UserAccountModel$Builder
 main/java/org/service/spservice/models/result/GetAllServicesPerSPResult.java
  main.java.org.service.spservice.models.result.GetAllServicesPerSPResult
  main.java.org.service.spservice.models.result.GetAllServicesPerSPResult$Builder
@@ -141,8 +156,8 @@ main/java/org/service/appointment/models/requests/GetBookingAppointmentsRequest.
 main/java/org/service/spservice/models/result/GetServiceResult.java
  main.java.org.service.spservice.models.result.GetServiceResult
  main.java.org.service.spservice.models.result.GetServiceResult$Builder
-main/java/org/service/message/activity/CreateMessageInboxIdActivity.java
- main.java.org.service.message.activity.CreateMessageInboxIdActivity
+main/java/org/service/spservice/converter/CostToStringConverter.java
+ main.java.org.service.spservice.converter.CostToStringConverter
 main/java/org/service/appointment/activity/UpdateBookingAppointmentActivity.java
  main.java.org.service.appointment.activity.UpdateBookingAppointmentActivity
 main/java/org/service/spservice/converter/ServiceConverter.java
@@ -173,17 +188,17 @@ main/java/org/service/message/activity/CreateMessageActivity.java
  main.java.org.service.message.activity.CreateMessageActivity
 main/java/org/service/useraccount/dynamodb/model/UserAccount.java
  main.java.org.service.useraccount.dynamodb.model.UserAccount
-main/java/org/service/message/models/request/GetInboxPerLoggedInUserRequest.java
- main.java.org.service.message.models.request.GetInboxPerLoggedInUserRequest
+main/java/org/service/useraccount/activity/GetUserAccountActivity.java
+ main.java.org.service.useraccount.activity.GetUserAccountActivity
 main/java/org/service/appointment/models/results/GetBookingAppointmentsResult.java
  main.java.org.service.appointment.models.results.GetBookingAppointmentsResult
  main.java.org.service.appointment.models.results.GetBookingAppointmentsResult$Builder
 main/java/org/service/appointment/dynamodb/models/Appointment.java
  main.java.org.service.appointment.dynamodb.models.Appointment
-main/java/org/dependency/ServiceComponent.java
- main.java.org.dependency.ServiceComponent
-main/java/org/service/message/activity/GetInboxPerLoggedInUserActivity.java
- main.java.org.service.message.activity.GetInboxPerLoggedInUserActivity
+main/java/org/service/useraccount/lambda/CreateUserAccountProvider.java
+ main.java.org.service.useraccount.lambda.CreateUserAccountProvider
+main/java/org/service/spservice/acitivity/UpdateServiceActivity.java
+ main.java.org.service.spservice.acitivity.UpdateServiceActivity
 main/java/org/service/spservice/acitivity/CreateServiceActivity.java
  main.java.org.service.spservice.acitivity.CreateServiceActivity
 main/java/org/service/appointment/activity/AddAppointmentToBookingActivity.java
@@ -197,55 +212,44 @@ main/java/org/enumeratedtype/Time.java
 main/java/org/service/spservice/models/request/CreateServiceRequest.java
  main.java.org.service.spservice.models.request.CreateServiceRequest
  main.java.org.service.spservice.models.request.CreateServiceRequest$Builder
+main/java/org/service/appointment/lambda/CreateBookingActivityProvider.java
+ main.java.org.service.appointment.lambda.CreateBookingActivityProvider
 main/java/org/service/appointment/models/results/AddAppointmentToBookingResult.java
  main.java.org.service.appointment.models.results.AddAppointmentToBookingResult
  main.java.org.service.appointment.models.results.AddAppointmentToBookingResult$Builder
+main/java/org/service/message/lambda/CreateMessageInboxProvider.java
+ main.java.org.service.message.lambda.CreateMessageInboxProvider
+main/java/org/service/spservice/lambda/GetAllServicesPerSPActivityProvider.java
+ main.java.org.service.spservice.lambda.GetAllServicesPerSPActivityProvider
 main/java/org/service/spservice/dynamodb/models/Service.java
  main.java.org.service.spservice.dynamodb.models.Service
 main/java/org/dependency/DaoModule.java
  main.java.org.dependency.DaoModule
 main/java/org/service/spservice/dynamodb/ServiceDao.java
  main.java.org.service.spservice.dynamodb.ServiceDao
-main/java/org/service/message/models/results/GetMessagePerInboxIdResult.java
- main.java.org.service.message.models.results.GetMessagePerInboxIdResult
-main/java/org/service/appointment/dynamodb/models/Booking.java
- main.java.org.service.appointment.dynamodb.models.Booking
-main/java/org/service/message/activity/GetMessagesPerInboxIdActivity.java
- main.java.org.service.message.activity.GetMessagesPerInboxIdActivity
-main/java/org/service/spservice/converter/CostToStringConverter.java
- main.java.org.service.spservice.converter.CostToStringConverter
-main/java/org/service/spservice/acitivity/UpdateServiceActivity.java
- main.java.org.service.spservice.acitivity.UpdateServiceActivity
-main/java/org/service/useraccount/activity/GetUserAccountActivity.java
- main.java.org.service.useraccount.activity.GetUserAccountActivity
 main/java/org/service/message/converter/MessageInboxConverter.java
  main.java.org.service.message.converter.MessageInboxConverter
-main/java/org/service/useraccount/model/UserAccountModel.java
- main.java.org.service.useraccount.model.UserAccountModel
- main.java.org.service.useraccount.model.UserAccountModel$Builder
-main/java/org/service/spservice/lambda/UpdateServiceActivityProvider.java
- main.java.org.service.spservice.lambda.UpdateServiceActivityProvider
-main/java/org/service/useraccount/model/request/GetUserAccountRequest.java
- main.java.org.service.useraccount.model.request.GetUserAccountRequest
- main.java.org.service.useraccount.model.request.GetUserAccountRequest$Builder
-main/java/org/service/appointment/models/requests/GetBookingRequest.java
- main.java.org.service.appointment.models.requests.GetBookingRequest
- main.java.org.service.appointment.models.requests.GetBookingRequest$Builder
-main/java/org/service/useraccount/lambda/UpdateUserAccountProvider.java
- main.java.org.service.useraccount.lambda.UpdateUserAccountProvider
-main/java/org/service/appointment/lambda/AddAppointmentToBookingActivityProvider.java
- main.java.org.service.appointment.lambda.AddAppointmentToBookingActivityProvider
-main/java/org/service/appointment/lambda/CreateBookingActivityProvider.java
- main.java.org.service.appointment.lambda.CreateBookingActivityProvider
-main/java/org/service/appointment/lambda/GetBookingActivityProvider.java
- main.java.org.service.appointment.lambda.GetBookingActivityProvider
-main/java/org/service/appointment/lambda/GetBookingAppointmentsActivityProvider.java
- main.java.org.service.appointment.lambda.GetBookingAppointmentsActivityProvider
-main/java/org/service/appointment/lambda/UpdateBookingAppointmentActivityProvider.java
- main.java.org.service.appointment.lambda.UpdateBookingAppointmentActivityProvider
-main/java/org/service/spservice/lambda/GetAllServicesPerSPActivityProvider.java
- main.java.org.service.spservice.lambda.GetAllServicesPerSPActivityProvider
-main/java/org/service/message/lambda/CreateMessageActivityProvider.java
- main.java.org.service.message.lambda.CreateMessageActivityProvider
-main/java/org/service/message/lambda/CreateMessageInboxProvider.java
- main.java.org.service.message.lambda.CreateMessageInboxProvider
+main/java/org/service/appointment/dynamodb/models/Booking.java
+ main.java.org.service.appointment.dynamodb.models.Booking
+main/java/org/service/message/models/request/GetMessagePerInboxIdRequest.java
+ main.java.org.service.message.models.request.GetMessagePerInboxIdRequest
+main/java/org/service/message/models/results/GetInboxPerLoggedInUserResult.java
+ main.java.org.service.message.models.results.GetInboxPerLoggedInUserResult
+main/java/org/service/message/models/results/GetMessagePerInboxIdResult.java
+ main.java.org.service.message.models.results.GetMessagePerInboxIdResult
+main/java/org/service/message/lambda/GetInboxPerLoggedInUserActivityProvider.java
+ main.java.org.service.message.lambda.GetInboxPerLoggedInUserActivityProvider
+main/java/org/service/message/activity/GetMessagesPerInboxIdActivity.java
+ main.java.org.service.message.activity.GetMessagesPerInboxIdActivity
+main/java/org/service/message/dynamodb/UserMessageInboxDao.java
+ main.java.org.service.message.dynamodb.UserMessageInboxDao
+main/java/org/dependency/ServiceComponent.java
+ main.java.org.dependency.ServiceComponent
+main/java/org/service/message/models/request/GetInboxPerLoggedInUserRequest.java
+ main.java.org.service.message.models.request.GetInboxPerLoggedInUserRequest
+main/java/org/service/message/activity/GetInboxPerLoggedInUserActivity.java
+ main.java.org.service.message.activity.GetInboxPerLoggedInUserActivity
+main/java/org/service/message/activity/CreateMessageInboxIdActivity.java
+ main.java.org.service.message.activity.CreateMessageInboxIdActivity
+main/java/org/service/message/lambda/GetMessagesPerInboxIdActivityProvider.java
+ main.java.org.service.message.lambda.GetMessagesPerInboxIdActivityProvider
