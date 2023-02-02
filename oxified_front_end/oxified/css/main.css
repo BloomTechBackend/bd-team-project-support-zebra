@@ -192,23 +192,26 @@ margin-left: 12em;
 .mp-row {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 20%);
+    grid-template-columns: 40% 50%;
     place-content: center;
     place-items: center;
-    margin-top: 2em;
+    margin-top: 3em;
 }
 .mp-single {
-    /* width: 33%; */
-    margin: 2em;
-    padding: 1em;
+    /* width: 100%; */
+    /* margin: 2em; */
+    /* padding: 1em;
     border-radius: 5px;
     box-shadow: 5px 5px 5px #b8b8b8;
-    border: 1px solid rgb(226, 226, 226);
+    border: 1px solid rgb(226, 226, 226); */
+}
+.mp-description p{
+    text-align: justify;
 }
 
 .mp-single img {
     width: 100%;
-    height: 10em;
+    height: 25em;
     filter: grayscale(50%);
     border-radius: 5px;
     box-shadow: 1px 1px 4px #ffffff;
