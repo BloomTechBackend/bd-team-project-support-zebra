@@ -6,13 +6,6 @@ import dagger.internal.DoubleCheck;
 import dagger.internal.Preconditions;
 import javax.annotation.processing.Generated;
 import javax.inject.Provider;
-import main.java.org.service.appointment.activity.AddAppointmentToBookingActivity;
-import main.java.org.service.appointment.activity.CreateBookingActivity;
-import main.java.org.service.appointment.activity.GetBookingActivity;
-import main.java.org.service.appointment.activity.GetBookingAppointmentsActivity;
-import main.java.org.service.appointment.activity.UpdateBookingAppointmentActivity;
-import main.java.org.service.appointment.dynamodb.AppointmentDao;
-import main.java.org.service.appointment.dynamodb.BookingDao;
 import main.java.org.service.spservice.acitivity.CreateServiceActivity;
 import main.java.org.service.spservice.acitivity.GetAllServicesPerSPActivity;
 import main.java.org.service.spservice.acitivity.GetServiceActivity;
@@ -21,6 +14,7 @@ import main.java.org.service.spservice.dynamodb.ServiceDao;
 import main.java.org.service.useraccount.activity.CreateUserAccountActivity;
 import main.java.org.service.useraccount.activity.GetUserAccountActivity;
 import main.java.org.service.useraccount.activity.UpdateUserAccountActivity;
+import main.java.org.service.useraccount.activity.UserAuthenticationActivity;
 import main.java.org.service.useraccount.dynamodb.UserAccountDao;
 
 @DaggerGenerated
@@ -82,14 +76,6 @@ public final class DaggerServiceComponent {
       return new ServiceDao(provideDBMapperProvider.get());
     }
 
-    private BookingDao bookingDao() {
-      return new BookingDao(provideDBMapperProvider.get());
-    }
-
-    private AppointmentDao appointmentDao() {
-      return new AppointmentDao(provideDBMapperProvider.get());
-    }
-
     @SuppressWarnings("unchecked")
     private void initialize(final DaoModule daoModuleParam) {
       this.provideDBMapperProvider = DoubleCheck.provider(DaoModule_ProvideDBMapperFactory.create(daoModuleParam));
@@ -121,30 +107,6 @@ public final class DaggerServiceComponent {
     }
 
     @Override
-<<<<<<< HEAD
-    public AddAppointmentToBookingActivity provideAddAppointmentToBookingActivity() {
-      return new AddAppointmentToBookingActivity(bookingDao(), appointmentDao());
-    }
-
-    @Override
-    public CreateBookingActivity provideCreateBookingActivity() {
-      return new CreateBookingActivity(bookingDao());
-    }
-
-    @Override
-    public GetBookingActivity provideGetBookingActivity() {
-      return new GetBookingActivity(bookingDao());
-    }
-
-    @Override
-    public GetBookingAppointmentsActivity provideGetBookingAppointmentsActivity() {
-      return new GetBookingAppointmentsActivity(bookingDao());
-    }
-
-    @Override
-    public UpdateBookingAppointmentActivity provideUpdateBookingAppointmentActivity() {
-      return new UpdateBookingAppointmentActivity(appointmentDao());
-=======
     public UpdateServiceActivity provideUpdateServiceActivity() {
       return new UpdateServiceActivity(serviceDao());
     }
@@ -152,7 +114,11 @@ public final class DaggerServiceComponent {
     @Override
     public GetAllServicesPerSPActivity provideGetAllServicesPerSPActivity() {
       return new GetAllServicesPerSPActivity(serviceDao());
->>>>>>> ana
+    }
+
+    @Override
+    public UserAuthenticationActivity provideUserAuthenticationActivity() {
+      return new UserAuthenticationActivity(userAccountDao());
     }
   }
 }

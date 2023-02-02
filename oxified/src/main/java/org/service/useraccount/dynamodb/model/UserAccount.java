@@ -10,6 +10,7 @@ import java.util.Set;
 
 @DynamoDBTable(tableName = "user_accounts")
 public class UserAccount {
+    public static final String AUTHENTICATION_INDEX = "email-index";
     private String uaId;
     private String Email;
     private String Password;
@@ -37,7 +38,15 @@ public class UserAccount {
     public void setUaId(String uaId) {
         this.uaId = uaId;
     }
-    @DynamoDBAttribute(attributeName = "email")
+    @DynamoDBRangeKey(attributeName = "userType")
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+    @DynamoDBIndexHashKey(globalSecondaryIndexName = AUTHENTICATION_INDEX,attributeName = "email")
     public String getEmail() {
         return Email;
     }
@@ -52,14 +61,6 @@ public class UserAccount {
 
     public void setPassword(String password) {
         Password = password;
-    }
-    @DynamoDBRangeKey(attributeName = "userType")
-    public String getUserType() {
-        return userType;
-    }
-
-    public void setUserType(String userType) {
-        this.userType = userType;
     }
     @DynamoDBAttribute(attributeName = "status")
     public String getStatus() {

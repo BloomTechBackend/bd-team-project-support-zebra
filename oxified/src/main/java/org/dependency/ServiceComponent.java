@@ -1,7 +1,6 @@
 package main.java.org.dependency;
 
 import dagger.Component;
-import main.java.org.service.appointment.activity.*;
 import main.java.org.service.spservice.acitivity.CreateServiceActivity;
 import main.java.org.service.spservice.acitivity.GetAllServicesPerSPActivity;
 import main.java.org.service.spservice.acitivity.GetServiceActivity;
@@ -9,6 +8,7 @@ import main.java.org.service.spservice.acitivity.UpdateServiceActivity;
 import main.java.org.service.useraccount.activity.CreateUserAccountActivity;
 import main.java.org.service.useraccount.activity.GetUserAccountActivity;
 import main.java.org.service.useraccount.activity.UpdateUserAccountActivity;
+import main.java.org.service.useraccount.activity.UserAuthenticationActivity;
 
 import javax.inject.Singleton;
 
@@ -22,11 +22,7 @@ public interface ServiceComponent {
     CreateServiceActivity provideCreateService();
     UpdateServiceActivity provideUpdateServiceActivity();
     GetAllServicesPerSPActivity provideGetAllServicesPerSPActivity();
-    //  DON
-    AddAppointmentToBookingActivity provideAddAppointmentToBookingActivity();
-    CreateBookingActivity provideCreateBookingActivity();
-    GetBookingActivity provideGetBookingActivity();
-    GetBookingAppointmentsActivity provideGetBookingAppointmentsActivity();
-    UpdateBookingAppointmentActivity provideUpdateBookingAppointmentActivity();
+    UserAuthenticationActivity provideUserAuthenticationActivity();
+
 
 }

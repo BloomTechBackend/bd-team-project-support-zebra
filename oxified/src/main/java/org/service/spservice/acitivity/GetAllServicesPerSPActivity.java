@@ -31,8 +31,11 @@ public class GetAllServicesPerSPActivity implements RequestHandler<GetServiceReq
     @Override
     public GetAllServicesPerSPResult handleRequest(GetServiceRequest input, Context context) {
         log.info("Received GetServiceRequest {}", input);
+        Service service = new Service();
+        service.setUaId(input.getUaId());
+        service.setServiceType(input.getServiceId());
 
-        List<Service> serviceList = serviceDao.getServiceByUserAccount(input.getUaId());
+        List<Service> serviceList = serviceDao.getServiceByUserAccount(service);
         return GetAllServicesPerSPResult.builder()
                 .setServiceList(serviceList)
                 .build();

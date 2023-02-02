@@ -61,6 +61,7 @@ dependencies {
     implementation 'org.apache.commons:commons-lang3:3.12.0'
     implementation files("$rootDir/LibrariesAndUtilities/ATAResources.jar")
     implementation 'org.apache.logging.log4j:log4j-core:2.19.0'
+    implementation 'org.mindrot:jbcrypt:0.4'
     runtimeOnly 'com.amazonaws:aws-lambda-java-log4j2:1.5.1'
 
     // Added for using log4j usage
