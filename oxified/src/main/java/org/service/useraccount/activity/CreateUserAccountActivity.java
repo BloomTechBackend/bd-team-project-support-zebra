@@ -13,6 +13,7 @@ import main.java.org.service.useraccount.model.result.CreateUserAccountResult;
 import main.java.org.service.useraccount.util.UserAccountServiceUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.mindrot.jbcrypt.BCrypt;
 import org.testng.collections.Sets;
 
 import javax.inject.Inject;
@@ -34,7 +35,7 @@ public class CreateUserAccountActivity implements RequestHandler<CreateUserAccou
         if(!UserAccountServiceUtils.isValidString(createUserAccountRequest.getEmail())){
             throw new InvalidAttributeValueException("Invalid Email.");
         }
-
+        //user email should not be repeated
         Set<String> inboxes = null;
         if(createUserAccountRequest.getInboxes() != null) {
             inboxes = Sets.newHashSet(createUserAccountRequest.getInboxes());
@@ -42,7 +43,7 @@ public class CreateUserAccountActivity implements RequestHandler<CreateUserAccou
         UserAccount userAccount = new UserAccount();
         userAccount.setUaId(UserAccountServiceUtils.generateUaId());
         userAccount.setEmail(createUserAccountRequest.getEmail());
-        userAccount.setPassword(createUserAccountRequest.getPassword());
+        userAccount.setPassword(BCrypt.hashpw(createUserAccountRequest.getPassword(), BCrypt.gensalt(12)));
         userAccount.setUserType(createUserAccountRequest.getUserType());
         userAccount.setStatus(String.valueOf(Status.INACTIVE));
         userAccount.setBookingId(UserAccountServiceUtils.generateBookingId());

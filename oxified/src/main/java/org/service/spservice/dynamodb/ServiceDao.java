@@ -1,5 +1,9 @@
 package main.java.org.service.spservice.dynamodb;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import com.amazonaws.services.dynamodbv2.document.utils.ValueMap;
+import com.amazonaws.services.dynamodbv2.xspec.S;
 import main.java.org.service.spservice.dynamodb.models.Service;
 import javax.inject.Inject;
 import java.util.*;
@@ -13,8 +17,14 @@ public class ServiceDao {
     public Service getService(String serviceId, String uaId) {
         return dynamoDBMapper.load(Service.class, serviceId, uaId);
     }
-    public List<Service> getServiceByUserAccount(String uaId) {
-        return Collections.singletonList(dynamoDBMapper.load(Service.class, uaId));
+    public List<Service> getServiceByUserAccount(Service service) {
+//        return Collections.singletonList(dynamoDBMapper.load(Service.class, service.getUaId()));
+        DynamoDBQueryExpression<Service> queryExpression =
+                new DynamoDBQueryExpression<Service>()
+            .withIndexName("uaId")
+            .withConsistentRead(false)
+            .withExpressionAttributeValues(new HashMap<>());
+        return null;
     }
 
 
@@ -22,4 +32,6 @@ public class ServiceDao {
         dynamoDBMapper.save(service);
         return service;
     }
+
+
 }

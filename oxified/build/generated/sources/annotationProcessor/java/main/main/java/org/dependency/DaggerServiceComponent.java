@@ -6,6 +6,7 @@ import dagger.internal.DoubleCheck;
 import dagger.internal.Preconditions;
 import javax.annotation.processing.Generated;
 import javax.inject.Provider;
+<<<<<<< HEAD
 import main.java.org.service.appointment.activity.AddAppointmentToBookingActivity;
 import main.java.org.service.appointment.activity.CreateBookingActivity;
 import main.java.org.service.appointment.activity.GetBookingActivity;
@@ -19,6 +20,8 @@ import main.java.org.service.message.activity.GetInboxPerLoggedInUserActivity;
 import main.java.org.service.message.activity.GetMessagesPerInboxIdActivity;
 import main.java.org.service.message.dynamodb.UserMessageDao;
 import main.java.org.service.message.dynamodb.UserMessageInboxDao;
+=======
+>>>>>>> ana
 import main.java.org.service.spservice.acitivity.CreateServiceActivity;
 import main.java.org.service.spservice.acitivity.GetAllServicesPerSPActivity;
 import main.java.org.service.spservice.acitivity.GetServiceActivity;
@@ -27,6 +30,7 @@ import main.java.org.service.spservice.dynamodb.ServiceDao;
 import main.java.org.service.useraccount.activity.CreateUserAccountActivity;
 import main.java.org.service.useraccount.activity.GetUserAccountActivity;
 import main.java.org.service.useraccount.activity.UpdateUserAccountActivity;
+import main.java.org.service.useraccount.activity.UserAuthenticationActivity;
 import main.java.org.service.useraccount.dynamodb.UserAccountDao;
 
 @DaggerGenerated
@@ -88,6 +92,7 @@ public final class DaggerServiceComponent {
       return new ServiceDao(provideDBMapperProvider.get());
     }
 
+<<<<<<< HEAD
     private BookingDao bookingDao() {
       return new BookingDao(provideDBMapperProvider.get());
     }
@@ -104,6 +109,8 @@ public final class DaggerServiceComponent {
       return new UserMessageDao(provideDBMapperProvider.get());
     }
 
+=======
+>>>>>>> ana
     @SuppressWarnings("unchecked")
     private void initialize(final DaoModule daoModuleParam) {
       this.provideDBMapperProvider = DoubleCheck.provider(DaoModule_ProvideDBMapperFactory.create(daoModuleParam));
@@ -137,6 +144,7 @@ public final class DaggerServiceComponent {
     @Override
     public UpdateServiceActivity provideUpdateServiceActivity() {
       return new UpdateServiceActivity(serviceDao());
+<<<<<<< HEAD
     }
 
     @Override
@@ -187,6 +195,18 @@ public final class DaggerServiceComponent {
     @Override
     public GetMessagesPerInboxIdActivity provideGetMessagesPerInboxIdActivity() {
       return new GetMessagesPerInboxIdActivity(userMessageDao());
+=======
+    }
+
+    @Override
+    public GetAllServicesPerSPActivity provideGetAllServicesPerSPActivity() {
+      return new GetAllServicesPerSPActivity(serviceDao());
+    }
+
+    @Override
+    public UserAuthenticationActivity provideUserAuthenticationActivity() {
+      return new UserAuthenticationActivity(userAccountDao());
+>>>>>>> ana
     }
   }
 }
