@@ -1,7 +1,9 @@
 package main.java.org.service.message.util;
 
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
+
 
 import java.util.regex.Pattern;
 
@@ -18,4 +20,5 @@ public class MessageUtils {
     public static String generateMessageId() {
         return RandomStringUtils.randomAlphanumeric(ID_LENGTH);
     }
+
 }

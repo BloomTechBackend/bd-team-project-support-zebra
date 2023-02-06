@@ -1,9 +1,11 @@
 package main.java.org.service.message.models.request;
 
+import main.java.org.service.message.dynamodb.models.UserMessage;
+
 import java.util.Objects;
 
 public class CreateMessageInboxRequest {
-    private String inboxId;
+
     private String messageBody;
     private String dateTime;
     private String senderUaid;
@@ -12,21 +14,21 @@ public class CreateMessageInboxRequest {
     public CreateMessageInboxRequest() {
     }
 
+    public CreateMessageInboxRequest(UserMessage message) {
+        messageBody = message.getMessageBody();
+        dateTime = message.getDateTime();
+        senderUaid = message.getSenderUaid();
+        receiverUaid = message.getReceiverUaid();
+    }
+
     public CreateMessageInboxRequest(CreateMessageInboxBuilder builder) {
-        this.inboxId = builder.inboxId;
+
         this.messageBody = builder.messageBody;
         this.dateTime = builder.dateTime;
         this.senderUaid = builder.senderUaid;
         this.receiverUaid = builder.receiverUaid;
     }
 
-    public String getInboxId() {
-        return inboxId;
-    }
-
-    public void setInboxId(String inboxId) {
-        this.inboxId = inboxId;
-    }
 
     public String getMessageBody() {
         return messageBody;
@@ -70,29 +72,65 @@ public class CreateMessageInboxRequest {
         if (this == o) return true;
         if (! ( o instanceof CreateMessageInboxRequest )) return false;
         CreateMessageInboxRequest that = (CreateMessageInboxRequest) o;
-        return Objects.equals(inboxId, that.inboxId) && messageBody.equals(that.messageBody) && Objects.equals(dateTime, that.dateTime) && senderUaid.equals(that.senderUaid) && receiverUaid.equals(that.receiverUaid);
+        return  messageBody.equals(that.messageBody) && Objects.equals(dateTime, that.dateTime) && senderUaid.equals(that.senderUaid) && receiverUaid.equals(that.receiverUaid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(inboxId, messageBody, dateTime, senderUaid, receiverUaid);
+        return Objects.hash( messageBody, dateTime, senderUaid, receiverUaid);
     }
 
     public static class CreateMessageInboxBuilder {
-        private String inboxId;
+        private UserMessage message;
         private String messageBody;
         private String dateTime;
         private String senderUaid;
         private String receiverUaid;
 
+        public CreateMessageInboxBuilder(UserMessage message) {
+            this.message = message;
+            messageBody = message.getMessageBody();
+            dateTime = message.getDateTime();
+            senderUaid = message.getSenderUaid();
+            receiverUaid = message.getReceiverUaid();
+        }
+
+        public String getMessageBody() {
+            return messageBody;
+        }
+
+        public void setMessageBody(String messageBody) {
+            this.messageBody = messageBody;
+        }
+
+        public String getDateTime() {
+            return dateTime;
+        }
+
+        public void setDateTime(String dateTime) {
+            this.dateTime = dateTime;
+        }
+
+        public String getSenderUaid() {
+            return senderUaid;
+        }
+
+        public void setSenderUaid(String senderUaid) {
+            this.senderUaid = senderUaid;
+        }
+
+        public String getReceiverUaid() {
+            return receiverUaid;
+        }
+
+        public void setReceiverUaid(String receiverUaid) {
+            this.receiverUaid = receiverUaid;
+        }
+
         public CreateMessageInboxBuilder() {
 
         }
 
-        public CreateMessageInboxBuilder withInboxId(String inboxId) {
-            this.inboxId = inboxId;
-            return this;
-        }
 
         public CreateMessageInboxBuilder withMessageBody(String messageBody) {
             this.messageBody = messageBody;

@@ -1,0 +1,12 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "dynamodb:PutItem",
+      "Resource": "arn:aws:dynamodb:us-west-2:873295751266:table/inbox"
+    }
+  ]
+}
+"arn:aws:logs:us-west-2:873295751266:log-group:/aws/lambda/createInbox:*"
+dynamodb:UpdateItem

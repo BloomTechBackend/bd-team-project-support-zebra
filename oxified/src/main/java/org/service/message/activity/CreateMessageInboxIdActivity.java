@@ -4,14 +4,17 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import main.java.org.service.message.converter.MessageInboxConverter;
 import main.java.org.service.message.dynamodb.UserMessageInboxDao;
+import main.java.org.service.message.dynamodb.models.UserMessage;
 import main.java.org.service.message.dynamodb.models.UserMessageInbox;
-import main.java.org.service.message.models.MessageInboxModel;
+import main.java.org.service.message.helper.MessageHelper;
+import main.java.org.service.message.models.CreateMessageInboxModel;
 import main.java.org.service.message.models.request.CreateMessageInboxRequest;
 import main.java.org.service.message.models.results.CreateMessageInboxResult;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.inject.Inject;
+import java.time.ZonedDateTime;
 
 public class CreateMessageInboxIdActivity implements RequestHandler<CreateMessageInboxRequest, CreateMessageInboxResult> {
     private Logger log = LogManager.getLogger();
@@ -30,13 +33,20 @@ public class CreateMessageInboxIdActivity implements RequestHandler<CreateMessag
      */
     @Override
     public CreateMessageInboxResult handleRequest(CreateMessageInboxRequest input, Context context) {
-        UserMessageInbox inbox = new UserMessageInbox();
+
+        UserMessage message = MessageHelper.generateMessage();
+
+        input = new CreateMessageInboxRequest(message);
+
+        UserMessageInbox inbox = new UserMessageInbox(message);
+        inbox.setInboxId();
+        inbox.setDateTime(input.getDateTime());
         inbox.setMessageBody(input.getMessageBody());
         inbox.setSenderUaid(input.getSenderUaid());
         inbox.setReceiverUaid(input.getReceiverUaid());
-        MessageInboxModel inboxModel = MessageInboxConverter.toMessageInboxModel(inbox);
+        CreateMessageInboxModel inboxModel = MessageInboxConverter.toMessageInboxModel(inboxDao.createInbox(inbox));
         return CreateMessageInboxResult.builder()
-                .withMessageInboxModel(inboxModel)
+                .withInboxModel(inboxModel)
                 .build();
     }
 }

@@ -6,22 +6,12 @@ import dagger.internal.DoubleCheck;
 import dagger.internal.Preconditions;
 import javax.annotation.processing.Generated;
 import javax.inject.Provider;
-<<<<<<< HEAD
-import main.java.org.service.appointment.activity.AddAppointmentToBookingActivity;
-import main.java.org.service.appointment.activity.CreateBookingActivity;
-import main.java.org.service.appointment.activity.GetBookingActivity;
-import main.java.org.service.appointment.activity.GetBookingAppointmentsActivity;
-import main.java.org.service.appointment.activity.UpdateBookingAppointmentActivity;
-import main.java.org.service.appointment.dynamodb.AppointmentDao;
-import main.java.org.service.appointment.dynamodb.BookingDao;
 import main.java.org.service.message.activity.CreateMessageActivity;
 import main.java.org.service.message.activity.CreateMessageInboxIdActivity;
 import main.java.org.service.message.activity.GetInboxPerLoggedInUserActivity;
 import main.java.org.service.message.activity.GetMessagesPerInboxIdActivity;
 import main.java.org.service.message.dynamodb.UserMessageDao;
 import main.java.org.service.message.dynamodb.UserMessageInboxDao;
-=======
->>>>>>> ana
 import main.java.org.service.spservice.acitivity.CreateServiceActivity;
 import main.java.org.service.spservice.acitivity.GetAllServicesPerSPActivity;
 import main.java.org.service.spservice.acitivity.GetServiceActivity;
@@ -92,15 +82,6 @@ public final class DaggerServiceComponent {
       return new ServiceDao(provideDBMapperProvider.get());
     }
 
-<<<<<<< HEAD
-    private BookingDao bookingDao() {
-      return new BookingDao(provideDBMapperProvider.get());
-    }
-
-    private AppointmentDao appointmentDao() {
-      return new AppointmentDao(provideDBMapperProvider.get());
-    }
-
     private UserMessageInboxDao userMessageInboxDao() {
       return new UserMessageInboxDao(provideDBMapperProvider.get());
     }
@@ -109,8 +90,6 @@ public final class DaggerServiceComponent {
       return new UserMessageDao(provideDBMapperProvider.get());
     }
 
-=======
->>>>>>> ana
     @SuppressWarnings("unchecked")
     private void initialize(final DaoModule daoModuleParam) {
       this.provideDBMapperProvider = DoubleCheck.provider(DaoModule_ProvideDBMapperFactory.create(daoModuleParam));
@@ -144,37 +123,11 @@ public final class DaggerServiceComponent {
     @Override
     public UpdateServiceActivity provideUpdateServiceActivity() {
       return new UpdateServiceActivity(serviceDao());
-<<<<<<< HEAD
     }
 
     @Override
     public GetAllServicesPerSPActivity provideGetAllServicesPerSPActivity() {
       return new GetAllServicesPerSPActivity(serviceDao());
-    }
-
-    @Override
-    public AddAppointmentToBookingActivity provideAddAppointmentToBookingActivity() {
-      return new AddAppointmentToBookingActivity(bookingDao(), appointmentDao());
-    }
-
-    @Override
-    public CreateBookingActivity provideCreateBookingActivity() {
-      return new CreateBookingActivity(bookingDao());
-    }
-
-    @Override
-    public GetBookingActivity provideGetBookingActivity() {
-      return new GetBookingActivity(bookingDao());
-    }
-
-    @Override
-    public GetBookingAppointmentsActivity provideGetBookingAppointmentsActivity() {
-      return new GetBookingAppointmentsActivity(bookingDao());
-    }
-
-    @Override
-    public UpdateBookingAppointmentActivity provideUpdateBookingAppointmentActivity() {
-      return new UpdateBookingAppointmentActivity(appointmentDao());
     }
 
     @Override
@@ -195,18 +148,11 @@ public final class DaggerServiceComponent {
     @Override
     public GetMessagesPerInboxIdActivity provideGetMessagesPerInboxIdActivity() {
       return new GetMessagesPerInboxIdActivity(userMessageDao());
-=======
-    }
-
-    @Override
-    public GetAllServicesPerSPActivity provideGetAllServicesPerSPActivity() {
-      return new GetAllServicesPerSPActivity(serviceDao());
     }
 
     @Override
     public UserAuthenticationActivity provideUserAuthenticationActivity() {
       return new UserAuthenticationActivity(userAccountDao());
->>>>>>> ana
     }
   }
 }

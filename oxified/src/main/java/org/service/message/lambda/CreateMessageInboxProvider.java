@@ -18,7 +18,7 @@ public class CreateMessageInboxProvider implements RequestHandler<CreateMessageI
     @Override
 
     public CreateMessageInboxResult handleRequest(CreateMessageInboxRequest input, Context context) {
-        return null;
+        return getService().provideCreateMessageInboxActivity().handleRequest(input, context);
     }
     private ServiceComponent getService() {
         ServiceComponent component = DaggerServiceComponent.create();
