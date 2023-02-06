@@ -14,15 +14,14 @@ public class AppointmentDao {
         this.dynamoDBMapper = dynamoDBMapper;
     }
 
-    public Appointment getAppointment(String appointmentId, String date) {
-        return dynamoDBMapper.load(Appointment.class, appointmentId, date);
+    public Appointment getAppointment(String appointmentId, String bookingId) {
+        return dynamoDBMapper.load(Appointment.class, appointmentId, bookingId);
     }
 
-    public Appointment saveAppointment(Appointment appointment) {
+    public void saveAppointment(Appointment appointment) {
         if (appointment == null) {
             throw new InvalidAttributeValueException();
         }
         this.dynamoDBMapper.save(appointment);
-        return appointment;
     }
 }

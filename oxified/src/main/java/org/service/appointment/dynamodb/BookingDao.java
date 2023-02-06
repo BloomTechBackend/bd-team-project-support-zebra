@@ -15,18 +15,16 @@ public class BookingDao {
     }
 
     public Booking getBooking(String bookingId){
-        Booking booking = this.dynamoDBMapper.load(Booking.class, bookingId);
-        if (booking == null) {
-            throw new InvalidAttributeValueException("Could not find playlist with id " + bookingId);
+        if (bookingId.equals("")) {
+            throw new InvalidAttributeValueException("Booking cannot be empty.");
         }
-        return booking;
+        return dynamoDBMapper.load(Booking.class, bookingId);
     }
 
-    public Booking saveBooking(Booking booking) throws InvalidAttributeValueException {
+    public void saveBooking(Booking booking) throws InvalidAttributeValueException {
         if (booking == null) {
             throw new InvalidAttributeValueException();
         }
         this.dynamoDBMapper.save(booking);
-        return booking;
     }
 }
